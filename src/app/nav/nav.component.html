@@ -1,0 +1,43 @@
+<div class = "col-sm-12 flex1">
+<div *ngIf = "showing" class = "sidenav bg-color col-sm-3">
+    <img src = "assets/Images/logo.svg" />
+    <ul class = "p-1">
+     <a [routerLink] = "['/nav','jobs']"> <li (click)="onClick(1)"   [ngClass]="{'active1': tab==='tab1'}"> <i class="fa fa-th-large" aria-hidden="true"></i> My Jobs </li> </a>
+     <a [routerLink] = "['/nav','search']"> <li (click)="onClick(2)"   [ngClass]="{'active1': tab==='tab2'}"> <i class="fa fa-search" aria-hidden="true"></i> Search for Jobs </li> </a>
+     <a [routerLink] = "['/nav','message']"> <li (click)="onClick(3)"   [ngClass]="{'active1': tab==='tab3'}"> <i class="fa fa-envelope" aria-hidden="true"></i> Message </li> </a>
+     <a [routerLink] = "['/nav','invites']"> <li (click)="onClick(4)"   [ngClass]="{'active1': tab==='tab4'}"> <i class="fas fa-bullhorn"></i> My Invites </li> </a>
+     <a [routerLink] = "['/nav','past']"> <li (click)="onClick(5)"   [ngClass]="{'active1': tab==='tab5'}"> <i class="far fa-file-alt"></i> Past Jobs </li> </a>
+      <li (click)="onClick(6)"   [ngClass]="{'active1': tab==='tab6'}"> <i class="fas fa-phone-alt"></i> Contact Multum </li>
+      <li (click)="onClick(7)"   [ngClass]="{'active1': tab==='tab7'}"> <i class="fa fa-cog" aria-hidden="true"></i>  Settings </li>
+      <li routerLink = "/login" (click)="onClick(8)"   [ngClass]="{'active1': tab==='tab8'}"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout </li>  
+    </ul>
+  </div>
+
+  <div *ngIf = "showing1" class = "sidenav bg-color col-sm-1">
+    <img src = "assets/Images/logo-icon.svg" />
+    <ul class = "p-1 list1">
+     <a [routerLink] = "['/nav','jobs']"> <li (click)="onClick(1)"   [ngClass]="{'active1': tab==='tab1'}"> <i class="fa fa-th-large" aria-hidden="true"></i> My Jobs </li> </a>
+     <a [routerLink] = "['/nav','search']"> <li (click)="onClick(2)"   [ngClass]="{'active1': tab==='tab2'}"> <i class="fa fa-search" aria-hidden="true"></i> Search Jobs </li> </a>
+     <a [routerLink] = "['/nav','message']"> <li (click)="onClick(3)"   [ngClass]="{'active1': tab==='tab3'}"> <i class="fa fa-envelope" aria-hidden="true"></i> Message </li> </a>
+     <a [routerLink] = "['/nav','invites']"> <li (click)="onClick(4)"   [ngClass]="{'active1': tab==='tab4'}"> <i class="fas fa-bullhorn"></i> My Invites </li> </a>
+     <a [routerLink] = "['/nav','past']"> <li (click)="onClick(5)"   [ngClass]="{'active1': tab==='tab5'}"> <i class="far fa-file-alt"></i> Past Jobs </li> </a>
+      <li (click)="onClick(6)"   [ngClass]="{'active1': tab==='tab6'}"> <i class="fas fa-phone-alt"></i> Contact Multum </li>
+      <li (click)="onClick(7)"   [ngClass]="{'active1': tab==='tab7'}"> <i class="fa fa-cog" aria-hidden="true"></i>  Settings </li>
+      <li routerLink = "/login" (click)="onClick(8)"   [ngClass]="{'active1': tab==='tab8'}"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout </li> 
+    </ul>
+  </div>
+
+  <div class = "width1 p-1" [class.width] = "!showing ? 'width' :'!width'">
+    <div class = "box1">  
+    <i (click) = "toggle1()" class="fas fa-align-left" aria-hidden="true"></i>
+    <div (click) = "toggle()" class = "pull-right relative1"> <img class = "img1" src = "assets/Images/user.png" /> <b> Wayne Mills </b> <i class="fas fa-caret-down"></i>
+    <!-- <ul class = "absolute1">
+      <li *ngIf = "show" routerLink ="/profile"> Profile </li>
+      <li *ngIf = "show" routerLink ="/history"> Work History </li>
+      <li *ngIf = "show" routerLink = "/check"> Background Check </li>
+    </ul> -->
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  </div>
+  </div>

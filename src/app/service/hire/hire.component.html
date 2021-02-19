@@ -1,0 +1,242 @@
+<div class = "col-sm-12">
+
+<div class = "flex1 top1">
+<div class = "col-sm-7">
+    <h4 class = "font1"> Job details </h4>
+</div>
+<div class = "pull-right">
+<div [routerLink] = "['/nav','message']" class = "btn color1"> 
+    Message
+</div>
+<div class = "btn color2"> 
+    Cancel
+</div>
+<div class = "btn color2">
+    Finished
+</div>
+</div>
+</div>
+
+<ul class = "nav nav-pills center">
+    <li class = "width2" [class.active] = "viewmode == 'hired'">
+        <a (click) = "viewmode = 'hired'">
+        
+        <div (click)="onClick(1)"   [ngClass]="{'active1': tab==='tab1'}" class = "clippy1 pull-left"></div>
+        <hr />
+        <br />
+           <h6> Hired </h6>
+        
+        
+        </a>
+    </li>
+    <li class = "width2" [class.active] = "viewmode == 'started'">
+        <a (click) = "viewmode = 'started'"> 
+            <div (click)="onClick(2)"   [ngClass]="{'active1': tab==='tab2'}" class = "clippy1 pull-left"></div>
+        <hr />
+        <br />
+           <h6> Job Started </h6>           
+        </a>
+    </li>
+    <li class = "width2" [class.active] = "viewmode == 'completed'">
+        <a (click) = "viewmode = 'completed'"> 
+            <div (click)="onClick(3)"   [ngClass]="{'active1': tab==='tab3'}" class = "clippy1 pull-left"></div>
+        <hr />
+        <br />
+          <h6>  Job Completed  </h6>
+        </a>
+    </li>
+    <li class = "width2" [class.active] = "viewmode == 'verification'">
+        <a (click) = "viewmode = 'verification'"> 
+            <div (click)="onClick(4)"   [ngClass]="{'active1': tab==='tab4'}" class = "clippy1 pull-left"></div>
+            <hr />
+            <br />
+             <h6> Customer Verification </h6>
+        </a>
+    </li>
+    <li class = "width2" [class.active] = "viewmode == 'moneysent'">
+        <a (click) = "viewmode = 'moneysent'"> 
+            <div (click)="onClick(5)"   [ngClass]="{'active1': tab==='tab5'}" class = "clippy1"></div>
+            <br />
+
+          <h6> Money Sent </h6>
+        </a>
+    </li>
+  </ul>
+
+  <div class = "center1" [ngSwitch] = "viewmode">
+    <div *ngSwitchCase ="'hired'"> 
+        <div class = "box2">
+            <h4> Job Hired </h4>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+            </p>
+            <div class ="flex1">
+            <div class = "col-sm-4">
+                <h4> Address </h4>
+                <p> 
+                    17 Howard Street<br />
+Oswego NY 13126<br />
+USA
+                </p>
+            </div>
+            <div class = "col-sm-4">
+                <h4> Date </h4>
+                <p> 
+                    22/11/2020
+                </p>
+            </div>       
+            <div class = "col-sm-4">
+                <h4>
+                    Time
+                </h4>
+                <p>
+                    10:00 A.M.
+                </p>
+            </div>     
+            </div>
+        </div>
+    </div>
+    <div *ngSwitchCase ="'started'"> 
+        <div class = "box2">
+            <h4> Job Started </h4>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+            </p>
+            <div class ="flex1">
+            <div class = "col-sm-4">
+                <h4> Address </h4>
+                <p> 
+                    17 Howard Street<br />
+Oswego NY 13126<br />
+USA
+                </p>
+            </div>
+            <div class = "col-sm-4">
+                <h4> Date </h4>
+                <p> 
+                    22/11/2020
+                </p>
+            </div>       
+            <div class = "col-sm-4">
+                <h4>
+                    Time
+                </h4>
+                <p>
+                    10:00 A.M.
+                </p>
+            </div> 
+            </div>    
+        </div>
+    </div>
+ 
+    <div *ngSwitchCase ="'completed'"> 
+        <div class = "col-sm-12 box2">
+            <h4> Job Completed </h4>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+            </p>
+            <div class ="flex1">
+            <div class = "col-sm-4">
+                <h4> Address </h4>
+                <p> 
+                    17 Howard Street<br />
+Oswego NY 13126<br />
+USA
+                </p>
+            </div>
+            <div class = "col-sm-4">
+                <h4> Date </h4>
+                <p> 
+                    22/11/2020
+                </p>
+            </div>       
+            <div class = "col-sm-4">
+                <h4>
+                    Time
+                </h4>
+                <p>
+                    10:00 A.M.
+                </p>
+            </div>   
+            </div>  
+        </div>
+    </div>
+    <div *ngSwitchCase ="'verification'"> 
+        <div class = "box2">
+            <h4> Job Verification </h4>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+            </p>
+            <div class = "clearfix"></div>
+            <div class ="flex1">
+            <div class = "col-sm-4">
+                <h4> Address </h4>
+                <p> 
+                    17 Howard Street<br />
+Oswego NY 13126<br />
+USA
+                </p>
+            </div>
+            <div class = "col-sm-4">
+                <h4> Date </h4>
+                <p> 
+                    22/11/2020
+                </p>
+            </div>       
+            <div class = "col-sm-4">
+                <h4>
+                    Time
+                </h4>
+                <p>
+                    10:00 A.M.
+                </p>
+            </div>  
+            </div>   
+        </div>
+    </div>
+    <div *ngSwitchCase ="'moneysent'"> 
+        <div class = "box2">
+            <h4> Money Sent </h4>
+            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+                passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
+            </p>
+            <div class ="flex1">
+            <div class = "col-sm-4">
+                <h4> Address </h4>
+                <p> 
+                    17 Howard Street<br />
+Oswego NY 13126<br />
+USA
+                </p>
+            </div>
+            <div class = "col-sm-4">
+                <h4> Date </h4>
+                <p> 
+                    22/11/2020
+                </p>
+            </div>       
+            <div class = "col-sm-4">
+                <h4>
+                    Time
+                </h4>
+                <p>
+                    10:00 A.M.
+                </p>
+            </div>    
+            </div> 
+        </div>
+    </div>
+    <!-- <div *ngSwitchDefault> <h4>Otherwise</h4> </div> -->
+  </div>
+
+  </div>

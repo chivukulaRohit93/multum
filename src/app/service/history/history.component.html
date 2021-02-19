@@ -1,0 +1,68 @@
+
+<div class = "col-sm-12 flex1">
+              <div class = "col-sm-10 top2">
+                  <h3 class = "font1"> Work History </h3>
+              </div>
+              <ng-template #content let-modal>
+                <div class="modal-header">
+                  <h4 class="modal-title" id="modal-basic-title">Add History</h4>
+                  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div> Add Job Description </div>
+                  <input type = "text" class = "text1" />
+                  <div> Date </div>
+                  <input type = "text" class = "text1" value = "10/10/1980" />
+                  <p> Write 100 characters to explain why they are Adding </p>
+                  <textarea class = "textarea" name="" id="" cols="30" rows="10" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting
+                  industry. Lorem Ipsum has been the industry's standard dummy text
+                  ever since the 1500s,">
+                    
+                  </textarea>
+                </div>
+                <div class="modal-footer">
+                <a>  <button type="button" class="btn btn color5" (click)="modal.close('Save click')">Add History</button> </a> 
+                </div>
+              </ng-template>
+            
+            <div (click)="open(content)" class = "btn color1 pull-right"> Add History </div>
+          </div>
+          <div class = "clearfix"></div>
+          <div class = "col-sm-12">
+
+              <div class = "box2">
+                  <h4> Job Description 1 </h4>
+                  <h5 class = "color2"> Jan 2019 - Present </h5>
+                  <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+                 </p>
+                 <ul class = "disc">
+                     <li> sages, and more recently with desktop publishing software like Aldus PageMak </li>
+                     <li> Lorem Ipsum has been the industry's standard dummy text ever since the </li>
+                     <li> Printer took a galley of type and scrambled it to make a type specimen book. </li>
+                 </ul>
+              </div>
+
+              <div class = "box2">
+                <h4> Job Description 2 </h4>
+                <h5 class = "color2"> Aug 2017 - Jan 2019 </h5>
+                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                  when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+               </p>
+               <ul class = "disc">
+                   <li> sages, and more recently with desktop publishing software like Aldus PageMak </li>
+                   <li> Lorem Ipsum has been the industry's standard dummy text ever since the </li>
+                   <li> Printer took a galley of type and scrambled it to make a type specimen book. </li>
+               </ul>
+            </div>
+
+            <div class = "clearfix"></div>
+
+            <div [routerLink]="['/nav','background']" class = "pull-right btn color1">  Next  </div>
+
+          </div>
+
+    
+

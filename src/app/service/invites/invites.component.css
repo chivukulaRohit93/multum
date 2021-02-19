@@ -1,0 +1,38 @@
+.font1{
+    font-weight:bold;
+    margin-top:15px;
+}
+
+.flex1{
+    display: flex;
+}
+
+.box2{
+    box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
+    padding:15px;
+    border-radius:15px;
+    margin-top:10px;
+}
+
+.color1{
+    color:#bb7485;
+}
+
+.color2{
+    background-color:#532b48;
+    color:#fff;
+    height:40px;
+    border-radius: 10px;
+}
+
+h4{
+    font-size:18px;
+}
+
+.color3{
+    background-color:#b45c79;
+    color:#fff;
+    height:40px;
+    border-radius: 10px;
+    margin-left:10px;
+}

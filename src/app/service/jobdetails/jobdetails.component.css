@@ -1,0 +1,30 @@
+.font1{
+    font-weight:600;
+    margin-top:20px;
+}
+
+.color1{
+    color:#ad4a6d;
+}
+
+.color2{
+    background-color:#532b48;
+    color:#fff;
+}
+
+.color3{
+    background-color: #ac415b;
+    color:#fff;
+    margin-left:20px;
+}
+
+.box2{
+    box-shadow: 0 0 4px 0 rgb(144 162 178 / 51%);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.flex1{
+    display: flex;
+}
