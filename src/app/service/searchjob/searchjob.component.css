@@ -39,6 +39,7 @@
 .absolute1{
     position:absolute;
     right:0;
+    line-height:45px;
 }
 
 .fa-filter{
@@ -75,4 +76,22 @@ color:#fff;
     border:2px solid #ddd;
     padding:5px;
     border-radius: 5px;
+}
+
+/* responsive css */
+
+@media (min-width:320px) and (max-width:998px){
+.width2{
+    width:100% !important;
+}
+.flex1{
+    display: block;
+}
+.t1{
+    text-align: center;
+    margin-top:15px;
+}
+.pull-right{
+float:right;
+}
 }

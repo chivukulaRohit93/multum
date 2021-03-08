@@ -1,0 +1,412 @@
+<div>
+    <h4 class = "font1">Message</h4>
+    <div class="messaging">
+          <div class="inbox_msg">
+            <div class="inbox_people">
+              <div class="headind_srch">
+                
+                <div class="srch_bar">
+                  <div class="stylish-input-group">
+                    <input type="text" class="search-bar"  placeholder="Search" >
+                    <span class="input-group-addon">
+                    <button type="button"> <i class="fa fa-search" aria-hidden="true"></i> </button>
+                    </span> </div>
+                </div>
+              </div>
+              <div class="inbox_chat">
+                
+                    <div (click)="onClick(1)" [ngClass]="{'active_chat': tab==='tab1'}" [class.active] = "viewmode == 'service1'" class="chat_list active_chat">
+                        <div (click) = "viewmode = 'service1'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                
+                
+                    <div (click)="onClick(2)" [ngClass]="{'active_chat': tab==='tab2'}" [class.active] = "viewmode == 'service2'" class="chat_list">
+                        <div (click) = "viewmode = 'service2'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                
+                
+                    <div (click)="onClick(3)" [ngClass]="{'active_chat': tab==='tab3'}" [class.active] = "viewmode == 'service3'" class="chat_list">
+                        <div (click) = "viewmode = 'service3'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                
+                    <div (click)="onClick(4)" [ngClass]="{'active_chat': tab==='tab4'}" [class.active] = "viewmode == 'service4'" class="chat_list">
+                        <div (click) = "viewmode = 'service4'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+                               
+
+                
+                    <div (click)="onClick(5)" [ngClass]="{'active_chat': tab==='tab5'}" [class.active] = "viewmode == 'service5'" class="chat_list">
+                        <div (click) = "viewmode = 'service5'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+      
+                
+                
+                
+                    <div (click)="onClick(6)" [ngClass]="{'active_chat': tab==='tab6'}" [class.active] = "viewmode == 'service6'" class="chat_list">
+                        <div (click) = "viewmode = 'service6'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+      
+                                
+                
+                    <div (click)="onClick(7)" [ngClass]="{'active_chat': tab==='tab7'}" [class.active] = "viewmode == 'service7'" class="chat_list">
+                        <div (click) = "viewmode = 'service7'" class="chat_people">
+                          <div class="chat_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                          <div class="chat_ib">
+                            <h5>Sunil Rajput <span class="chat_date">Dec 25</span></h5>
+                            <p>Test, which is a new approach to have all solutions 
+                              astrology under one roof.</p>
+                          </div>
+                        </div>
+                      </div>
+                
+                
+
+                
+                    
+                              
+              </div>
+            </div>
+            <div [ngSwitch] = "viewmode" class="mesgs">
+              <div *ngSwitchCase ="'service1'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test1 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+              <div *ngSwitchCase ="'service2'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test2 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase ="'service3'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test3 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase ="'service4'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test4 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase ="'service5'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test5 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase ="'service6'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test6 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div *ngSwitchCase ="'service7'" class="msg_history">
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test7 which is a new approach to have all
+                        solutions</p>
+                      <span class="time_date"> 11:01 AM    |    June 9</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Test which is a new approach to have all
+                      solutions</p>
+                    <span class="time_date"> 11:01 AM    |    June 9</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>Test, which is a new approach to have</p>
+                      <span class="time_date"> 11:01 AM    |    Yesterday</span></div>
+                  </div>
+                </div>
+                <div class="outgoing_msg">
+                  <div class="sent_msg">
+                    <p>Apollo University, Delhi, India Test</p>
+                    <span class="time_date"> 11:01 AM    |    Today</span> </div>
+                </div>
+                <div class="incoming_msg">
+                  <div class="incoming_msg_img"> <img class = "img1" src = "assets/Images/user.png" /> </div>
+                  <div class="received_msg">
+                    <div class="received_withd_msg">
+                      <p>We work directly with our designers and suppliers,
+                        and sell direct to you, which means quality, exclusive
+                        products, at a price anyone can afford.</p>
+                      <span class="time_date"> 11:01 AM    |    Today</span></div>
+                  </div>
+                </div>
+              </div>
+              <div class="type_msg">
+                <div class="input_msg_write">
+                  <input type="text" class="write_msg" placeholder="Type a message" />
+                  <button class="msg_send_btn" type="button"><i class="fas fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+          
+          
+        </div></div>

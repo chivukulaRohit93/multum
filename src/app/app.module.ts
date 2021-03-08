@@ -22,6 +22,20 @@ import { JobdetailsComponent } from './service/jobdetails/jobdetails.component';
 import { MessageComponent } from './service/message/message.component';
 import { InvitesComponent } from './service/invites/invites.component';
 import { PastjobsComponent } from './service/pastjobs/pastjobs.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MyjobsComponent } from './customer/myjobs/myjobs.component';
+import { MyprofileComponent } from './customer/myprofile/myprofile.component';
+import { PostjobComponent } from './customer/postjob/postjob.component';
+import { Profile1Component } from './customer/profile1/profile1.component';
+import { CreateaccComponent } from './customer/createacc/createacc.component';
+import { MydescriptionComponent } from './customer/mydescription/mydescription.component';
+import { MyreviewsComponent } from './customer/myreviews/myreviews.component';
+import { MymessageComponent } from './customer/mymessage/mymessage.component';
+import { MycontactComponent } from './customer/mycontact/mycontact.component';
+import { MysearchComponent } from './customer/mysearch/mysearch.component';
+import { MysettingsComponent } from './customer/mysettings/mysettings.component';
+import { MypastjobsComponent } from './customer/mypastjobs/mypastjobs.component';
+import { MyratingsComponent } from './customer/myratings/myratings.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +55,21 @@ import { PastjobsComponent } from './service/pastjobs/pastjobs.component';
     JobdetailsComponent,
     MessageComponent,
     InvitesComponent,
-    PastjobsComponent
+    PastjobsComponent,
+    NavbarComponent,
+    MyjobsComponent,
+    MyprofileComponent,
+    PostjobComponent,
+    Profile1Component,
+    CreateaccComponent,
+    MydescriptionComponent,
+    MyreviewsComponent,
+    MymessageComponent,
+    MycontactComponent,
+    MysearchComponent,
+    MysettingsComponent,
+    MypastjobsComponent,
+    MyratingsComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ export class NavComponent implements OnInit {
   styles:boolean = false;
   in:boolean = true;
   show:boolean = false;
-  showing:boolean = true;
+  showing:boolean = false;
   showing1:boolean = false;
   iferror:boolean = true;
   tab : any;
@@ -29,11 +29,13 @@ export class NavComponent implements OnInit {
   }
 
   toggle(){
-    return this.show = !this.show;
+    this.show = !this.show;
+    this.showing = true;
     }
     toggle1(){
        this.showing = !this.showing;
        this.showing1 = !this.showing1;
+       this.in = !this.in;
     }
   style(){
     this.styles = true;

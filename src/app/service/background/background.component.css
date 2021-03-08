@@ -11,7 +11,7 @@
     float:left;
 }
 .font1{
-    font-weight: 600;
+    font-weight: bold;
 }
 
 b{
@@ -102,5 +102,15 @@ ul.disc li{
 .absolute1{
     position:absolute;
     color:#eb4034;
+}
+
+/* responsive css */
+@media (min-width:320px) and (max-width:998px){
+    .flex1{
+        display: block;
+    }
+    .color1{
+        float:left !important;
+    }
 }
 

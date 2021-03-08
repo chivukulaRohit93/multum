@@ -1,0 +1,268 @@
+.clippy1{
+    clip-path: circle(50% at 50% 50%);
+    background-color: #ddd;
+    width:21%;
+    height:45%;
+    text-align:center;
+    position:relative;
+}
+
+.clippy1 b{
+    position: absolute;
+    left: 0;
+    right:0;
+    top:7px;
+}
+
+.text1{
+    width: 100%;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.text2{
+    width: 100%;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    height: 35px;
+    margin-left:5px;
+    margin-top:5px;
+}
+
+.color4{
+   color: #ac415b;
+   font-weight: bold;
+}
+
+.line2{
+    line-height: 38px;
+}
+
+.top1{
+    margin-top:15px;
+}
+
+.text-center{
+    text-align:center;
+}
+.color5{
+    background-color:hsl(345, 45%, 46%);
+    color:#fff;
+    padding:10px;
+    border-radius: 10px;
+    margin-left:5px;
+}
+
+.bottom1{
+position: absolute;
+right:0;
+bottom:0;
+}
+
+.pull-right{
+    float:right;
+}
+
+.top2{
+    margin-top:12px;
+}
+
+.position1{
+    position: relative;
+}
+
+.color3{
+    color:#fff;
+    text-align: center;
+}
+
+.nav{
+    padding:30px;
+    justify-content:center;
+}
+
+.top1{
+    margin-top:20px;
+}
+
+.flex1{
+    display: flex;
+}
+
+
+
+.bg-color{
+    background-color:#f9f9f9;
+    padding:10px;
+}
+
+.btn1{
+    border:2px solid #ddd;
+    border-radius:5px;
+    padding:10px;
+}
+
+.color1{
+    background-color:#532b48;
+    color:#fff;
+    border-radius: 25px;
+}
+
+.color2{
+    background-color:#ac415b;
+    color:#fff;
+    margin-left:20px;
+    border-radius: 25px;
+}
+
+.font1{
+    font-weight:600;
+}
+
+.width2{
+    width:20%;
+    margin-top:25px;
+}
+
+.pull-left{
+    float:left;
+}
+
+hr{
+    margin:15px auto;
+    width:100%;
+    border: 0; 
+    height: 1.5px; 
+    background-color: #ddd;
+}
+
+.box2{
+    box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
+    padding:15px;
+    border-radius:15px;
+    margin-top:35px;
+    overflow:hidden;
+}
+
+.line1{
+    line-height:40px;
+}
+
+h5{
+    font-size:16px;
+}
+
+.none{
+    display: block;
+}
+
+.none1{
+    display: none;
+}
+
+/* Progrees bar css */
+
+.progressbar {
+    margin-bottom: 30px;
+    overflow: hidden;
+    color: #455A64;
+    padding-left: 0px;
+    margin-top: 30px;
+}
+
+.progressbar li {
+    list-style-type: none;
+    width: 16.66%;
+        display: inline-block;
+    position: relative;
+    font-weight: 400;
+}
+
+.progressbar .step1:before {
+    content: "1";
+}
+
+.progressbar .step2:before {
+    content: "2";
+}
+
+.progressbar .step3:before {
+    content: "3";
+}
+
+
+.progressbar li a div:before {
+    width: 40px;
+    height: 40px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: #E3E5E8;
+    border-radius: 50%;
+    margin: auto;
+    color: #263746;
+}
+
+.progressbar li a div:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: #455A64;
+    position: absolute;
+    left: 0 !important;
+    top: 21px;
+    z-index: -1;
+}
+
+.progressbar li:last-child a div:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: absolute;
+    left: -50% !important;
+}
+
+.progressbar li:first-child a div:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    position: absolute;
+    left: 50% !important;
+}
+
+.progressbar li:last-child a div:after {
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.progressbar li:first-child a div:after {
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.progressbar li a div.active1:before,
+.progressbar li a div.active1:after {
+    background-image: linear-gradient(-45deg, #C43A30 0%, #874DA2 100%);
+    color: #fff;
+}
+
+/*  Media Queries */
+
+@media (min-width:320px) and (max-width:998px){
+    .flex1{
+        display:block;
+    }
+    h6{
+        display:none;
+    }
+    .none{
+        display: none;
+    }
+    
+    .none1{
+        display: block;
+    }
+}
+
+

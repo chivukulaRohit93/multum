@@ -25,3 +25,11 @@ h4{
     border-radius:15px;
     margin-top:10px;
 }
+
+/* Media Queries */
+
+@media (min-width:320px) and (max-width:998px){
+    .flex1{
+        display: block;
+    }
+}

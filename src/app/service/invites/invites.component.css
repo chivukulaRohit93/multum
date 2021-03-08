@@ -36,3 +36,14 @@ h4{
     border-radius: 10px;
     margin-left:10px;
 }
+
+/*  responsive css */
+@media (min-width:320px) and (max-width:998px){
+    .flex1{
+        display: block;
+    }
+    .color3{
+        margin-left:5px;
+        padding:5px;
+    }
+}

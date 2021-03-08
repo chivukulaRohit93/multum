@@ -1,0 +1,28 @@
+.font1{
+    font-weight: bold;
+}
+
+.flex1{
+    display: flex;
+}
+
+.top1{
+    margin-top:15px;
+}
+
+.color1{
+    color:#b24a68;
+    font-weight: bold;
+    font-size:18px;
+}
+
+.size1{
+    font-size: 18px;
+}
+
+.box2{
+    box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
+    padding:15px;
+    border-radius:15px;
+    margin-top:10px;
+}

@@ -97,3 +97,16 @@ li a{
         color:#eb34d3;
         font-weight: 600;
     }
+    /* responsive css */
+    @media (min-width:320px) and (max-width:998px){
+        .flex1{
+            display: block;
+        }
+        .bg-image{
+            position:relative;
+            height:450px;
+        }
+        .clippy1{
+            display: none;
+        }
+    }

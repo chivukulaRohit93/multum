@@ -1,5 +1,5 @@
 .p-1{
-    padding:0px;
+    padding:0px !important;
 }
 .flex1{
     display:flex;
@@ -19,6 +19,55 @@
 .font1{
     font-weight: 600;
 }
+
+.img-show1{
+    background-image:url('src/assets/Images/logo-icon.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.img-show{
+    background-image:url('src/assets/Images/logo.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* .active2{
+    transition:all 0.3s;
+} */
+
+.sidenav{
+    transition:all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: bottom left;
+    display: block;
+}
+
+.position1{
+    position: relative;
+}
+
+.sidenav.active2{
+    min-width: 80px;
+    max-width: 80px;
+    text-align: center;
+}
+
+.sidenav.active2 li i{
+    font-size:40px;
+}
+
+.sidenav.active2 li {
+    padding: 10px;
+}
+
+
+/* .sidenav{
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%); 
+} */
 
 .list1 .fa{
 font-size:35px;
@@ -101,7 +150,6 @@ background-color: #431A28;
 .box1{
     box-shadow:0 2px 4px 0 rgb(176 199 220 / 54%);
     height:60px;
-    transition: all 0.3s;
 }
 
 .box2{
@@ -131,5 +179,41 @@ background-color: #431A28;
 .absolute1{
     position:absolute;
     color:#eb4034;
+}
+
+.list1 li{
+    text-align: center;
+}
+
+.img{
+    margin-left:auto;
+    margin-right:auto;
+    display: block;
+}
+
+/*  responsive css */
+
+@media (min-width:320px) and (max-width:998px){
+    .sidenav {
+        min-width: 80px;
+        max-width: 80px;
+        text-align: center;
+        margin-left: -80px !important;
+    }
+    .sidenav.active2 {
+        margin-left: 0 !important;
+    }
+b{
+    font-size:12px;
+}
+.img1{
+    width:35px;
+}
+.relative1{
+    top:10px;
+}
+.width{
+    width:100% !important;
+}
 }
 

@@ -1,6 +1,6 @@
-<div class = "col-sm-12 flex1">
-    <div class = "pull-left col-sm-8">
-      <img class = "img" src = "assets/Images/login-img.jpg" />
+  <div class = "col-sm-12 p-0 flex1">
+    <div class = "pull-left col-sm-8 bg-image2">
+      <!-- <img class = "img" src = "assets/Images/login-img.jpg" /> -->
     </div>
     <div class = "col-sm-4 top1">
       <img class = "img1" src = "assets/Images/logo-icon.svg" />
@@ -64,7 +64,7 @@
                       </div>
                   </div>
               </div> <br />
-              <button [routerLink] = "['/nav','profile']" class="btn btn-color">  LOGIN   </button> 
+              <button [routerLink] = "['/navbar','profile1']" class="btn btn-color">  LOGIN   </button> 
               </form>
 
         <input type = "checkbox" />
@@ -73,7 +73,7 @@
     <b class = "pull-right"> Forgot Password ? </b>
     <br />
         <p class = "text-center color7"> or </p>
-    <div class = "btn box2"> CONTINUE AS GUEST </div>
+    <div [routerLink] = "['/navbar','create']" class = "btn box2"> CONTINUE AS GUEST </div>
     <br />
     <br />
     <b class = "center2"> Don't have an account ? &nbsp;&nbsp; <a routerLink="/signup">signup</a> </b>

@@ -119,3 +119,31 @@ ul.disc li{
     color:#eb4034;
 }
 
+.none{
+    display:block;
+}
+
+.none1{
+    display: none;
+}
+
+@media (min-width:320px) and (max-width:998px){
+    .left1{
+        margin-left:0px;
+    }
+    .none{
+        display:none;
+    }
+    
+    .none1{
+        display:block;
+    }
+    .pull-left{
+        float:none;
+    }
+    .img2{
+        display: block;
+        margin:0 auto;
+    }
+    }
+

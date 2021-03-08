@@ -1,0 +1,182 @@
+.clippy1{
+    clip-path: circle(50% at 50% 50%);
+    background-color: #ddd;
+    width:21%;
+    height:45%;
+    text-align:center;
+    position:relative;
+}
+
+.clippy1 b{
+    position: absolute;
+    left: 0;
+    right:0;
+    top:7px;
+}
+
+.text1{
+    width: 100%;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    height: 35px;
+}
+
+.text2{
+    width: 100%;
+    border:2px solid #ddd;
+    border-radius: 10px;
+    height: 35px;
+    margin-left:5px;
+    margin-top:5px;
+}
+
+.color4{
+   color: #ac415b;
+   font-weight: bold;
+}
+
+.fa-star{
+    color:#f7b509;
+}
+
+
+
+.line2{
+    line-height: 38px;
+}
+
+.img1{
+    width:40px;
+}
+
+.top1{
+    margin-top:15px;
+}
+
+.text-center{
+    text-align:center;
+}
+.color5{
+    background-color:hsl(345, 45%, 46%);
+    color:#fff;
+    padding:10px;
+    border-radius: 10px;
+    margin-left:5px;
+}
+
+.bottom1{
+position: absolute;
+right:0;
+bottom:0;
+}
+
+.pull-right{
+    float:right;
+}
+
+.top2{
+    margin-top:12px;
+}
+
+.position1{
+    position: relative;
+}
+
+.color3{
+    color:#fff;
+    text-align: center;
+}
+
+.nav{
+    padding:30px;
+    justify-content:center;
+}
+
+.top1{
+    margin-top:20px;
+}
+
+.flex1{
+    display: flex;
+    position:relative;
+}
+
+.right1{
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+.fa-comment-dots{
+    margin-left:5px;
+}
+
+.btn-danger{
+    margin-left:5px;
+}
+
+
+
+.bg-color{
+    background-color:#f9f9f9;
+    padding:10px;
+}
+
+.btn1{
+    border:2px solid #ddd;
+    border-radius:5px;
+    padding:10px;
+}
+
+.color1{
+    background-color:#532b48;
+    color:#fff;
+    border-radius: 25px;
+}
+
+.color2{
+    background-color:#ac415b;
+    color:#fff;
+    margin-left:20px;
+    border-radius: 25px;
+}
+
+.font1{
+    font-weight: bold;
+    margin-top:35px;
+}
+
+.width2{
+    width:20%;
+    margin-top:25px;
+}
+
+.pull-left{
+    float:left;
+}
+
+hr{
+    margin:15px auto;
+    width:100%;
+    border: 0; 
+    height: 1.5px; 
+    background-color: #ddd;
+}
+
+.box2{
+    box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
+    padding:15px;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.line1{
+    line-height:40px;
+}
+
+/* media queries */
+@media (min-width:320px) and (max-width:998px){
+    .flex1{
+        display: block;
+    }
+}

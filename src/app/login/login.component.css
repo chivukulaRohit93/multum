@@ -20,6 +20,12 @@ li a{
         height:750px;
     }
 
+     .bg-image2{
+       background-image: url('src/assets/Images/login-img.jpg');
+       background-size: cover;
+       height:900px;
+   }  
+
     .box2{
         background: #FFFFFF;
     border: 1px solid #CFCFCF;
@@ -91,3 +97,22 @@ li a{
         color:#fff;
         font-size:16px;
     }
+
+    /*  responsive css */
+@media (min-width:320px) and (max-width:998px){
+   .bg-image2{
+       height:450px;
+   } 
+   .flex1{
+       display:block;
+   }
+   /* .none1{
+       display:none;
+   } */
+   .top1{
+       margin-top:10px;
+   }
+   label{
+       color:#fff;
+   }
+}

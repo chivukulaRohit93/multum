@@ -14,6 +14,20 @@ import { JobdetailsComponent } from './service/jobdetails/jobdetails.component';
 import { MessageComponent } from 'src/app/service/message/message.component';
 import { InvitesComponent } from './service/invites/invites.component';
 import { PastjobsComponent } from './service/pastjobs/pastjobs.component';
+import { CreateaccComponent } from './customer/createacc/createacc.component';
+import { MydescriptionComponent } from './customer/mydescription/mydescription.component';
+import { MyjobsComponent } from './customer/myjobs/myjobs.component';
+import { MyprofileComponent } from './customer/myprofile/myprofile.component';
+import { MyreviewsComponent } from './customer/myreviews/myreviews.component';
+import { PostjobComponent } from './customer/postjob/postjob.component';
+import { Profile1Component } from './customer/profile1/profile1.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MymessageComponent } from './customer/mymessage/mymessage.component';
+import { MysearchComponent } from './customer/mysearch/mysearch.component';
+import { MycontactComponent } from './customer/mycontact/mycontact.component';
+import { MysettingsComponent } from './customer/mysettings/mysettings.component';
+import { MypastjobsComponent } from './customer/mypastjobs/mypastjobs.component';
+import { MyratingsComponent } from './customer/myratings/myratings.component';
 
 const routes: Routes = [
   {path:'signup',component:SignupComponent},
@@ -31,6 +45,23 @@ const routes: Routes = [
     {path:'invites',component:InvitesComponent},
     {path:'past',component:PastjobsComponent}
   ]
+},
+{path:'navbar',component:NavbarComponent, children:[
+  {path:'createacc',component:CreateaccComponent},
+  {path:'mydescription',component:MydescriptionComponent},
+  {path:'myjobs',component:MyjobsComponent},
+  {path:'myprofile',component:MyprofileComponent},
+  {path:'myreviews',component:MyreviewsComponent},
+  {path:'post',component:PostjobComponent},
+  {path:'profile1',component:Profile1Component},
+  {path:'mymessage',component:MymessageComponent},
+  {path:'mysearch',component:MysearchComponent},
+  {path:'mycontact',component:MycontactComponent},
+  {path:'mysettings',component:MysettingsComponent},
+  {path:'mypastjobs',component:MypastjobsComponent},
+  {path:'create',component:CreateaccComponent},
+  {path:'myratings',component:MyratingsComponent}
+]
 },
   {path:'', redirectTo:'/login', pathMatch:'full' }
 ];

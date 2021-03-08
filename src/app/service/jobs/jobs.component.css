@@ -32,6 +32,7 @@ ul{
 .btn-color{
     background-color:#fff;
     color:#000;
+    border:1px solid #000;
 }
 .color2{
     color:darkgrey;
@@ -74,7 +75,7 @@ hr{
 }
 
 .font1{
-    font-weight:600;
+    font-weight:bold;
 }
 
 ul li{
@@ -145,3 +146,10 @@ ul.disc li{
     color:#eb4034;
 }
 
+/* Media Queries */
+
+@media (min-width:320px) and (max-width:998px){
+.flex1{
+    display: block;
+}
+}

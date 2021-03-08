@@ -102,6 +102,13 @@ h4{
     border-radius:50%;
 }
 
+.none{
+    display:block;
+}
+.none1{
+    display:none;
+}
+
 .relative1{
     position: relative;
 }
@@ -109,5 +116,24 @@ h4{
 .absolute1{
     position:absolute;
     color:#eb4034;
+}
+
+@media (min-width:320px) and (max-width:998px){
+.left1{
+    margin-left:0px;
+}
+.img2{
+    display:block;
+    margin:0 auto;
+}
+.pull-left{
+    float:none;
+}
+.none{
+    display:none;
+}
+.none1{
+    display: block;
+}
 }
 

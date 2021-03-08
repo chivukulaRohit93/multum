@@ -28,3 +28,17 @@
 .flex1{
     display: flex;
 }
+
+/*  responsive css */
+@media (min-width:320px) and (max-width:998px){
+    .color2{
+        height: 40px;
+    }
+    .color3{
+        height: 40px;
+        margin-left:5px;
+    }
+    .flex1{
+        display: block;
+    }
+}

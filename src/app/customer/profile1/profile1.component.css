@@ -1,0 +1,45 @@
+.box2{
+    box-shadow: 0 0 4px 0 rgb(144 162 178 / 51%);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.font1{
+    font-weight:bold;
+}
+
+.color2{
+    color:#ac415b;
+}
+
+.color3{
+    color:grey;
+}
+
+.flex1{
+    display: flex;
+}
+
+.none{
+    display: block;
+}
+
+.none1{
+    display: none;
+}
+
+/* Media Queries */
+
+@media (min-width:320px) and (max-width:998px){
+    .flex1{
+        display: block;
+    }
+    .none{
+        display: none;
+    }
+    
+    .none1{
+        display: block;
+    }
+}

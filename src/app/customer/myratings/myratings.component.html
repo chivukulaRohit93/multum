@@ -1,0 +1,103 @@
+<div class ="col-sm-12 ">
+
+    <ng-template #content let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title font1" id="modal-basic-title">Rating</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class = "center2">
+            <i class="far fa-frown-open"></i> <i class="far fa-frown"></i> <i class="far fa-meh"></i><i class="far fa-smile"></i><i class="far fa-grin"></i>
+        </div>
+          <p> Write a review </p>
+          <textarea class = "textarea" name="" id="" cols="30" rows="10" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text
+          ever since the 1500s,">
+            
+          </textarea>
+        </div>
+        <div class="modal-footer">
+        <a>  <button type="button" class="btn color2" (click)="modal.close('Save click')">Save</button> </a> &nbsp;&nbsp;&nbsp;  <button class = "btn btn-color" (click)="modal.dismiss('Cross click')"> Cancel </button>
+        </div>
+      </ng-template>
+
+      <ng-template #content1 let-modal>
+        <div class="modal-header">
+          <h4 class="modal-title font1" id="modal-basic-title1">Tip</h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class = "flex1">
+            <div class = "btn-color5">
+              <h5 class = "text-center"> $1 </h5>
+            </div>
+            <div class = "btn-color6">
+              <h5 class = "text-center"> $2 </h5>
+            </div>
+          </div>
+          <br />
+          <div class = "clearfix"></div>
+          <h6> OR </h6>
+          <p> Write Amount </p>
+          <input type = "text" class = "text1" />
+        </div>
+        <div class="modal-footer">
+        <a>  <button type="button" class="btn color2" (click)="modal.close('Save click')">Save</button> </a> &nbsp;&nbsp;&nbsp;  <button class = "btn btn-color" (click)="modal.dismiss('Cross click')"> Cancel </button>
+        </div>
+      </ng-template>
+
+
+    <h4 class = "top1 font1"> Rate and Tip Past Freelancer </h4>
+    <div class = "box2 flex1">
+        <div class = "col-sm-9">
+            <h4 class = "color1"> Service Provider 1 </h4>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+        <div>
+            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+                
+            
+        </div>
+        <div class = "col-sm-3 top2">
+            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
+        </div>
+    </div>
+    <div class = "box2 flex1">
+        <div class = "col-sm-9">
+            <h4 class = "color1"> Service Provider 1 </h4>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+        <div>
+            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+                
+            
+        </div>
+        <div class = "col-sm-3 top2">
+            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
+        </div>
+    </div>
+    <div class = "box2 flex1">
+        <div class = "col-sm-9">
+            <h4 class = "color1"> Service Provider 1 </h4>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+        <div>
+            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+                
+            
+        </div>
+        <div class = "col-sm-3 top2">
+            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
+        </div>
+    </div>
+    <div class = "clearfix"></div>
+    <div class = "center1">
+        <i class="far fa-frown-open"></i> <i class="far fa-frown"></i> <i class="far fa-meh"></i><i class="far fa-smile"></i><i class="far fa-grin"></i>
+    </div>
+    
+
+</div>

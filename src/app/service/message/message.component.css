@@ -4,6 +4,7 @@ padding:0px;
 
 .font1{
     margin-left:15px;
+    font-weight:bold;
 }
 
 .back1{
@@ -226,4 +227,32 @@ img{ max-width:100%;}
 .msg_history {
   height: 555px;
   overflow-y: auto;
+}
+
+/*  responsive css */
+@media (min-width:320px) and (max-width:998px){
+  .flex1{
+    display:block;
+  }
+  .back5{
+    height:150px;
+    position: relative;
+    margin-left: 0px;
+    margin-top:50px;
+  }
+  .top1{
+    position:absolute;
+    left:0px;
+    right:0;
+    margin-top:20%;
+  }
+  .received_msg{
+    width:100%;
+  }
+  .received_withd_msg{
+    width:100%;
+  }
+  .sent_msg{
+    width:100%;
+  }
 }
