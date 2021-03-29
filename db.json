@@ -8,16 +8,16 @@
   ],
   "users":[
     {
-      "firstname":"phani",
-      "lastname":"sundara",
-      "email":"sundara.phani@gmail.com",
-      "password":"1234",
-      "confirmpassword":"1234",
-      "phone":"9999999999",
-      "dateofbirth":"17/08/1980",
-      "zipcode":"23456"
+    "firstName":"phani",
+    "lastName":"rohit",
+    "email":"sundara.phani@gmail.com",
+    "password":"1234",
+    "confirmPassword":"1234",
+    "phone":"9999999999",
+    "dateofbirth":"17/10/1980",
+    "zipcode":"34567"
     }
-  ],
+    ],
   "comments": [
     {
       "id": 1,

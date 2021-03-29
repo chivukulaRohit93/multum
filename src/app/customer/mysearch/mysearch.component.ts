@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class MysearchComponent implements OnInit {
 
   showing:boolean = false;
+  searchterm!:any;
   constructor() { }
 
   ngOnInit(): void {
@@ -16,5 +17,14 @@ export class MysearchComponent implements OnInit {
   toggle(){
     this.showing = !this.showing;
   }
+
+  hotels = [
+    { Name : 'Maurice Huff', Address : 'Washington dc', Jobs : 'Jobs done on Multum',cost: 'Average Job Cost : $250.00'},
+    { Name : 'Maurice Huff', Address : 'Washington dc', Jobs : 'Jobs done on Multum',cost: 'Average Job Cost : $250.00'},
+    { Name : 'Maurice Huff', Address : 'Washington dc', Jobs : 'Jobs done on Multum',cost: 'Average Job Cost : $250.00'},
+    { Name : 'Maurice Huff', Address : 'Washington dc', Jobs : 'Jobs done on Multum',cost: 'Average Job Cost : $250.00'},
+    { Name : 'Maurice Huff', Address : 'Washington dc', Jobs : 'Jobs done on Multum',cost: 'Average Job Cost : $250.00'}
+
+  ];
 
 }

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Common2Service } from 'src/app/services/common2.service';
+import { Person2 } from 'src/app/person2';
 
 @Component({
   selector: 'app-postjob',
@@ -9,15 +11,18 @@ export class PostjobComponent implements OnInit {
 
   viewmode = "hired";
   color:boolean = false;
+  people!: Person2[];
+  person:any = new Person2();
   tab : any = 'tab1';
   tab1 : any;
   tab2 : any;
   tab3 : any;
   tab4 : any;
   tab5 : any;
-  constructor() { }
+  constructor(private commonService:Common2Service) { }
 
   ngOnInit(): void {
+    this.refreshPeople();
   }
 
   onClick(check:any){
@@ -36,6 +41,24 @@ export class PostjobComponent implements OnInit {
           this.tab = 'tab5';
         }
       
+    }
+
+    refreshPeople() {
+      this.commonService.getPeople()
+        .subscribe(data => {
+          console.log(data);
+          this.people=data;
+        });      
+   
+    }
+
+    addPerson(){
+      this.commonService.addPerson(this.person)
+        .subscribe((data: any) => {
+          console.log(data);
+          this.refreshPeople();
+        });      
+          
     }
 
 

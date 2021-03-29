@@ -5,7 +5,7 @@
         <div class = "width1"></div>
         <div class = "width2">
             <i class="fas fa-search"></i>
-        <input type = "text" class = "text1" value = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search City , Zip code" />
+        <input type = "text" class = "text1" [(ngModel)] = "searchterm" placeholder = "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Search City , Zip code" />
         </div>
         <div class = "width1"></div>
         <div class = "clearfix"></div>
@@ -33,36 +33,20 @@
         </div>
         <div class = "clearfix"></div>
         <br />
+        <ng-container class = "col-sm-12" *ngIf = "(hotels | search:searchterm) as result">
+            <div *ngFor = "let hotel of result" [routerLink] = "['/nav','details']" class = "box2">
+                
+                <h4 class = "color1"> {{ hotel.JobName }} </h4>
+                <p> {{ hotel.Address }} </p>
+                <p> {{ hotel.description }} </p>
+            </div>
+
+                <div class = "col-sm-12" *ngIf = "result.length === 0">
+                    <h4 class = "text-center top1"> No results Found ... </h4>
+                </div>
+
+        </ng-container>
         
-        <div [routerLink] = "['/nav','details']" class = "box2">
-        <h4 class = "color1"> Job 1 </h4>
-        <p> Washington dc, 5004 </p>
-        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-        </div>
-        
-        
-        
-        <div [routerLink] = "['/nav','details']" class = "box2">
-            <h4 class = "color1"> Job 2 </h4>
-            <p> Washington dc, 5004 </p>
-            <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-        </div>
-        
-        
-        
-        <div [routerLink] = "['/nav','details']" class = "box2">
-                <h4 class = "color1"> Job 3 </h4>
-                <p> Washington dc, 5004 </p>
-                <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-        </div>
-        
-        
-        
-        <div [routerLink] = "['/nav','details']" class = "box2">
-                    <h4 class = "color1"> Job 4 </h4>
-                    <p> Washington dc, 5004 </p>
-                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry </p>
-        </div>
         
         </div>
 </div>

@@ -46,17 +46,17 @@
                 <div class = "col-sm-4">
                     <label> Job Title </label>
                     <br />
-                    <input type = "text" class = "text1" />
+                    <input type = "text" class = "text1" [(ngModel)] = "person.jobtitle" />
                 </div>
                 <div class = "col-sm-4">
                     <label> Date Job needs to be done: </label>
                     <br />
-                    <input type = "text" class = "text1" />
+                    <input type = "text" class = "text1" [(ngModel)] = "person.dateneedstoknow" />
                 </div>
                 <div class = "col-sm-4">
                     <label> Time Job needs to be done: </label>
                     <br />
-                    <input type = "text" class = "text1" />
+                    <input type = "text" class = "text1" [(ngModel)] = "person.timeneedstobedone" />
                 </div>
             </div>
             
@@ -69,22 +69,25 @@
             <br />
         <label class = "color4"> Pickup Address </label>
         <br />
-        <input type = "text" class = "text2 col-sm-4" />
-        <input type = "text" class = "text2 col-sm-4" />
-        <input type = "text" class = "text2 col-sm-3" />
-        <input type = "text" class = "text2 col-sm-4" />
-        <input type = "text" class = "text2 col-sm-4" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress1" />
+        <input type = "text" class = "text2 col-sm-3" [(ngModel)] = "person.pickupaddress2" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress3" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress4" />
         <div class = "clearfix"></div>
         <br />
         <label class = "color4"> Drop Off Address </label>
         <br />
-        <input type = "text" class = "text2 col-sm-4" />
-        <input type = "text" class = "text2 col-sm-4" />
-        <input type = "text" class = "text2 col-sm-3" />
-        <input type = "text" class = "text2 col-sm-4" />
-        <input type = "text" class = "text2 col-sm-4" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress1" />
+        <input type = "text" class = "text2 col-sm-3" [(ngModel)] = "person.dropoffaddress2" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress3" />
+        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress4" />
         <div class = "clearfix"></div>
-        <div [class.active] = "viewmode == 'started'" class = "pull-right color5"> Next </div>
+        <div (click) = "viewmode = 'started'">
+            <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "pull-right color5"> Next </div>
+        </div>
+        
         </div>
         
     </div>
@@ -94,7 +97,7 @@
             <div class = "flex1">
             <div class = "col-sm-6">
                 <h5 class = "color4"> Choose price for the job </h5>
-            <input type = "text" class = "text1 col-sm-9" />
+            <input type = "text" class = "text1 col-sm-9" [(ngModel)] = "person.chooseprice" />
             </div>
             <div class = "col-sm-6 line1">
                 <h5 class = "color4"> Job Cost Summary </h5>
@@ -114,9 +117,15 @@
             </div>
             </div>
             <br /><br /><br />
-            <div class = "pull-right">
-                <div [class.active] = "viewmode == 'hired'" class = "btn btn1"> Back </div>
-                <div [class.active] = "viewmode == 'completed'" class = "btn color5"> Next </div>
+            <div class = "pull-right flex1">
+                <div (click) = "viewmode = 'hired'">
+                    <div (click)="onClick(1)" [ngClass]="{'active1': tab==='tab1'}" class = "btn btn1"> Back </div>
+                </div>
+                
+                <div (click) = "viewmode = 'completed'">
+                    <div (click)="onClick(3)" [ngClass]="{'active1': tab==='tab3'}" class = "btn color5"> Next </div>
+                </div>
+                
             </div>
         </div>
     </div>
@@ -173,19 +182,19 @@
                             <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10:00 A.M. </b>
                         </div>
                         <br />
-                        <h5> Credit Card Information </h5>
+                        <h5 class ="color4"> Credit Card Information </h5>
                         <div class = "bg-color">
                             <span class = "col-sm-6"> Card Number </span>
-                            <input type = "text" class = "text1 col-sm-6" value = "4567 3453 8786 2098" />
+                            <input type = "text" class = "text1 col-sm-6" value = "4567 3453 8786 2098" [(ngModel)] = "person.cardnumber" />
                             <br />
                             <div class = "flex1">
                                 <div class = "col-sm-6">
                                     <label> CVV </label>
-                                <input type = "text" class = "text1" value = "***" />
+                                <input type = "text" class = "text1" value = "***" [(ngModel)] = "person.cvv" />
                                 </div>
                                 <div class = "col-sm-6">
                                     <label> Card Expiration </label>
-                                <input type = "text" class = "text1" value = "20/24" />
+                                <input type = "text" class = "text1" value = "20/24" [(ngModel)] = "person.cardexpiry" />
                                 </div>
                                 
                             </div>
@@ -195,7 +204,7 @@
                     </div>
     
                 </div>
-                <div class = "btn color5 pull-right top1">  Place Order </div>
+                <div (click) = "addPerson()" class = "btn color5 pull-right top1">  Place Order </div>
             </div>
         </div>
         <div class = "none1">
@@ -249,7 +258,7 @@
                             <b> <br /> 10:00 A.M. </b>
                         </div>
                         <br />
-                        <h5> Credit Card Information </h5>
+                        <h5 class ="color4"> Credit Card Information </h5>
                         <div class = "bg-color">
                             <span class = "col-sm-6 p-0"> Card Number </span>
                             <input type = "text" class = "text1 col-sm-6 p-0" value = "4567 3453 8786 2098" />
@@ -271,7 +280,7 @@
                     </div>
     
                 </div>
-                <div class = "btn color5 pull-right top1">  Place Order </div>
+                <div (click) = "addPerson()" class = "btn color5 pull-right top1">  Place Order </div>
             </div>
         </div>
     </div>

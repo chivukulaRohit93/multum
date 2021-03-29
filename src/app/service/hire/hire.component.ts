@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HireComponent implements OnInit {
 
-  viewmode = "hired";
+  viewmode = "completed";
   color:boolean = false;
-  tab : any = 'tab1';
+  tab : any = 'tab3';
   tab1 : any;
   tab2 : any;
   tab3 : any;

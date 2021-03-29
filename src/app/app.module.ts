@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { NavComponent } from './nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HistoryComponent } from './service/history/history.component';
 import { BackgroundComponent } from './service/background/background.component';
 import { ProfileComponent } from './service/profile/profile.component';
@@ -36,6 +37,8 @@ import { MysearchComponent } from './customer/mysearch/mysearch.component';
 import { MysettingsComponent } from './customer/mysettings/mysettings.component';
 import { MypastjobsComponent } from './customer/mypastjobs/mypastjobs.component';
 import { MyratingsComponent } from './customer/myratings/myratings.component';
+import { SearchPipe } from './services/search.pipe';
+import { MysearchPipe } from './services/mysearch.pipe';
 
 @NgModule({
   declarations: [
@@ -69,12 +72,15 @@ import { MyratingsComponent } from './customer/myratings/myratings.component';
     MysearchComponent,
     MysettingsComponent,
     MypastjobsComponent,
-    MyratingsComponent
+    MyratingsComponent,
+    SearchPipe,
+    MysearchPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    FormsModule,
     NgbModule,
     HttpClientModule
   ],
