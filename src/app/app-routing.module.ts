@@ -28,10 +28,12 @@ import { MycontactComponent } from './customer/mycontact/mycontact.component';
 import { MysettingsComponent } from './customer/mysettings/mysettings.component';
 import { MypastjobsComponent } from './customer/mypastjobs/mypastjobs.component';
 import { MyratingsComponent } from './customer/myratings/myratings.component';
+import { MyloginComponent } from './mylogin/mylogin.component';
 
 const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
+  {path:'mylogin',component:MyloginComponent},
   {path:'nav',component:NavComponent, children:[
     {path:'history',component:HistoryComponent},
     {path:'background',component:BackgroundComponent},
@@ -63,7 +65,7 @@ const routes: Routes = [
   {path:'myratings',component:MyratingsComponent}
 ]
 },
-  {path:'', redirectTo:'/login', pathMatch:'full' }
+  {path:'', redirectTo:'/mylogin', pathMatch:'full' }
 ];
 
 

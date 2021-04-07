@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Common2Service } from 'src/app/services/common2.service';
 import { Person2 } from 'src/app/person2';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-postjob',
@@ -13,17 +14,63 @@ export class PostjobComponent implements OnInit {
   color:boolean = false;
   people!: Person2[];
   person:any = new Person2();
+  myDate!: Date;
+  timepicker!:Date;
   tab : any = 'tab1';
   tab1 : any;
   tab2 : any;
   tab3 : any;
   tab4 : any;
   tab5 : any;
-  constructor(private commonService:Common2Service) { }
+  jobForm!: FormGroup;
+  priceForm!:FormGroup;
+  reviewForm!:FormGroup;
+
+  constructor(private formBuilder: FormBuilder ,private commonService:Common2Service) { }
 
   ngOnInit(): void {
-    this.refreshPeople();
+    this.formValidation();
+    this.formvalidation1();
+    this.formValidation2();
+    
+    
+
   }
+
+  formValidation(){
+    this.jobForm = this.formBuilder.group({
+      jobtitle: ['', [Validators.required]],
+      dateneedstoknow: ['', Validators.required],
+      timeneedstobedone: ['', Validators.required],
+      pickupaddress: ['', Validators.required],
+      pickupaddress1: ['', Validators.required],      
+      pickupaddress2: ['', Validators.required],
+      pickupaddress3: [''],
+      pickupaddress4: ['' ],
+      dropoffaddress: ['', Validators.required],
+      dropoffaddress1: ['', Validators.required],
+      dropoffaddress2: ['', Validators.required],
+      dropoffaddress3: [''],
+      dropoffaddress4: ['']
+    });
+
+    
+  }
+
+  formvalidation1(){
+    this.priceForm = this.formBuilder.group({
+      chooseprice: ['', [Validators.required]]
+    });    
+  }
+
+  formValidation2(){
+    this.reviewForm = this.formBuilder.group({
+      cardnumber: ['', [Validators.required]],
+      cvv: ['', Validators.required],
+      cardexpiry: ['', Validators.required]
+    });
+  }
+  
 
   onClick(check:any){
     //    console.log(check);
@@ -43,23 +90,9 @@ export class PostjobComponent implements OnInit {
       
     }
 
-    refreshPeople() {
-      this.commonService.getPeople()
-        .subscribe(data => {
-          console.log(data);
-          this.people=data;
-        });      
-   
-    }
+    
 
-    addPerson(){
-      this.commonService.addPerson(this.person)
-        .subscribe((data: any) => {
-          console.log(data);
-          this.refreshPeople();
-        });      
-          
-    }
+    
 
 
 }

@@ -11,6 +11,10 @@ import { SignupComponent } from './signup/signup.component';
 import { NavComponent } from './nav/nav.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HistoryComponent } from './service/history/history.component';
 import { BackgroundComponent } from './service/background/background.component';
 import { ProfileComponent } from './service/profile/profile.component';
@@ -39,6 +43,8 @@ import { MypastjobsComponent } from './customer/mypastjobs/mypastjobs.component'
 import { MyratingsComponent } from './customer/myratings/myratings.component';
 import { SearchPipe } from './services/search.pipe';
 import { MysearchPipe } from './services/mysearch.pipe';
+import { MyloginComponent } from './mylogin/mylogin.component';
+import { DateTimePickerComponent } from './date-time-picker/date-time-picker.component';
 
 @NgModule({
   declarations: [
@@ -74,7 +80,9 @@ import { MysearchPipe } from './services/mysearch.pipe';
     MypastjobsComponent,
     MyratingsComponent,
     SearchPipe,
-    MysearchPipe
+    MysearchPipe,
+    MyloginComponent,
+    DateTimePickerComponent
   ],
   imports: [
     BrowserModule,
@@ -82,7 +90,11 @@ import { MysearchPipe } from './services/mysearch.pipe';
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    BsDatepickerModule.forRoot(),    
+    BrowserAnimationsModule,
+    TimepickerModule.forRoot(),
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

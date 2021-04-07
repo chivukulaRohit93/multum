@@ -5,9 +5,9 @@
         <ul class = "progressbar nav nav-pills center">
 
             <li [class.active] = "viewmode == 'hired'">
-                <a (click) = "viewmode = 'hired'">
+                <a>
                 
-                <div (click)="onClick(1)" [ngClass]="{'active1': tab==='tab1'}" class = "step1">  </div>
+                <div [ngClass]="{'active1': tab==='tab1'}" class = "step1">  </div>
                 
                 <br />
                    <h6 class = "text-center"> Order Description </h6>
@@ -16,16 +16,16 @@
                 </a>
             </li>
             <li [class.active] = "viewmode == 'started'">
-                <a (click) = "viewmode = 'started'"> 
-                    <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}"  class = "step2">  </div>
+                <a> 
+                    <div [ngClass]="{'active1': tab==='tab2'}" class = "step2">  </div>
                 
                 <br />
                    <h6 class = "text-center"> Price </h6>           
                 </a>
             </li>
             <li [class.active] = "viewmode == 'completed'">
-                <a (click) = "viewmode = 'completed'"> 
-                    <div (click)="onClick(3)" [ngClass]="{'active1': tab==='tab3'}" class = "step3">  </div>
+                <a> 
+                    <div [ngClass]="{'active1': tab==='tab3'}" class = "step3">  </div>
                 <br />
                 <h6 class = "text-center">  Review  </h6>
                 </a>
@@ -40,23 +40,23 @@
 
 <div class = "center1" [ngSwitch] = "viewmode">
     <div *ngSwitchCase ="'hired'"> 
-        <div class = "box2">
+     <div [formGroup]="jobForm" class = "box2">
             <h4> Order Description </h4>
             <div class = "flex1">
                 <div class = "col-sm-4">
                     <label> Job Title </label>
                     <br />
-                    <input type = "text" class = "text1" [(ngModel)] = "person.jobtitle" />
+                    <input type = "text" formControlName="jobtitle" placeholder = "Job Title" class = "text1" [(ngModel)] = "person.jobtitle" />
                 </div>
                 <div class = "col-sm-4">
                     <label> Date Job needs to be done: </label>
                     <br />
-                    <input type = "text" class = "text1" [(ngModel)] = "person.dateneedstoknow" />
+                    <input type = "text" bsDatepicker formControlName="dateneedstoknow" [bsConfig]="{containerClass:'theme-blue'}" placeholder=" Specify date" class = "text1" [(ngModel)] = "person.dateneedstoknow" />
                 </div>
                 <div class = "col-sm-4">
                     <label> Time Job needs to be done: </label>
                     <br />
-                    <input type = "text" class = "text1" [(ngModel)] = "person.timeneedstobedone" />
+                        <timepicker formControlName="timeneedstobedone" placeholder="Specify time" [(ngModel)] = "person.timeneedstobedone"></timepicker>
                 </div>
             </div>
             
@@ -69,35 +69,43 @@
             <br />
         <label class = "color4"> Pickup Address </label>
         <br />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress" />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress1" />
-        <input type = "text" class = "text2 col-sm-3" [(ngModel)] = "person.pickupaddress2" />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress3" />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress4" />
+        <input type = "text" formControlName="pickupaddress" placeholder = "Location" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress" />
+        <input type = "text" formControlName="pickupaddress1" placeholder = "City" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress1" />
+        <input type = "text" formControlName="pickupaddress2" placeholder="Pincode" class = "text2 col-sm-3" [(ngModel)] = "person.pickupaddress2" />
+        <input type = "text" formControlName="pickupaddress3" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress3" />
+        <input type = "text" formControlName="pickupaddress4" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress4" />
         <div class = "clearfix"></div>
         <br />
         <label class = "color4"> Drop Off Address </label>
         <br />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress" />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress1" />
-        <input type = "text" class = "text2 col-sm-3" [(ngModel)] = "person.dropoffaddress2" />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress3" />
-        <input type = "text" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress4" />
+        <input type = "text" formControlName="dropoffaddress" placeholder="Location" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress" />
+        <input type = "text" formControlName="dropoffaddress1" placeholder="City" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress1" />
+        <input type = "text" formControlName="dropoffaddress2" placeholder="Pincode" class = "text2 col-sm-3" [(ngModel)] = "person.dropoffaddress2" />
+        <input type = "text" formControlName="dropoffaddress3" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress3" />
+        <input type = "text" formControlName="dropoffaddress4" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress4" />
         <div class = "clearfix"></div>
         <div (click) = "viewmode = 'started'">
-            <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "pull-right color5"> Next </div>
+            <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "pull-right">
+           <button class = "btn btn-primary" type = "button" [disabled]="!jobForm.valid"> Next </button>  
+            </div>
         </div>
         
         </div>
         
     </div>
     <div *ngSwitchCase ="'started'"> 
-        <div class = "box2">
+        <div [formGroup]="priceForm" class = "box2">
             <h4> Price </h4>
             <div class = "flex1">
             <div class = "col-sm-6">
                 <h5 class = "color4"> Choose price for the job </h5>
-            <input type = "text" class = "text1 col-sm-9" [(ngModel)] = "person.chooseprice" />
+            <select class = "text1 col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice">
+                <option> Select Default Value </option>
+                <option> 100 </option>
+                <option> 200 </option>
+                <option> 300 </option>
+                <option> 400 </option>
+            </select>
             </div>
             <div class = "col-sm-6 line1">
                 <h5 class = "color4"> Job Cost Summary </h5>
@@ -123,7 +131,9 @@
                 </div>
                 
                 <div (click) = "viewmode = 'completed'">
-                    <div (click)="onClick(3)" [ngClass]="{'active1': tab==='tab3'}" class = "btn color5"> Next </div>
+                    <div (click)="onClick(3)" [ngClass]="{'active1': tab==='tab3'}"> 
+                        <button type = "button" class = "btn btn-primary" [disabled]="!priceForm.valid"> Next </button>
+                    </div>
                 </div>
                 
             </div>
@@ -131,8 +141,8 @@
     </div>
  
     <div *ngSwitchCase ="'completed'"> 
-        <div class = "none">
-            <div class = "col-sm-12 box2">
+        <div class = "">
+            <div [formGroup]="reviewForm" class = "col-sm-12 box2">
                 <h4 class = "font1"> Review </h4>
                 <div class = "flex1">
                     <div class = "col-sm-6">
@@ -140,23 +150,23 @@
                         <br />
                         <div class = "bg-color line2">
                             <span> Price </span>
-                            <b class = "text-center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $100.00 </b>
+                            <b class = "text-center ml-1">  $100.00 </b>
                             <br />
                             <span> Pickup Address </span>
-                            <b class = "text-center"> &nbsp;&nbsp;&nbsp;&nbsp; 17 Howard Street <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oswego NY 13126 <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USA </b>
+                            <b class = "text-center ml-6"> {{ person.pickupaddress }} <br />
+                                <span class = "ml-7"> {{ person.pickupaddress1 }} </span> <br />
+                                <span class = "ml-7"> {{ person.pickupaddress2 }} </span> </b>
                             <br />
                             <span> Drop off Point </span>
-                            <b class = "text-center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 17 Howard Street <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oswego NY 13126 <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USA  </b>
+                            <b class = "text-center ml-2"> {{ person.dropoffaddress }} <br />
+                                <span class = "ml-7"> {{ person.dropoffaddress1 }} </span> <br />
+                                <span class = "ml-7"> {{ person.dropoffaddress2 }} </span>  </b>
                             <br />
-                            <span> Date </span>
-                            <b class = "text-center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22/11/2020 </b>
+                            <span class = "ml-6"> Date </span>
+                            <b class = "text-center ml-3"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
                             <br />
-                            <span> Time </span>
-                            <b class = "text-center"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10:00 A.M. </b>
+                            <span class = "ml-6"> Time </span>
+                            <b class = "text-center ml-3"> {{ person.timeneedstobedone | date: "hh:mm:ss" }} </b>
                         </div>
                     </div>
     
@@ -164,37 +174,37 @@
                         <h5 class ="color4"> Job Cost Breakdown </h5>
                         <br />
                         <div class = "bg-color">
-                            <span> Job Budget </span>
-                            <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $90.00 </b>
+                            <span class = "ml-6"> Job Budget </span>
+                            <b class = "ml-8"> $90.00 </b>
                             <br />
-                            <span> Pickup Address </span>
-                            <b> &nbsp;&nbsp;&nbsp;&nbsp; 17 Howard Street <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Oswego NY 13126 <br />
-                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; USA </b>
+                            <span class = "ml-6"> Pickup Address </span>
+                            <b class = "ml-6"> {{ person.pickupaddress }} <br />
+                               <span class = "ml-9"> {{ person.pickupaddress1 }} </span>  <br />
+                                <span class = "ml-9"> {{ person.pickupaddress2 }} </span> </b>
                             <br />
-                            <span> Total </span>
-                            <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $100.00 </b>
+                            <span class = "ml-6"> Total </span>
+                            <b class = "ml-10"> $100.00 </b>
                             <br />
-                            <span> Date </span>
-                            <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 22/11/2020 </b>
+                            <span class = "ml-6"> Date </span>
+                            <b class = "ml-10"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
                             <br />
-                            <span> Time </span>
-                            <b> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10:00 A.M. </b>
+                            <span class = "ml-6"> Time </span>
+                            <b class = "ml-10"> {{ person.timeneedstobedone | date: "hh:mm:ss" }} </b>
                         </div>
                         <br />
                         <h5 class ="color4"> Credit Card Information </h5>
                         <div class = "bg-color">
                             <span class = "col-sm-6"> Card Number </span>
-                            <input type = "text" class = "text1 col-sm-6" value = "4567 3453 8786 2098" [(ngModel)] = "person.cardnumber" />
+                            <input type = "text" class = "text1 col-sm-6" placeholder="Enter the card NO" formControlName="cardnumber" [(ngModel)] = "person.cardnumber" />
                             <br />
                             <div class = "flex1">
                                 <div class = "col-sm-6">
                                     <label> CVV </label>
-                                <input type = "text" class = "text1" value = "***" [(ngModel)] = "person.cvv" />
+                                <input type = "password" placeholder="Enter the CVV" class = "text1" formControlName="cvv" [(ngModel)] = "person.cvv" />
                                 </div>
                                 <div class = "col-sm-6">
                                     <label> Card Expiration </label>
-                                <input type = "text" class = "text1" value = "20/24" [(ngModel)] = "person.cardexpiry" />
+                                <input type = "text" class = "text1" placeholder="Card expiry date" formControlName="cardexpiry" [(ngModel)] = "person.cardexpiry" />
                                 </div>
                                 
                             </div>
@@ -204,10 +214,16 @@
                     </div>
     
                 </div>
-                <div (click) = "addPerson()" class = "btn color5 pull-right top1">  Place Order </div>
+                <div class = "pull-right flex1">
+                    <div (click) = "viewmode = 'started'">
+                        <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "btn btn1 top1"> Back </div>
+                    </div>
+                    <button [disabled]="!reviewForm.valid" class = "btn color5 top1">  Place Order </button>
+                </div>
+                
             </div>
         </div>
-        <div class = "none1">
+        <!-- <div class = "none1">
             <div class = "col-sm-12 box2">
                 <h4 class = "font1"> Review </h4>
                 <div class = "flex1">
@@ -219,20 +235,20 @@
                             <b class = "text-center"> <br /> $100.00 </b>
                             <br />
                             <span> Pickup Address </span>
-                            <b class = "text-center"> <br /> 17 Howard Street <br />
-                                <br /> Oswego NY 13126 <br />
-                                <br /> USA </b>
+                            <b class = "text-center"> <br /> {{ person.pickupaddress }} <br />
+                                <br /> {{ person.pickupaddress1 }} <br />
+                                <br /> {{ person.pickupaddress2 }} </b>
                             <br />
                             <span> Drop off Point </span>
-                            <b class = "text-center"> <br /> 17 Howard Street <br />
-                                <br /> Oswego NY 13126 <br />
-                                <br /> USA  </b>
+                            <b class = "text-center"> <br /> {{ person.dropoffaddress }} <br />
+                                <br /> {{ person.dropoffaddress1 }} <br />
+                                <br /> {{ person.dropoffaddress2 }}  </b>
                             <br />
                             <span> Date </span>
-                            <b class = "text-center"> <br /> 22/11/2020 </b>
+                            <b class = "text-center"> <br /> {{ person.dateneedstoknow }} </b>
                             <br />
                             <span> Time </span>
-                            <b class = "text-center"> <br /> 10:00 A.M. </b>
+                            <b class = "text-center"> <br /> {{ person.timeneedstobedone }} </b>
                         </div>
                     </div>
     
@@ -244,33 +260,33 @@
                             <b> <br /> $90.00 </b>
                             <br />
                             <span> Pickup Address </span>
-                            <b> <br /> 17 Howard Street <br />
-                                <br /> Oswego NY 13126 <br />
-                                <br /> USA </b>
+                            <b> <br /> {{ person.pickupaddress }} <br />
+                                <br /> {{ person.pickupaddress1 }} <br />
+                                <br /> {{ person.pickupaddress2 }} </b>
                             <br />
                             <span> Total </span>
                             <b> <br /> $100.00 </b>
                             <br />
                             <span> Date </span>
-                            <b> <br /> 22/11/2020 </b>
+                            <b> <br /> {{ person.dateneedstoknow }} </b>
                             <br />
                             <span> Time </span>
-                            <b> <br /> 10:00 A.M. </b>
+                            <b> <br /> {{ person.timeneedstobedone }} </b>
                         </div>
                         <br />
                         <h5 class ="color4"> Credit Card Information </h5>
                         <div class = "bg-color">
                             <span class = "col-sm-6 p-0"> Card Number </span>
-                            <input type = "text" class = "text1 col-sm-6 p-0" value = "4567 3453 8786 2098" />
+                            <input type = "text" class = "text1 col-sm-6 p-0" />
                             <br />
                             <div class = "flex1">
                                 <div class = "col-sm-6 p-0">
                                     <label> CVV </label>
-                                <input type = "text" class = "text1 p-0" value = "***" />
+                                <input type = "password" class = "text1 p-0" />
                                 </div>
                                 <div class = "col-sm-6 p-0">
                                     <label> Card Expiration </label>
-                                <input type = "text" class = "text1 p-0" value = "20/24" />
+                                <input type = "text" class = "text1 p-0" />
                                 </div>
                                 
                             </div>
@@ -280,9 +296,9 @@
                     </div>
     
                 </div>
-                <div (click) = "addPerson()" class = "btn color5 pull-right top1">  Place Order </div>
+                <button [disabled]="!reviewForm.valid" class = "btn color5 pull-right top1">  Place Order </button>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
     

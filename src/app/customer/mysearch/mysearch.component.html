@@ -17,6 +17,7 @@
          Filter
          </div> 
          <div *ngIf = "showing" class = "absolute1 box2">
+             <div (click) = "toggle()" class = "pull-right"> X </div>
              <div> Job Price </div>
              <input type = "text" class = "text2" value = "$250" />
              <div> Rating </div>

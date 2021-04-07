@@ -10,10 +10,7 @@ export class MysearchPipe implements PipeTransform {
       return hotels;
     }
 
-     hotels.filter((((hotel: { Name: any; }) => hotel.Name.toLowerCase().indexOf(searchterm.toLowerCase()) !== -1)));
-     hotels.filter((((hotel: { Address: any; }) => hotel.Address.toLowerCase().indexOf(searchterm.toLowerCase()) !== -1)));
-     hotels.filter((((hotel: { Jobs: any; }) => hotel.Jobs.toLowerCase().indexOf(searchterm.toLowerCase()) !== -1)));
-     hotels.filter((((hotel: { cost: any; }) => hotel.cost.toLowerCase().indexOf(searchterm.toLowerCase()) !== -1)));
+     return hotels.filter((((hotel: { Address: string; }) => hotel.Address.toLowerCase().indexOf(searchterm.toLowerCase()) !== -1)));
   }
 
 }
