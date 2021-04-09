@@ -15,6 +15,14 @@
     font-weight: bold;
 }
 
+.align1{
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    width:550px;
+}
+
 h4{
     font-size: 18px;
 }
@@ -31,5 +39,8 @@ h4{
 @media (min-width:320px) and (max-width:998px){
     .flex1{
         display: block;
+    }
+    .align1{
+        width:100%;
     }
 }

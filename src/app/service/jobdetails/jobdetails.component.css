@@ -18,6 +18,14 @@
     margin-left:20px;
 }
 
+.align1{
+    margin-top:50px;
+    margin-left:auto;
+    margin-right:auto;
+    display:block;
+    width:550px;
+}
+
 .box2{
     box-shadow: 0 0 4px 0 rgb(144 162 178 / 51%);
     padding: 15px;
@@ -40,5 +48,8 @@
     }
     .flex1{
         display: block;
+    }
+    .align1{
+        width:100%;
     }
 }

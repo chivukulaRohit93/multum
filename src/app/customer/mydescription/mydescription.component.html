@@ -39,18 +39,17 @@
     <div class = "clearfix"></div>
     <h6 class = "color4"> Applied List </h6>
     <div class = "flex1">
-        <div class = "col-sm-3">
+        <div *ngFor = "let item of collection| paginate: { itemsPerPage: 4, currentPage: p }" class = "col-sm-3">
             <div [routerLink] = "['/navbar','myreviews']" class = "box2">
                 <img class = "img1 pull-left" src = "assets/Images/user.png" />
-                <h6> Service Provider 1 </h6>
+                <h6> {{ item.JobName }} </h6>
                 
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
                 <br />
                 <p>
-                    Lorem Ipsum is simply dummy text
-    of the printing and typesetting
-    industry. Lorem Ipsum has been 
-    
+                    
+                    {{ item.description }}
+
                 </p>
                 <br />
                 <div class = "flex1">
@@ -65,84 +64,12 @@
                 
             </div>
         </div>
-        <div class = "col-sm-3">
-            <div [routerLink] = "['/navbar','myreviews']" class = "box2">
-                <img class = "img1 pull-left" src = "assets/Images/user.png" />
-                <h6> Service Provider 1 </h6>
-                
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                <br />
-                <p>
-                    Lorem Ipsum is simply dummy text
-    of the printing and typesetting
-    industry. Lorem Ipsum has been 
-    
-                </p>
-                <br />
-                <div class = "flex1">
-                    <div class = "btn btn-sm btn-success"> Hire </div>
-                <div class = "btn btn-sm btn-danger"> Reject </div>
-               <div class = "pull-right right1">
-                <i class="fas fa-user-alt"></i>
-                <i class="fas fa-comment-dots"></i>
-               </div>
-                
-                </div>
-                
-            </div>
-        </div>
-        <div class = "col-sm-3">
-            <div [routerLink] = "['/navbar','myreviews']" class = "box2">
-                <img class = "img1 pull-left" src = "assets/Images/user.png" />
-                <h6> Service Provider 1 </h6>
-                
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                <br />
-                <p>
-                    Lorem Ipsum is simply dummy text
-    of the printing and typesetting
-    industry. Lorem Ipsum has been 
-    
-                </p>
-                <br />
-                <div class = "flex1">
-                    <div class = "btn btn-sm btn-success"> Hire </div>
-                <div class = "btn btn-sm btn-danger"> Reject </div>
-               <div class = "pull-right right1">
-                <i class="fas fa-user-alt"></i>
-                <i class="fas fa-comment-dots"></i>
-               </div>
-                
-                </div>
-                
-            </div>
-        </div>
-        <div class = "col-sm-3">
-            <div [routerLink] = "['/navbar','myreviews']" class = "box2">
-                <img class = "img1 pull-left" src = "assets/Images/user.png" />
-                <h6> Service Provider 1 </h6>
-                
-                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
-                <br />
-                <p>
-                    Lorem Ipsum is simply dummy text
-    of the printing and typesetting
-    industry. Lorem Ipsum has been 
-    
-                </p>
-                <br />
-                <div class = "flex1">
-                    <div class = "btn btn-sm btn-success"> Hire </div>
-                <div class = "btn btn-sm btn-danger"> Reject </div>
-               <div class = "pull-right right1">
-                <i class="fas fa-user-alt"></i>
-                <i class="fas fa-comment-dots"></i>
-               </div>
-                
-                </div>
-                
-            </div>
-        </div>
+       
     </div>
+
+    <div class = "clearfix"></div>
+            <div class ="align1">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
         
 </div>

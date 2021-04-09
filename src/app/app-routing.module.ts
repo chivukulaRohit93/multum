@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from 'src/app/login/login.component';
 import { NavComponent } from 'src/app/nav/nav.component';
+import { ContactComponent } from 'src/app/service/contact/contact.component';
+import { SettingsComponent } from 'src/app/service/settings/settings.component';
 import { SignupComponent } from 'src/app/signup/signup.component';
 import { HistoryComponent } from 'src/app/service/history/history.component';
 import { BackgroundComponent } from 'src/app/service/background/background.component';
@@ -45,7 +47,9 @@ const routes: Routes = [
     {path:'details',component:JobdetailsComponent},
     {path:'message',component:MessageComponent},
     {path:'invites',component:InvitesComponent},
-    {path:'past',component:PastjobsComponent}
+    {path:'past',component:PastjobsComponent},
+    {path:'contact',component:ContactComponent},
+    {path:'settings',component:SettingsComponent}
   ]
 },
 {path:'navbar',component:NavbarComponent, children:[

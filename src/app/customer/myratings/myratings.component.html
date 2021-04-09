@@ -52,40 +52,12 @@
 
 
     <h4 class = "top1 font1"> Rate and Tip Past Freelancer </h4>
-    <div class = "box2 flex1">
+    <div *ngFor = "let item of collection | paginate: { itemsPerPage: 3, currentPage: p }" class = "box2 flex1">
         <div class = "col-sm-9">
-            <h4 class = "color1"> Service Provider 1 </h4>
-        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+            <h4 class = "color1"> {{ item.JobName }} </h4>
+        <p> {{ item.description }} </p>
         <div>
-            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-                
-            
-        </div>
-        <div class = "col-sm-3 top2">
-            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
-        </div>
-    </div>
-    <div class = "box2 flex1">
-        <div class = "col-sm-9">
-            <h4 class = "color1"> Service Provider 1 </h4>
-        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-        <div>
-            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </div>
-                
-            
-        </div>
-        <div class = "col-sm-3 top2">
-            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
-        </div>
-    </div>
-    <div class = "box2 flex1">
-        <div class = "col-sm-9">
-            <h4 class = "color1"> Service Provider 1 </h4>
-        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-        <div>
-            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h4 class = "size1"> Date : {{ item.date }} </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
                 
             
@@ -95,9 +67,41 @@
         </div>
     </div>
     <div class = "clearfix"></div>
-    <div class = "center1">
-        <i class="far fa-frown-open"></i> <i class="far fa-frown"></i> <i class="far fa-meh"></i><i class="far fa-smile"></i><i class="far fa-grin"></i>
+            <div class ="align1">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+    <!-- <div class = "box2 flex1">
+        <div class = "col-sm-9">
+            <h4 class = "color1"> Service Provider 1 </h4>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+        <div>
+            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+                
+            
+        </div>
+        <div class = "col-sm-3 top2">
+            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
+        </div>
     </div>
+    <div class = "box2 flex1">
+        <div class = "col-sm-9">
+            <h4 class = "color1"> Service Provider 1 </h4>
+        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+        <div>
+            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+                
+            
+        </div>
+        <div class = "col-sm-3 top2">
+            <div (click)="open(content)" class = "btn btn-color1"> Rating </div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <div (click)="open1(content1)" class = "btn color2"> Tip </div>
+        </div>
+    </div> -->
+    <div class = "clearfix"></div>
+    <!-- <div class = "center1">
+        <i class="far fa-frown-open"></i> <i class="far fa-frown"></i> <i class="far fa-meh"></i><i class="far fa-smile"></i><i class="far fa-grin"></i>
+    </div> -->
     
 
 </div>

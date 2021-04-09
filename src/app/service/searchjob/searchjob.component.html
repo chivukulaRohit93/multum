@@ -18,6 +18,7 @@
              Filter
              </div> 
              <div *ngIf = "showing" class = "absolute1 box2">
+                <div (click) = "toggle()" class = "pull-right"> X </div>
                  <div> Job Price </div>
                  <input type = "text" class = "text2" value = "$250" />
                  <div> Rating </div>
@@ -34,12 +35,16 @@
         <div class = "clearfix"></div>
         <br />
         <ng-container class = "col-sm-12" *ngIf = "(hotels | search:searchterm) as result">
-            <div *ngFor = "let hotel of result" [routerLink] = "['/nav','details']" class = "box2">
+            <div *ngFor = "let hotel of result | paginate: { itemsPerPage: 3, currentPage: p }" [routerLink] = "['/nav','details']" class = "box2">
                 
                 <h4 class = "color1"> {{ hotel.JobName }} </h4>
                 <p> {{ hotel.Address }} </p>
                 <p> {{ hotel.description }} </p>
             </div>
+
+            <div class ="align1">
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+              </div>
 
                 <div class = "col-sm-12" *ngIf = "result.length === 0">
                     <h4 class = "text-center top1"> No results Found ... </h4>

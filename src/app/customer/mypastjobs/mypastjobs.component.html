@@ -1,6 +1,18 @@
 <div class ="col-sm-12">
     <h4 class = "top1 font1"> Past Jobs </h4>
-    <div class = "box2">
+    <div *ngFor = "let item of collection| paginate: { itemsPerPage: 3, currentPage: p }" class = "box2">
+        <h4 class = "color1"> {{ item.JobName }} </h4>
+        <p> {{ item.description }} </p>
+        <div class = "flex1">
+            <h4 class = "size1"> Date : {{ item.date }} </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h4 class = "size1"> Price : {{ item.price }} </h4>
+        </div>
+    </div>
+    <div class = "clearfix"></div>
+            <div class ="align1">
+              <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </div>
+    <!-- <div class = "box2">
         <h4 class = "color1"> Job Title </h4>
         <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
         <div class = "flex1">
@@ -23,13 +35,5 @@
             <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <h4 class = "size1"> Price : $250.00 </h4>
         </div>
-    </div>
-    <div class = "box2">
-        <h4 class = "color1"> Job Title </h4>
-        <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
-        <div class = "flex1">
-            <h4 class = "size1"> Date : 04 Sep 2020 </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <h4 class = "size1"> Price : $250.00 </h4>
-        </div>
-    </div>
+    </div> -->
 </div>

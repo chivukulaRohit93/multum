@@ -45,6 +45,9 @@ import { SearchPipe } from './services/search.pipe';
 import { MysearchPipe } from './services/mysearch.pipe';
 import { MyloginComponent } from './mylogin/mylogin.component';
 import { DateTimePickerComponent } from './date-time-picker/date-time-picker.component';
+import { ContactComponent } from './service/contact/contact.component';
+import { SettingsComponent } from './service/settings/settings.component';
+import { MaterialModule } from './material/material.module';
 
 @NgModule({
   declarations: [
@@ -82,7 +85,9 @@ import { DateTimePickerComponent } from './date-time-picker/date-time-picker.com
     SearchPipe,
     MysearchPipe,
     MyloginComponent,
-    DateTimePickerComponent
+    DateTimePickerComponent,
+    ContactComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
@@ -94,7 +99,8 @@ import { DateTimePickerComponent } from './date-time-picker/date-time-picker.com
     BsDatepickerModule.forRoot(),    
     BrowserAnimationsModule,
     TimepickerModule.forRoot(),
-    NgxPaginationModule
+    NgxPaginationModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]

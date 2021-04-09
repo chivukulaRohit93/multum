@@ -13,6 +13,10 @@
     color:#ac415b;
 }
 
+.ml-7{
+    margin-left:85px;
+}
+
 .color3{
     color:grey;
 }
@@ -21,25 +25,26 @@
     display: flex;
 }
 
-.none{
-    display: block;
-}
-
-.none1{
-    display: none;
-}
-
 /* Media Queries */
 
 @media (min-width:320px) and (max-width:998px){
     .flex1{
         display: block;
     }
-    .none{
-        display: none;
-    }
     
-    .none1{
-        display: block;
+    .ml-5{
+        margin-left:0px !important;
+        float:none;
+        display:block;
+    }
+    .ml-4{
+        margin-left:0px !important;
+        float:none;
+        display:block;
+    }
+    .ml-7{
+        margin-left:0px !important;
+        float:none;
+        display:block;
     }
 }

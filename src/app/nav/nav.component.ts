@@ -30,7 +30,6 @@ export class NavComponent implements OnInit {
 
   toggle(){
     this.show = !this.show;
-    this.showing = true;
     }
     toggle1(){
        this.showing = !this.showing;

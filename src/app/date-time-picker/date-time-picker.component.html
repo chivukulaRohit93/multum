@@ -1,11 +1,12 @@
 <div class="input-group mr-2">
 	<input
     [ngClass]="ngControl?.valid ? 'ng-valid' : 'ng-invalid'"
-    class="form-control"
+    class="form-control text21"
+    placeholder="Specify date"
     (blur)="inputBlur($event)"
     [ngModel]="dateString | date:inputDatetimeFormat"
     (change)="onInputChange($event)"
-    [disabled]="disabled"
+    [disabled]="disabled" 
   />
 
 	<div class="input-group-append">
@@ -15,7 +16,8 @@
       [disabled]="disabled"
       type="button"
     >
-      <fa-icon [icon]="['far', 'calendar']"></fa-icon>
+    <i class="far fa-calendar-alt"></i>
+      <!-- <fa-icon [icon]="['far', 'calendar']"></fa-icon> -->
     </button>
 	</div>
 </div>
@@ -32,7 +34,8 @@
         type="button"
         (click)="toggleDateTimeState($event)"
       >
-        <fa-icon [icon]="['far', 'clock']"></fa-icon>
+      <i class="far fa-clock"></i>
+        <!-- <fa-icon [icon]="['far', 'clock']"></fa-icon> -->
       </button>
 		</div>
 		<div *ngIf="showTimePickerToggle">
@@ -42,7 +45,8 @@
         type="button"
         (click)="toggleDateTimeState($event)"
       >
-        <fa-icon [icon]="['far', 'calendar']"></fa-icon>
+      <i class="far fa-calendar-alt"></i>
+        <!-- <fa-icon [icon]="['far', 'calendar']"></fa-icon> -->
       </button>
 			<div class="mt-auto">
 				<ngb-timepicker #tp name="timepicker" [ngModel]="datetime" (ngModelChange)="onTimeChange($event)"

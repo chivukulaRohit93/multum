@@ -43,21 +43,26 @@
      <div [formGroup]="jobForm" class = "box2">
             <h4> Order Description </h4>
             <div class = "flex1">
-                <div class = "col-sm-4">
+                <div class = "col-sm-5 ml-0 p-0">
                     <label> Job Title </label>
                     <br />
                     <input type = "text" formControlName="jobtitle" placeholder = "Job Title" class = "text1" [(ngModel)] = "person.jobtitle" />
                 </div>
-                <div class = "col-sm-4">
-                    <label> Date Job needs to be done: </label>
+                <div class = "col-sm-5 ml-10">
+                    <!-- <label> Date Job needs to be done: </label>
                     <br />
-                    <input type = "text" bsDatepicker formControlName="dateneedstoknow" [bsConfig]="{containerClass:'theme-blue'}" placeholder=" Specify date" class = "text1" [(ngModel)] = "person.dateneedstoknow" />
+                    <input type = "text" bsDatepicker formControlName="dateneedstoknow" [bsConfig]="{containerClass:'theme-blue'}" placeholder=" Specify date" class = "text1" [(ngModel)] = "person.dateneedstoknow" /> -->
+
+                    <label for="dateneedstoknow">Date Job needs to be done:</label>
+                    <br />
+                    <app-date-time-picker formControlName="dateneedstoknow" name = "dateneedstoknow" placeholder=" Specify date" class = "" [(ngModel)] = "person.dateneedstoknow"></app-date-time-picker>  
+
                 </div>
-                <div class = "col-sm-4">
+                <!-- <div class = "col-sm-4">
                     <label> Time Job needs to be done: </label>
                     <br />
                         <timepicker formControlName="timeneedstobedone" placeholder="Specify time" [(ngModel)] = "person.timeneedstobedone"></timepicker>
-                </div>
+                </div> -->
             </div>
             
             <div class = "clearfix"></div>
@@ -69,20 +74,20 @@
             <br />
         <label class = "color4"> Pickup Address </label>
         <br />
-        <input type = "text" formControlName="pickupaddress" placeholder = "Location" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress" />
-        <input type = "text" formControlName="pickupaddress1" placeholder = "City" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress1" />
-        <input type = "text" formControlName="pickupaddress2" placeholder="Pincode" class = "text2 col-sm-3" [(ngModel)] = "person.pickupaddress2" />
-        <input type = "text" formControlName="pickupaddress3" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress3" />
-        <input type = "text" formControlName="pickupaddress4" class = "text2 col-sm-4" [(ngModel)] = "person.pickupaddress4" />
+        <input type = "text" formControlName="pickupaddress" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress" />
+        <input type = "text" formControlName="pickupaddress1" placeholder = "State" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress1" />
+        <input type = "text" formControlName="pickupaddress2" placeholder="Pincode" class = "text2 col-sm-3 ml-0" [(ngModel)] = "person.pickupaddress2" />
+        <input type = "text" formControlName="pickupaddress3" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress3" />
+        <input type = "text" formControlName="pickupaddress4" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress4" />
         <div class = "clearfix"></div>
         <br />
         <label class = "color4"> Drop Off Address </label>
         <br />
-        <input type = "text" formControlName="dropoffaddress" placeholder="Location" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress" />
-        <input type = "text" formControlName="dropoffaddress1" placeholder="City" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress1" />
-        <input type = "text" formControlName="dropoffaddress2" placeholder="Pincode" class = "text2 col-sm-3" [(ngModel)] = "person.dropoffaddress2" />
-        <input type = "text" formControlName="dropoffaddress3" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress3" />
-        <input type = "text" formControlName="dropoffaddress4" class = "text2 col-sm-4" [(ngModel)] = "person.dropoffaddress4" />
+        <input type = "text" formControlName="dropoffaddress" placeholder="Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress" />
+        <input type = "text" formControlName="dropoffaddress1" placeholder="State" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress1" />
+        <input type = "text" formControlName="dropoffaddress2" placeholder="Pincode" class = "text2 col-sm-3 ml-0" [(ngModel)] = "person.dropoffaddress2" />
+        <input type = "text" formControlName="dropoffaddress3" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress3" />
+        <input type = "text" formControlName="dropoffaddress4" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress4" />
         <div class = "clearfix"></div>
         <div (click) = "viewmode = 'started'">
             <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "pull-right">
@@ -94,20 +99,21 @@
         
     </div>
     <div *ngSwitchCase ="'started'"> 
-        <div [formGroup]="priceForm" class = "box2">
+        <div [formGroup]="priceForm" class = "box3">
             <h4> Price </h4>
             <div class = "flex1">
-            <div class = "col-sm-6">
+            <div class = "col-sm-6 p-0">
                 <h5 class = "color4"> Choose price for the job </h5>
-            <select class = "text1 col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice">
-                <option> Select Default Value </option>
+            <select required value="Select a value" class = "text1 col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice">
+                 <option> Select Default Value </option> 
                 <option> 100 </option>
                 <option> 200 </option>
                 <option> 300 </option>
                 <option> 400 </option>
             </select>
+            
             </div>
-            <div class = "col-sm-6 line1">
+            <div class = "col-sm-6 line1 p-0">
                 <h5 class = "color4"> Job Cost Summary </h5>
                 <div class = "bg-color">
                     <span> Job Budget </span>
@@ -142,7 +148,7 @@
  
     <div *ngSwitchCase ="'completed'"> 
         <div class = "">
-            <div [formGroup]="reviewForm" class = "col-sm-12 box2">
+            <div [formGroup]="reviewForm" class = "col-sm-12 box4">
                 <h4 class = "font1"> Review </h4>
                 <div class = "flex1">
                     <div class = "col-sm-6">
@@ -150,7 +156,7 @@
                         <br />
                         <div class = "bg-color line2">
                             <span> Price </span>
-                            <b class = "text-center ml-1">  $100.00 </b>
+                            <b class = "text-center ml-11">  $100.00 </b>
                             <br />
                             <span> Pickup Address </span>
                             <b class = "text-center ml-6"> {{ person.pickupaddress }} <br />
@@ -158,15 +164,15 @@
                                 <span class = "ml-7"> {{ person.pickupaddress2 }} </span> </b>
                             <br />
                             <span> Drop off Point </span>
-                            <b class = "text-center ml-2"> {{ person.dropoffaddress }} <br />
+                            <b class = "text-center ml-21"> {{ person.dropoffaddress }} <br />
                                 <span class = "ml-7"> {{ person.dropoffaddress1 }} </span> <br />
                                 <span class = "ml-7"> {{ person.dropoffaddress2 }} </span>  </b>
                             <br />
                             <span class = "ml-6"> Date </span>
-                            <b class = "text-center ml-3"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
+                            <b class = "text-center ml-31"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
                             <br />
                             <span class = "ml-6"> Time </span>
-                            <b class = "text-center ml-3"> {{ person.timeneedstobedone | date: "hh:mm:ss" }} </b>
+                            <b class = "text-center ml-31"> {{ person.dateneedstoknow | date: "hh:mm:ss" }} </b>
                         </div>
                     </div>
     
@@ -189,13 +195,13 @@
                             <b class = "ml-10"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
                             <br />
                             <span class = "ml-6"> Time </span>
-                            <b class = "ml-10"> {{ person.timeneedstobedone | date: "hh:mm:ss" }} </b>
+                            <b class = "ml-10"> {{ person.dateneedstoknow | date: "hh:mm:ss" }} </b>
                         </div>
                         <br />
                         <h5 class ="color4"> Credit Card Information </h5>
                         <div class = "bg-color">
                             <span class = "col-sm-6"> Card Number </span>
-                            <input type = "text" class = "text1 col-sm-6" placeholder="Enter the card NO" formControlName="cardnumber" [(ngModel)] = "person.cardnumber" />
+                            <input type = "text" class = "text1 col-sm-6" placeholder="Enter the card No" formControlName="cardnumber" [(ngModel)] = "person.cardnumber" />
                             <br />
                             <div class = "flex1">
                                 <div class = "col-sm-6">

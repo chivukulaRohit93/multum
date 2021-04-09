@@ -68,6 +68,23 @@
     padding: 10px;
 }
 
+.absolute1{
+    position:absolute;
+    background-color:#fff;
+    width:150px;
+    z-index:9999;
+    padding: 0px;
+}
+
+.absolute1 li{
+    color:#000;
+    text-align: center;
+}
+.absolute1 li:hover{
+    background-color:#000;
+    color:#fff;
+}
+
 .list1 .fa{
 font-size:35px;
 }

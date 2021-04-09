@@ -23,7 +23,7 @@ export class DateTimeModel implements NgbDateTimeStruct {
     const isValidDate = !isNaN(date.valueOf());
 
     if (!dateString || !isValidDate) {
-      return null;
+      return null as any;
     }
 
     return new DateTimeModel({
@@ -85,6 +85,6 @@ export class DateTimeModel implements NgbDateTimeStruct {
       return isoString;
     }
 
-    return null;
+    return null as any;
   }
 }

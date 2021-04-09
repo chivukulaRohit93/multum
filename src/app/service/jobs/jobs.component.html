@@ -22,10 +22,10 @@
 
      <div class = "col-sm-12">
            <h4 class = "font1"> My Jobs </h4>
-         <div class = "box2 row">
+         <div *ngFor = "let item of collection| paginate: { itemsPerPage: 3, currentPage: p }" class = "box2 row">
             <div class = "col-sm-9">
-             <h4 class = "color3"> Job1 </h4>
-             <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
+             <h4 class = "color3"> {{ item.JobName }} </h4>
+             <p> {{ item.description }} </p>
 
             </div>  
             <div class = "col-sm-3">
@@ -34,10 +34,14 @@
 
           </div>
        
-          </div>
+          
           <div class = "clearfix"></div>
-
-          <div class = "box2 row">
+        </div>
+        <div class ="align1">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+        
+          <!-- <div class = "box2 row">
            <div class = "col-sm-9">
             <h4 class = "color3"> Job1 </h4>
             <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard </p>
@@ -61,7 +65,7 @@
                <div (click)="open(content)" class = "btn color1 pull-left"> Cancel </div> &nbsp;&nbsp;&nbsp; <div [routerLink] = "['/nav','hire']" class = "btn color4"> Finished </div>
            </div>
       
-         </div>
+         </div> -->
      </div>
    </div>
 </div>

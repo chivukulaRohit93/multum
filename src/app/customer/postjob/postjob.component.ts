@@ -41,7 +41,6 @@ export class PostjobComponent implements OnInit {
     this.jobForm = this.formBuilder.group({
       jobtitle: ['', [Validators.required]],
       dateneedstoknow: ['', Validators.required],
-      timeneedstobedone: ['', Validators.required],
       pickupaddress: ['', Validators.required],
       pickupaddress1: ['', Validators.required],      
       pickupaddress2: ['', Validators.required],

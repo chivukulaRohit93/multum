@@ -10,8 +10,8 @@
            <li [routerLink] = "['/navbar','mymessage']" (click)="onClick(5)"   [ngClass]="{'active1': tab==='tab5'}"> <i class="far fa-file-alt"></i> Message </li> 
            <li [routerLink] = "['/navbar','mysearch']" (click)="onClick(6)"   [ngClass]="{'active1': tab==='tab6'}"> <i class="far fa-file-alt"></i> Search </li> 
            <li [routerLink] = "['/navbar','mycontact']" (click)="onClick(7)"   [ngClass]="{'active1': tab==='tab7'}"> <i class="fas fa-phone-alt"></i> Contact </li>
-           <li  [routerLink] = "['/navbar','mysettings']" (click)="onClick(8)"   [ngClass]="{'active1': tab==='tab8'}"> <i class="fa fa-cog" aria-hidden="true"></i>  Settings </li>
-           <li routerLink = "/login" (click)="onClick(9)"   [ngClass]="{'active1': tab==='tab9'}"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout </li>  
+           <!-- <li  [routerLink] = "['/navbar','mysettings']" (click)="onClick(8)"   [ngClass]="{'active1': tab==='tab8'}"> <i class="fa fa-cog" aria-hidden="true"></i>  Settings </li>
+           <li routerLink = "/login" (click)="onClick(9)"   [ngClass]="{'active1': tab==='tab9'}"> <i class="fa fa-sign-out" aria-hidden="true"></i> Logout </li>   -->
         </ul>
       </div>
     
@@ -19,11 +19,11 @@
         <div class = "box1">  
         <i (click) = "toggle1()" class="fas fa-align-left" aria-hidden="true"></i>
         <div (click) = "toggle()" class = "pull-right dropdown-toggle relative1"> <img class = "img1" src = "assets/Images/user.png" /> <b> Wayne Mills </b>
-        <!-- <ul class = "absolute1">
-          <li *ngIf = "show" routerLink ="/profile"> Profile </li>
-          <li *ngIf = "show" routerLink ="/history"> Work History </li>
-          <li *ngIf = "show" routerLink = "/check"> Background Check </li>
-        </ul> -->
+        <ul class = "absolute1">
+          <li *ngIf = "show" [routerLink] = "['/navbar','profile1']"> <i class="far fa-user-circle"></i> Profile </li>
+          <li *ngIf = "show" [routerLink] = "['/navbar','mysettings']"> <i class="fa fa-cog" aria-hidden="true"></i> Settings </li>
+          <li *ngIf = "show" routerLink = "/mylogin"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out </li>
+        </ul>
         </div>
       </div>
       <router-outlet></router-outlet>
