@@ -47,6 +47,10 @@ ul{
 .color3{
     color:#a8324e;
     font-weight:bold;
+    font-size:18px;
+}
+.modal-title{
+    font-weight:bold;
 }
 .color5{
     background-color:#a8324e;

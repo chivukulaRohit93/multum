@@ -2,7 +2,7 @@
 
     <ng-template #content let-modal>
         <div class="modal-header">
-          <h4 class="modal-title font1" id="modal-basic-title">Rating</h4>
+          <h3 class="modal-title font1" id="modal-basic-title">Rating</h3>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -25,7 +25,7 @@
 
       <ng-template #content1 let-modal>
         <div class="modal-header">
-          <h4 class="modal-title font1" id="modal-basic-title1">Tip</h4>
+          <h3 class="modal-title font1" id="modal-basic-title1">Tip</h3>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -33,15 +33,15 @@
         <div class="modal-body">
           <div class = "flex1">
             <div class = "btn-color5">
-              <h5 class = "text-center"> $1 </h5>
+              <h3 class = "text-center"> $1 </h3>
             </div>
             <div class = "btn-color6">
-              <h5 class = "text-center"> $2 </h5>
+              <h3 class = "text-center top3"> $2 </h3>
             </div>
           </div>
           <br />
           <div class = "clearfix"></div>
-          <h6> OR </h6>
+          <h4> OR </h4>
           <p> Write Amount </p>
           <input type = "text" class = "text1" />
         </div>
@@ -51,7 +51,7 @@
       </ng-template>
 
 
-    <h4 class = "top1 font1"> Rate and Tip Past Freelancer </h4>
+    <h2 class = "top1 font1"> Rate and Tip Past Freelancer </h2>
     <div *ngFor = "let item of collection | paginate: { itemsPerPage: 3, currentPage: p }" class = "box2 flex1">
         <div class = "col-sm-9">
             <h4 class = "color1"> {{ item.JobName }} </h4>

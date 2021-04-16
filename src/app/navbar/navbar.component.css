@@ -14,7 +14,7 @@
     background-color:#2e0110;
 }
 .width{
-    width:90% !important;
+    width:100% !important;
 }
 .font1{
     font-weight: 600;
@@ -42,6 +42,10 @@
     display: block;
 }
 
+/* .col-sm-2{
+    max-width:15% !important;
+} */
+
 .position1{
     position: relative;
 }
@@ -54,6 +58,7 @@
 
 .sidenav.active2 li i{
     font-size:40px;
+    display:block;
 }
 
 .sidenav.active2 li {
@@ -215,6 +220,7 @@ background-color: #431A28;
         max-width: 80px;
         text-align: center;
         margin-left: -80px !important;
+        overflow-x: hidden;
     }
     .sidenav.active2 {
         margin-left: 0 !important;
@@ -222,5 +228,8 @@ background-color: #431A28;
 b{
     font-size:12px;
 }
+/* .width{
+    width:100% !important;
+} */
 }
 

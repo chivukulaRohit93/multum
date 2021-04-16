@@ -1,5 +1,5 @@
 <div class ="col-sm-12">
-    <h4 class = "top1 font1"> Past Jobs </h4>
+    <h2 class = "top1 font1"> Past Jobs </h2>
     <div *ngFor = "let item of collection| paginate: { itemsPerPage: 3, currentPage: p }" class = "box2">
         <h4 class = "color1"> {{ item.JobName }} </h4>
         <p> {{ item.description }} </p>

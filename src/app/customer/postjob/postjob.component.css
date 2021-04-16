@@ -21,11 +21,11 @@
 }
 
 .ml-7{
-    margin-left:143px;
+    margin-left:130px;
 }
 
 .ml-11{
-    margin-left:102px !important;
+    margin-left:93px !important;
 }
 
 .ml-21{
@@ -33,11 +33,11 @@
 }
 
 .ml-31{
-    margin-left:75px !important;
+    margin-left:65px !important;
 }
 
 .ml-8{
-    margin-left:57px;
+    margin-left:52px;
 }
 
 .btn-primary{
@@ -46,11 +46,11 @@
 }
 
 .ml-9{
-    margin-left:175px;
+    margin-left:160px;
 }
 
 .ml-10{
-    margin-left:107px;
+    margin-left:95px;
 }
 
 .text1{
@@ -210,10 +210,6 @@ hr{
     line-height:40px;
 }
 
-h5{
-    font-size:16px;
-}
-
 .none{
     display: block;
 }
@@ -324,7 +320,7 @@ h5{
         height: 800px;
     }
     .box3{
-        height:460px;
+        height:500px;
     }
     .pull-right{
         float: left;
@@ -344,7 +340,7 @@ h5{
     .ml-7{
         margin-left:0px !important;
         float:none;
-        display: block;
+        /* display: block; */
         padding: 0;
     }
     .ml-8{
@@ -356,7 +352,7 @@ h5{
     .ml-9{
         margin-left:0px !important;
         float:none;
-        display: block;
+        /* display: block; */
         padding: 0;
     }
     .ml-10{

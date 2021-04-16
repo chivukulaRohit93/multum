@@ -1,6 +1,6 @@
 <div class = "position1">
     <div>
-        <h4 class = "font1 top1 text-center"> Post New Job </h4>
+        <h2 class = "font1 top1 text-center"> Post New Job </h2>
         
         <ul class = "progressbar nav nav-pills center">
 
@@ -10,7 +10,7 @@
                 <div [ngClass]="{'active1': tab==='tab1'}" class = "step1">  </div>
                 
                 <br />
-                   <h6 class = "text-center"> Order Description </h6>
+                   <h4 class = "text-center"> Order Description </h4>
                 
                 
                 </a>
@@ -20,14 +20,14 @@
                     <div [ngClass]="{'active1': tab==='tab2'}" class = "step2">  </div>
                 
                 <br />
-                   <h6 class = "text-center"> Price </h6>           
+                   <h4 class = "text-center"> Price </h4>           
                 </a>
             </li>
             <li [class.active] = "viewmode == 'completed'">
                 <a> 
                     <div [ngClass]="{'active1': tab==='tab3'}" class = "step3">  </div>
                 <br />
-                <h6 class = "text-center">  Review  </h6>
+                <h4 class = "text-center">  Review  </h4>
                 </a>
             </li>
             
@@ -41,7 +41,7 @@
 <div class = "center1" [ngSwitch] = "viewmode">
     <div *ngSwitchCase ="'hired'"> 
      <div [formGroup]="jobForm" class = "box2">
-            <h4> Order Description </h4>
+            <h3> Order Description </h3>
             <div class = "flex1">
                 <div class = "col-sm-5 ml-0 p-0">
                     <label> Job Title </label>
@@ -100,10 +100,10 @@
     </div>
     <div *ngSwitchCase ="'started'"> 
         <div [formGroup]="priceForm" class = "box3">
-            <h4> Price </h4>
+            <h3> Price </h3>
             <div class = "flex1">
             <div class = "col-sm-6 p-0">
-                <h5 class = "color4"> Choose price for the job </h5>
+                <h3 class = "color4"> Choose price for the job </h3>
             <select required value="Select a value" class = "text1 col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice">
                  <option> Select Default Value </option> 
                 <option> 100 </option>
@@ -114,7 +114,7 @@
             
             </div>
             <div class = "col-sm-6 line1 p-0">
-                <h5 class = "color4"> Job Cost Summary </h5>
+                <h3 class = "color4"> Job Cost Summary </h3>
                 <div class = "bg-color">
                     <span> Job Budget </span>
                     <span class = "pull-right"> $ 90.00 </span>
@@ -149,10 +149,10 @@
     <div *ngSwitchCase ="'completed'"> 
         <div class = "">
             <div [formGroup]="reviewForm" class = "col-sm-12 box4">
-                <h4 class = "font1"> Review </h4>
+                <h3 class = "font1"> Review </h3>
                 <div class = "flex1">
                     <div class = "col-sm-6">
-                        <h5 class = "color4"> Review Your Job </h5>
+                        <h4 class = "color4"> Review Your Job </h4>
                         <br />
                         <div class = "bg-color line2">
                             <span> Price </span>
@@ -177,7 +177,7 @@
                     </div>
     
                     <div class = "col-sm-6">
-                        <h5 class ="color4"> Job Cost Breakdown </h5>
+                        <h3 class ="color4"> Job Cost Breakdown </h3>
                         <br />
                         <div class = "bg-color">
                             <span class = "ml-6"> Job Budget </span>
@@ -198,17 +198,17 @@
                             <b class = "ml-10"> {{ person.dateneedstoknow | date: "hh:mm:ss" }} </b>
                         </div>
                         <br />
-                        <h5 class ="color4"> Credit Card Information </h5>
+                        <h3 class ="color4"> Credit Card Information </h3>
                         <div class = "bg-color">
-                            <span class = "col-sm-6"> Card Number </span>
+                            <span class = "col-sm-6 p-0"> Card Number </span>
                             <input type = "text" class = "text1 col-sm-6" placeholder="Enter the card No" formControlName="cardnumber" [(ngModel)] = "person.cardnumber" />
                             <br />
                             <div class = "flex1">
-                                <div class = "col-sm-6">
+                                <div class = "col-sm-6 p-0">
                                     <label> CVV </label>
                                 <input type = "password" placeholder="Enter the CVV" class = "text1" formControlName="cvv" [(ngModel)] = "person.cvv" />
                                 </div>
-                                <div class = "col-sm-6">
+                                <div class = "col-sm-6 p-0">
                                     <label> Card Expiration </label>
                                 <input type = "text" class = "text1" placeholder="Card expiry date" formControlName="cardexpiry" [(ngModel)] = "person.cardexpiry" />
                                 </div>

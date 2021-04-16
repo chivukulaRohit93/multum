@@ -1,5 +1,5 @@
 .p-1{
-    padding:0px;
+    padding:0px !important;
 }
 .flex1{
     display: flex;

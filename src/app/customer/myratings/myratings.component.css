@@ -10,10 +10,13 @@
     margin-top:15px;
 }
 
+.top3{
+    margin-top:5px;
+}
+
 .color1{
     color:#b24a68;
     font-weight: bold;
-    font-size: 18px;
 }
 
 .align1{
@@ -38,6 +41,7 @@
     padding:5px;
     border-radius:5px;
     width:45px;
+    height:40px;
 }
 
 .btn-color6{
@@ -45,6 +49,7 @@
     width:45px;
     margin-left:10px;
     border-radius: 5px;
+    height:40px;
 }
 
 .btn-color{
@@ -98,7 +103,7 @@ textarea{
 }
 
 .size1{
-    font-size: 18px;
+    font-weight: bold;
 }
 
 .box2{
