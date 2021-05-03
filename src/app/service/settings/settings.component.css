@@ -23,7 +23,6 @@
     margin-top:10px;
     padding:10px;
     background-color:#f9f9f9;
-    width:40%;
 }
 
 .center1{
@@ -41,7 +40,7 @@
     margin-top: 20px;
     margin-left: 10px;
     overflow: hidden;
-
+    width:35%;
 }
 
 .pull-right{
@@ -58,11 +57,14 @@
     .flex1{
         display:block;
     }
-    .bg-color{
-        width:100%;
+    .box2{
+        width:97%;
     }
     .color1{
-        width:230px;
+        width:100%;
+    }
+    .font1{
+        text-align:center;
     }
     .font2{
         text-align:center;

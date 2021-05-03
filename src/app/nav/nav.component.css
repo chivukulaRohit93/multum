@@ -14,7 +14,7 @@
     background-color:#2e0110;
 }
 .width{
-    width:90% !important;
+    width:100% !important;
 }
 .font1{
     font-weight: 600;
@@ -138,6 +138,10 @@ background-color: #431A28;
     font-size:20px;
 }
 
+.far{
+    font-size:20px;
+}
+
 .fa-align-left{
     padding:20px;
     cursor:pointer;
@@ -174,6 +178,7 @@ background-color: #431A28;
 
 .relative1{
     position: relative;
+    cursor:pointer;
 }
 
 .absolute1{
@@ -203,6 +208,11 @@ background-color: #431A28;
     display: block;
 }
 
+.absolute1{
+    position:absolute;
+    color:#eb4034;
+}
+
 /*  responsive css */
 
 @media (min-width:320px) and (max-width:998px){
@@ -224,8 +234,8 @@ b{
 .relative1{
     top:10px;
 }
-.width{
-    width:100% !important;
+.absolute1{
+    margin-left:-35px;
 }
 }
 

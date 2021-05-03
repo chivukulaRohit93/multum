@@ -1,6 +1,9 @@
 .flex1{
     display: flex;
 }
+.pull-right{
+    float:right;
+}
 li{
     float:left;
 }

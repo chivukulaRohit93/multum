@@ -14,10 +14,10 @@ export class LoginComponent implements OnInit {
   viewmode = "service";
   registerForm!: FormGroup;
   registerForm1!:FormGroup;
-    submitted = false;
-    isenable:boolean = false;
-    people!: Person1[];
-    person:any = new Person1();
+  submitted = false;
+  isenable:boolean = false;
+  people!: Person1[];
+  person:any = new Person1();
 
   constructor(private formBuilder: FormBuilder,private commonService:Common1Service, private route:Router) { }
 

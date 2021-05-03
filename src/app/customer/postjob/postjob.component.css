@@ -135,6 +135,10 @@ bottom:0;
     display: flex;
 }
 
+.flex2{
+    display:flex;
+}
+
 
 
 .bg-color{
@@ -203,7 +207,7 @@ hr{
     padding:15px;
     border-radius:15px;
     margin-top:35px;
-    height:540px;
+    height:550px;
 }
 
 .line1{

@@ -87,7 +87,19 @@ ul.disc li{
 }
 
 .left1{
-    margin-left:72px;
+    margin-left:85px;
+}
+
+.ml-7{
+    margin-left:20px;
+}
+
+.ml-8{
+    margin-left:15px;
+}
+
+.ml-9{
+    margin-left:5px;
 }
 
 .box2{
@@ -119,31 +131,32 @@ ul.disc li{
     color:#eb4034;
 }
 
-.none{
-    display:block;
-}
-
-.none1{
-    display: none;
-}
-
 @media (min-width:320px) and (max-width:998px){
     .left1{
         margin-left:0px;
-    }
-    .none{
-        display:none;
-    }
-    
-    .none1{
         display:block;
+        float:none;
     }
     .pull-left{
         float:none;
     }
     .img2{
         display: block;
-        margin:0 auto;
+    }
+    .ml-7{
+        margin-left:0px !important;
+        float:none;
+        display:block;
+    }
+    .ml-8{
+        margin-left:0px !important;
+        float:none;
+        display:block;
+    }
+    .ml-9{
+        margin-left:0px !important;
+        float:none;
+        display:block;
     }
     }
 

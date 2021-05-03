@@ -159,6 +159,10 @@ background-color: #431A28;
     font-size:20px;
 }
 
+.far{
+    font-size:20px;
+}
+
 .fa-align-left{
     padding:20px;
     cursor:pointer;
@@ -195,6 +199,7 @@ background-color: #431A28;
 
 .relative1{
     position: relative;
+    cursor:pointer;
 }
 
 .absolute1{
@@ -224,6 +229,9 @@ background-color: #431A28;
     }
     .sidenav.active2 {
         margin-left: 0 !important;
+    }
+    .absolute1{
+        margin-left:-20px;
     }
 b{
     font-size:12px;

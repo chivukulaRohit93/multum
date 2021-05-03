@@ -69,7 +69,7 @@ const routes: Routes = [
   {path:'myratings',component:MyratingsComponent}
 ]
 },
-  {path:'', redirectTo:'/mylogin', pathMatch:'full' }
+  {path:'', redirectTo:'/login', pathMatch:'full' }
 ];
 
 
