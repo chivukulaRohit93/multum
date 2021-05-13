@@ -12,14 +12,14 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   viewmode = "service";
-  registerForm!: FormGroup;
+  registerForm! :FormGroup;
   registerForm1!:FormGroup;
   submitted = false;
   isenable:boolean = false;
   people!: Person1[];
   person:any = new Person1();
 
-  constructor(private formBuilder: FormBuilder,private commonService:Common1Service, private route:Router) { }
+  constructor(private formBuilder: FormBuilder, private commonService:Common1Service, private route:Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
