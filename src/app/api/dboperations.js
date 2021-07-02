@@ -3,7 +3,7 @@ const sql = require('mssql');
 
 async function getOrders(){
     try{
-        let pool = await sql.Connect(config);
+        let pool = await sql.connect(config);
         let user = await pool.request().query("SELECT * from user");
         return user.recordsets;
     }
@@ -14,7 +14,7 @@ async function getOrders(){
 
 async function addOrder(order){
     try {
-        let pool = await sql.connect(config);
+    let pool = await sql.connect(config);
     let insertProduct = await pool.request()
     .input('username', sql.VarChar, order.username)
     .input('password', sql.VarChar, order.password)

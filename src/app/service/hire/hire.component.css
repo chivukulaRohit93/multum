@@ -157,6 +157,9 @@
     .flex1{
         display:block;
     }
+    .font2{
+        display:none;
+    }
     .color2{
         margin-left:0px;
     }

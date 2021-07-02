@@ -3,7 +3,7 @@ var Db = require('./dboperations');
 var Order = require('./order');
 
 var express = require('express');
-var bodyparser = require('body-parser');
+var bodyParser = require('body-parser');
 var cors = require('cors');
 var app = express();
 var router = express.Router();

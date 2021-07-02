@@ -11,7 +11,7 @@ export class Common1Service {
 
   constructor(private http: HttpClient) { }
 
-  baseURL: string = "http://localhost:8400/login/add";
+  baseURL: string = "http://localhost:8080/api/users";
 
   getPeople(): Observable<Person1[]> {
     console.log('getPeople '+this.baseURL);

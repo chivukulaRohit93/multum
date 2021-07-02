@@ -38,15 +38,18 @@
 <div class = "clearfix"></div>
 <br />
 
-<div class = "center1" [ngSwitch] = "viewmode">
-    <div *ngSwitchCase ="'hired'"> 
+ <div class = "center1" [ngSwitch] = "viewmode">
+<div *ngSwitchCase ="'hired'"> 
      <div [formGroup]="jobForm" class = "box2">
             <h3> Order Description </h3>
             <div class = "flex1">
                 <div class = "col-sm-5 ml-0 p-0">
                     <label> Job Title </label>
                     <br />
-                    <input type = "text" formControlName="jobtitle" placeholder = "Job Title" class = "text1" [(ngModel)] = "person.jobtitle" />
+                    <input type = "text" formControlName="jobtitle" placeholder = "Job Title" class = "text1" [ngClass]="{ 'is-invalid': submitted && f.jobtitle.errors }" [(ngModel)] = "person.jobtitle" />
+                    <div *ngIf="submitted && f.jobtitle.errors" class="invalid-feedback">
+                        <div *ngIf="f.jobtitle.errors.required">Job Title is required</div>
+                    </div>
                 </div>
                 <div class = "col-sm-5 ml-10">
                     <!-- <label> Date Job needs to be done: </label>
@@ -55,8 +58,10 @@
 
                     <label for="dateneedstoknow">Date Job needs to be done:</label>
                     <br />
-                    <app-date-time-picker formControlName="dateneedstoknow" name = "dateneedstoknow" placeholder=" Specify date" class = "" [(ngModel)] = "person.dateneedstoknow"></app-date-time-picker>  
-
+                    <app-date-time-picker formControlName="dateneedstoknow" name = "dateneedstoknow" [ngClass]="{ 'is-invalid': submitted && f.dateneedstoknow.errors }" placeholder=" Specify date" class = "" [(ngModel)] = "person.dateneedstoknow"></app-date-time-picker>  
+                    <div *ngIf="submitted && f.dateneedstoknow.errors" class="invalid-feedback">
+                        <div *ngIf="f.dateneedstoknow.errors.required">Job Title is required</div>
+                    </div>
                 </div>
                 <!-- <div class = "col-sm-4">
                     <label> Time Job needs to be done: </label>
@@ -74,30 +79,60 @@
             <br />
         <label class = "color4"> Pickup Address </label>
         <br />
-        <input type = "text" formControlName="pickupaddress" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress" />
-        <input type = "text" formControlName="pickupaddress1" placeholder = "State" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress1" />
-        <input type = "text" formControlName="pickupaddress2" placeholder="Pincode" class = "text2 col-sm-3 ml-0" [(ngModel)] = "person.pickupaddress2" />
-        <input type = "text" formControlName="pickupaddress3" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress3" />
-        <input type = "text" formControlName="pickupaddress4" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress4" />
+        <input type = "text" formControlName="pickupaddress" [ngClass]="{ 'is-invalid': submitted && f.pickupaddress.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress" />
+        <div *ngIf="submitted && f.pickupaddress.errors" class="invalid-feedback">
+            <div *ngIf="f.pickupaddress.errors.required">Pick Up Address is required</div>
+        </div>
+        <input type = "text" formControlName="pickupaddress1" [ngClass]="{ 'is-invalid': submitted && f.pickupaddress1.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress1" />
+        <div *ngIf="submitted && f.pickupaddress1.errors" class="invalid-feedback">
+            <div *ngIf="f.pickupaddress1.errors.required">Pick Up Address 1 is required</div>
+        </div>
+        <input type = "text" formControlName="pickupaddress2" [ngClass]="{ 'is-invalid': submitted && f.pickupaddress2.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress2" />
+        <div *ngIf="submitted && f.pickupaddress2.errors" class="invalid-feedback">
+            <div *ngIf="f.pickupaddress2.errors.required">Pick Up Address 2 is required</div>
+        </div>
+        <input type = "text" formControlName="pickupaddress3" [ngClass]="{ 'is-invalid': submitted && f.pickupaddress3.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress3" />
+        <div *ngIf="submitted && f.pickupaddress3.errors" class="invalid-feedback">
+            <div *ngIf="f.pickupaddress3.errors.required">Pick Up Address 3 is required</div>
+        </div>
+        <input type = "text" formControlName="pickupaddress4" [ngClass]="{ 'is-invalid': submitted && f.pickupaddress4.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.pickupaddress4" />
+        <div *ngIf="submitted && f.pickupaddress4.errors" class="invalid-feedback">
+            <div *ngIf="f.pickupaddress4.errors.required">Pick Up Address 4 is required</div>
+        </div>
         <div class = "clearfix"></div>
         <br />
         <label class = "color4"> Drop Off Address </label>
         <br />
-        <input type = "text" formControlName="dropoffaddress" placeholder="Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress" />
-        <input type = "text" formControlName="dropoffaddress1" placeholder="State" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress1" />
-        <input type = "text" formControlName="dropoffaddress2" placeholder="Pincode" class = "text2 col-sm-3 ml-0" [(ngModel)] = "person.dropoffaddress2" />
-        <input type = "text" formControlName="dropoffaddress3" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress3" />
-        <input type = "text" formControlName="dropoffaddress4" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress4" />
+        <input type = "text" formControlName="dropoffaddress" [ngClass]="{ 'is-invalid': submitted && f.dropoffaddressaddress.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress" />
+        <div *ngIf="submitted && f.dropoffaddress.errors" class="invalid-feedback">
+            <div *ngIf="f.dropoffaddress.errors.required">Drop Off Address is required</div>
+        </div>
+        <input type = "text" formControlName="dropoffaddress1" [ngClass]="{ 'is-invalid': submitted && f.dropoffaddressaddress1.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress1" />
+        <div *ngIf="submitted && f.dropoffaddress1.errors" class="invalid-feedback">
+            <div *ngIf="f.dropoffaddress1.errors.required">Drop Off Address 1 is required</div>
+        </div>
+        <input type = "text" formControlName="dropoffaddress2" [ngClass]="{ 'is-invalid': submitted && f.dropoffaddressaddress2.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress2" />
+        <div *ngIf="submitted && f.dropoffaddress2.errors" class="invalid-feedback">
+            <div *ngIf="f.dropoffaddress2.errors.required">Drop Off Address 2 is required</div>
+        </div>
+        <input type = "text" formControlName="dropoffaddress3" [ngClass]="{ 'is-invalid': submitted && f.dropoffaddressaddress3.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress3" />
+        <div *ngIf="submitted && f.dropoffaddress3.errors" class="invalid-feedback">
+            <div *ngIf="f.dropoffaddress3.errors.required">Drop Off Address 3 is required</div>
+        </div>
+        <input type = "text" formControlName="dropoffaddress4" [ngClass]="{ 'is-invalid': submitted && f.dropoffaddressaddress4.errors }" placeholder = "Location" class = "text2 col-sm-4 ml-0" [(ngModel)] = "person.dropoffaddress4" />
+        <div *ngIf="submitted && f.dropoffaddress4.errors" class="invalid-feedback">
+            <div *ngIf="f.dropoffaddress4.errors.required">Drop Off Address 4 is required</div>
+        </div>
         <div class = "clearfix"></div>
         <div (click) = "viewmode = 'started'">
             <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "pull-right">
-           <button class = "btn btn-primary" type = "button" [disabled]="!jobForm.valid"> Next </button>  
+           <button class = "btn btn-primary" [disabled]="!jobForm.valid" type = "button"> Next </button>  
             </div>
         </div>
         
-        </div>
-        
     </div>
+        
+</div>
     <div *ngSwitchCase ="'started'"> 
         <div [formGroup]="priceForm" class = "box3">
             <h3> Price </h3>
@@ -111,7 +146,8 @@
                 <option> 300 </option>
                 <option> 400 </option>
             </select>
-            
+
+        
             </div>
             <div class = "col-sm-6 line1 p-0">
                 <h3 class = "color4"> Job Cost Summary </h3>
@@ -138,7 +174,7 @@
                 
                 <div (click) = "viewmode = 'completed'">
                     <div (click)="onClick(3)" [ngClass]="{'active1': tab==='tab3'}"> 
-                        <button type = "button" class = "btn btn-primary" [disabled]="!priceForm.valid"> Next </button>
+                        <button type = "button" [disabled]="!priceForm.valid" class = "btn btn-primary"> Next </button>
                     </div>
                 </div>
                 
@@ -210,8 +246,9 @@
                                 </div>
                                 <div class = "col-sm-6 p-0">
                                     <label> Card Expiration </label>
-                                <input type = "text" class = "text1" placeholder="Card expiry date" formControlName="cardexpiry" [(ngModel)] = "person.cardexpiry" />
-                                </div>
+                                <!-- <input type = "text" class = "text1" placeholder="Card expiry date" formControlName="cardexpiry" [(ngModel)] = "person.cardexpiry" /> -->
+                                <input type="text"  class = "text1" placeholder="Card expiry date" formControlName="cardexpiry" [(ngModel)] = "person.cardexpiry" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM/YYYY', isAnimated: true, containerClass:'theme-blue' }" />
+                            </div>
                                 
                             </div>
                             
@@ -224,7 +261,7 @@
                     <div (click) = "viewmode = 'started'">
                         <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "btn btn1 top1"> Back </div>
                     </div>
-                    <button [disabled]="!reviewForm.valid" class = "btn color5 top1">  Place Order </button>
+                    <button (click) = "addPerson()" [disabled]="!reviewForm.valid" class = "btn color5 top1">  Place Order </button>
                 </div>
                 
             </div>

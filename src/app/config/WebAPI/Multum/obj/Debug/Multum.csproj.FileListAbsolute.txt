@@ -1,0 +1,2 @@
+C:\Rohit\multum\src\app\config\WebAPI\Multum\obj\Debug\Multum.csprojAssemblyReference.cache
+C:\Rohit\multum\src\app\config\WebAPI\Multum\obj\Debug\Multum.csproj.CoreCompileInputs.cache

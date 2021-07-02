@@ -5,10 +5,12 @@ const config = {
     database:'user',
     options:{
         trustedconnection: true,
-        enableArithAort : true,
-        instancename : 'LAPTOP-DH6TD26N\MSSQLSERVER01'
+        encrypt: true,
+        enableArithAbort: true,
+        instancename : 'LAPTOP-DH6TD26N\MSSQLSERVER01',
+        trustServerCertificate: true
     },
-    port : 55892
+    port : 61543
 }
 
 module.exports = config;

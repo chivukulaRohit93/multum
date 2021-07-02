@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Common2Service } from 'src/app/services/common2.service';
+import { Common5Service } from 'src/app/services/common5.service';
 import { Person2 } from 'src/app/person2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
@@ -14,6 +14,7 @@ export class PostjobComponent implements OnInit {
   color:boolean = false;
   people!: Person2[];
   person:any = new Person2();
+  submitted = false;
   myDate!: Date;
   timepicker!:Date;
   tab : any = 'tab1';
@@ -26,20 +27,22 @@ export class PostjobComponent implements OnInit {
   priceForm!:FormGroup;
   reviewForm!:FormGroup;
 
-  constructor(private formBuilder: FormBuilder ,private commonService:Common2Service) { }
+  constructor(private formBuilder: FormBuilder ,private common5Service:Common5Service) { }
 
   ngOnInit(): void {
     this.formValidation();
     this.formvalidation1();
     this.formValidation2();
-    
+    this.refreshPeople();
     
 
   }
 
+  get f() { return this.reviewForm.controls; }
+
   formValidation(){
     this.jobForm = this.formBuilder.group({
-      jobtitle: ['', [Validators.required]],
+      jobtitle: ['', Validators.required],
       dateneedstoknow: ['', Validators.required],
       pickupaddress: ['', Validators.required],
       pickupaddress1: ['', Validators.required],      
@@ -58,7 +61,7 @@ export class PostjobComponent implements OnInit {
 
   formvalidation1(){
     this.priceForm = this.formBuilder.group({
-      chooseprice: ['', [Validators.required]]
+      chooseprice: ['', Validators.required]
     });    
   }
 
@@ -68,6 +71,39 @@ export class PostjobComponent implements OnInit {
       cvv: ['', Validators.required],
       cardexpiry: ['', Validators.required]
     });
+  }
+
+  refreshPeople() {
+    this.common5Service.getPeople()
+      .subscribe(data => {
+        console.log(data);
+        this.people=data;
+      });      
+ 
+  }
+ 
+  addPerson() {
+    this.common5Service.addPerson(this.person)
+      .subscribe(data => {
+        console.log(data);
+        this.refreshPeople();
+      });      
+
+      this.submitted = true;
+
+      if(this.jobForm.invalid) {
+        return;
+      }
+
+      if(this.priceForm.invalid) {
+        return;
+        }
+
+      if(this.reviewForm.invalid) {
+      return;
+      }
+    
+    
   }
   
 
@@ -95,3 +131,4 @@ export class PostjobComponent implements OnInit {
 
 
 }
+

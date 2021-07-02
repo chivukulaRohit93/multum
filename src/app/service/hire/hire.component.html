@@ -26,7 +26,7 @@
                     <div (click)="onClick(1)" [ngClass]="{'active1': tab==='tab1'}" class = "step1"></div>
                     
                     <br />
-                       <h3 class = "text-center"> Hired </h3>
+                       <h3 class = "text-center font2"> Hired </h3>
                     
                     
                     </a>
@@ -36,7 +36,7 @@
                         <div (click)="onClick(2)"   [ngClass]="{'active1': tab==='tab2'}" class = "step2"></div>
                     
                     <br />
-                       <h3 class = "text-center"> Job Started </h3>           
+                       <h3 class = "text-center font2"> Job Started </h3>           
                     </a>
                 </li>
                 <li class = "width2" [class.active] = "viewmode == 'completed'">
@@ -44,7 +44,7 @@
                         <div (click)="onClick(3)"   [ngClass]="{'active1': tab==='tab3'}" class = "step3"></div>
                     
                     <br />
-                      <h3 class = "text-center">  Job Completed  </h3>
+                      <h3 class = "text-center font2">  Job Completed  </h3>
                     </a>
                 </li>
                 <li class = "width2" [class.active] = "viewmode == 'verification'">
@@ -52,15 +52,15 @@
                         <div (click)="onClick(4)"   [ngClass]="{'active1': tab==='tab4'}" class = "step4"></div>
                         
                         <br />
-                         <h3 class = "text-center"> Customer Verification </h3>
+                         <h3 class = "text-center font2"> Customer Verification </h3>
                     </a>
                 </li>
                 <li class = "width2" [class.active] = "viewmode == 'moneysent'">
                     <a (click) = "viewmode = 'moneysent'"> 
-                        <div (click)="onClick(5)"   [ngClass]="{'active1': tab==='tab5'}" class = "step5"></div>
+                        <div (click)="onClick(5)" [ngClass]="{'active1': tab==='tab5'}" class = "step5"></div>
                         <br />
             
-                      <h3 class = "text-center"> Money Sent </h3>
+                      <h3 class = "text-center font2"> Money Sent </h3>
                     </a>
                 </li>
               </ul>
@@ -72,7 +72,8 @@
             <div *ngSwitchCase ="'hired'"> 
                 <div class = "box2">
                     <h3> Job Hired </h3>
-                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+                    <p> 
+                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
                         when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into
                         electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
                         passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 
@@ -82,8 +83,8 @@
                         <h4> Address </h4>
                         <p> 
                             17 Howard Street<br />
-        Oswego NY 13126<br />
-        USA
+                            Oswego NY 13126<br />
+                            USA
                         </p>
                     </div>
                     <div class = "col-sm-4">
@@ -116,8 +117,8 @@
                         <h4> Address </h4>
                         <p> 
                             17 Howard Street<br />
-        Oswego NY 13126<br />
-        USA
+                            Oswego NY 13126<br />
+                            USA
                         </p>
                     </div>
                     <div class = "col-sm-4">
@@ -151,12 +152,14 @@
                         <h4> Address </h4>
                         <p> 
                             17 Howard Street<br />
-        Oswego NY 13126<br />
-        USA
+                            Oswego NY 13126<br />
+                            USA
                         </p>
                     </div>
                     <div class = "col-sm-4">
-                        <h4> Date </h4>
+                        <h4> 
+                            Date
+                        </h4>
                         <p> 
                             22/11/2020
                         </p>
@@ -186,8 +189,8 @@
                         <h4> Address </h4>
                         <p> 
                             17 Howard Street<br />
-        Oswego NY 13126<br />
-        USA
+                            Oswego NY 13126<br />
+                            USA
                         </p>
                     </div>
                     <div class = "col-sm-4">
@@ -220,8 +223,8 @@
                         <h4> Address </h4>
                         <p> 
                             17 Howard Street<br />
-        Oswego NY 13126<br />
-        USA
+                            Oswego NY 13126<br />
+                            USA
                         </p>
                     </div>
                     <div class = "col-sm-4">

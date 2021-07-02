@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Common1Service } from '../services/common1.service';
 import { Person1 } from 'src/app/person1';
+import { person3 } from 'src/app/person3';
 import { Router } from '@angular/router';
+import { Common2Service } from '../services/common2.service';
 
 @Component({
   selector: 'app-login',
@@ -17,9 +19,11 @@ export class LoginComponent implements OnInit {
   submitted = false;
   isenable:boolean = false;
   people!: Person1[];
+  people3!: person3[];
   person:any = new Person1();
+  person3:any = new person3();
 
-  constructor(private formBuilder: FormBuilder, private commonService:Common1Service, private route:Router) { }
+  constructor(private formBuilder: FormBuilder, private commonService:Common1Service,private common2Service:Common2Service, private route:Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -33,15 +37,27 @@ export class LoginComponent implements OnInit {
     });
 
     this.refreshPeople();
+    this.refreshPeople1();
   }
 
   get f() { return this.registerForm.controls; }
+
+  get f1() { return this.registerForm1.controls; }
 
   refreshPeople() {
     this.commonService.getPeople()
       .subscribe(data => {
         console.log(data);
         this.people=data;
+      });      
+ 
+  }
+
+  refreshPeople1() {
+    this.common2Service.getPeople1()
+      .subscribe(data => {
+        console.log(data);
+        this.people3=data;
       });      
  
   }
@@ -63,10 +79,10 @@ export class LoginComponent implements OnInit {
   }
 
   addPerson1(){
-    this.commonService.addPerson(this.person)
+    this.common2Service.addPerson1(this.person3)
       .subscribe(data => {
         console.log(data);
-        this.refreshPeople();
+        this.refreshPeople1();
       });      
 
       this.submitted = true;

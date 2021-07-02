@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CommonService } from '../services/common.service';
+import { Common3Service } from '../services/common3.service';
 import { Person } from 'src/app/person';
+import { Common4Service } from '../services/common4.service';
+import { Person4 } from 'src/app/person4';
 import { Router } from '@angular/router';
+
 
 
 @Component({
@@ -18,14 +21,16 @@ export class SignupComponent implements OnInit {
   submitted = false;
   people!: Person[];
   person:any = new Person();
+  people4!: Person4[];
+  person4:any = new Person4();
 
   
-  constructor(private formBuilder: FormBuilder,private commonService:CommonService, private route:Router) { }
+  constructor(private formBuilder: FormBuilder,private commonService:Common3Service,private common4Service:Common4Service, private route:Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
+      firstname: ['', Validators.required],
+      lastname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
@@ -37,8 +42,8 @@ export class SignupComponent implements OnInit {
     });
 
       this.registerForm1 = this.formBuilder.group({
-        firstName1: ['', Validators.required],
-        lastName1: ['', Validators.required],
+        firstname1: ['', Validators.required],
+        lastname1: ['', Validators.required],
         email1: ['', [Validators.required, Validators.email]],
         password1: ['', [Validators.required, Validators.minLength(6)]],
         confirmPassword1: ['', Validators.required],
@@ -49,6 +54,7 @@ export class SignupComponent implements OnInit {
   });
 
   this.refreshPeople();
+  this.refreshPeople1();
     
   }
 
@@ -57,13 +63,21 @@ export class SignupComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.people=data;
-      });      
+      });     
+ 
+  }
+  refreshPeople1() {
+    this.common4Service.getPeople()
+      .subscribe(data => {
+        console.log(data);
+        this.people4=data;
+      });     
  
   }
  
   addPerson() {
     this.commonService.addPerson(this.person)
-      .subscribe((data: any) => {
+      .subscribe((data:any) => {
         console.log(data);
         this.refreshPeople();
       });      
@@ -79,10 +93,10 @@ export class SignupComponent implements OnInit {
   }
 
   addPerson1() {
-    this.commonService.addPerson(this.person)
-      .subscribe((data: any) => {
+    this.common4Service.addPerson(this.person4)
+      .subscribe(data => {
         console.log(data);
-        this.refreshPeople();
+        this.refreshPeople1();
       });      
 
       this.submitted = true;
@@ -97,6 +111,8 @@ export class SignupComponent implements OnInit {
   }
 
   get f() { return this.registerForm.controls; }
+
+  get f1() { return this.registerForm1.controls; }
 
     onSubmit() {
       
