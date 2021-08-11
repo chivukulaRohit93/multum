@@ -70,6 +70,13 @@
     font-weight:600;
 }
 
+.color5{
+    background-color:#b15269;
+    color:#fff;
+    padding:5px;
+    height:40px;
+    }
+
 .color6{
 background-color:#b15269;
 color:#fff;
@@ -95,6 +102,15 @@ color:#f7b500;
     margin-top:15px;
     background-color:#fff;
     z-index:9999;
+}
+
+.box3{
+    box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
+    padding:15px;
+    margin-left:-99px;
+    width:200px;
+    margin-top:15px;
+    background-color:#fff;
 }
 
 .border1{

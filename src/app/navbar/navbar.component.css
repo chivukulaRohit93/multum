@@ -90,6 +90,11 @@
     color:#fff;
 }
 
+.dropdown-menu{
+    margin-top:30px;
+    margin-left:10px;
+}
+
 .list1 .fa{
 font-size:35px;
 }
@@ -230,8 +235,8 @@ background-color: #431A28;
     .sidenav.active2 {
         margin-left: 0 !important;
     }
-    .absolute1{
-        margin-left:-20px;
+    .dropdown-menu{
+        margin-left:0px;
     }
 b{
     font-size:12px;

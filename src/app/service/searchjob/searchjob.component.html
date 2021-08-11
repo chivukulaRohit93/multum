@@ -14,11 +14,19 @@
         <p class = "col-sm-11 t1"> 8 Results Found </p>
         <div class = "pull-right border1">
             
-            <div (click) = "toggle()" class = "position1"><i class="fas fa-filter"></i>
-             Filter
-             </div> 
-             <div *ngIf = "showing" class = "absolute1 box2">
-                <div (click) = "toggle()" class = "pull-right"> X </div>
+            <!-- <div class="nav-item dropdown pull-right" dropdown>
+                <a dropdownToggle class="nav-link dropdown-toggle waves-light"> <img class = "img1" src = "assets/Images/user.png" /> <b> Wayne Mills </b> <span class="caret"></span></a>
+                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                    <a class="dropdown-item waves-light" [routerLink] = "['/navbar','profile1']"> <i class="far fa-user-circle"></i> Profile </a>
+                    <a class="dropdown-item waves-light" [routerLink] = "['/navbar','mysettings']"> <i class="fa fa-cog" aria-hidden="true"></i> settings </a>
+                    <a class="dropdown-item waves-light" routerLink = "/login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out </a>
+                </div>
+              </div> -->
+
+            <div class = "dropdown pull-right nav-item" dropdown>
+                <a dropdownToggle class="nav-link dropdown-toggle waves-light"> <i class="fas fa-filter"></i> <b> Filter </b> </a>
+              
+             <div *dropdownMenu class = "dropdown-menu dropdown box3" role="menu">
                  <div> Job Price </div>
                  <input type = "text" class = "text2" value = "$250" />
                  <div> Rating </div>
@@ -30,6 +38,7 @@
                  <br /><br />
                  <div class = "btn color6"> Apply </div>
              </div>
+            </div>
         </div>
         </div>
         <div class = "clearfix"></div>

@@ -84,6 +84,15 @@ color:#fff;
     background-color:#fff;
 }
 
+.box3{
+    box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
+    padding:15px;
+    margin-left:-99px;
+    width:200px;
+    margin-top:15px;
+    background-color:#fff;
+}
+
 .border1{
     box-shadow:0 0 4px 0 rgb(144 162 178 / 51%);
     border:2px solid #ddd;

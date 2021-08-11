@@ -48,6 +48,17 @@ li a{
   color: #2dfbcd !important; 
 }
 
+.red1{
+    color:#dc3545;
+}
+
+input.ng-touched{
+  border:1px solid #dc3545;
+}
+input.ng-valid{
+  border:1px solid #ced4da;
+}
+
 
     .img{
         width:100%;

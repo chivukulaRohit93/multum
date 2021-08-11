@@ -21,6 +21,7 @@ import { ProfileComponent } from './service/profile/profile.component';
 import { ReviewComponent } from './service/review/review.component';
 import { JobsComponent } from './service/jobs/jobs.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HireComponent } from './service/hire/hire.component';
 import { SearchjobComponent } from './service/searchjob/searchjob.component';
 import { JobdetailsComponent } from './service/jobdetails/jobdetails.component';
@@ -99,6 +100,7 @@ import { MaterialModule } from './material/material.module';
     BsDatepickerModule.forRoot(),    
     BrowserAnimationsModule,
     TimepickerModule.forRoot(),
+    MDBBootstrapModule.forRoot(),
     NgxPaginationModule,
     MaterialModule
   ],

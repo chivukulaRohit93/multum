@@ -13,16 +13,12 @@ export class Common1Service {
 
   baseURL: string = "http://localhost:8080/api/users";
 
-  getPeople(): Observable<Person1[]> {
-    console.log('getPeople '+this.baseURL);
-    return this.http.get<Person1[]>(this.baseURL);
+  getAll(): Observable<any> {
+    return this.http.get(this.baseURL);
   }
 
-  addPerson(person:Person1): Observable<any> {
-    const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(person);
-    console.log(body);
-    return this.http.post(this.baseURL, body,{'headers':headers});
+  create(data: any): Observable<any> {
+    return this.http.post(this.baseURL, data);
   }
 
 }

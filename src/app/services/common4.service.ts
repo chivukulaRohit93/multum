@@ -12,15 +12,11 @@ export class Common4Service {
 
   baseURL: string = "http://localhost:8080/api/reg1";
 
-  getPeople(): Observable<Person4[]> {
-    console.log('getPeople '+this.baseURL);
-    return this.http.get<Person4[]>(this.baseURL);
+  getAll1(): Observable<any> {
+    return this.http.get(this.baseURL);
   }
 
-  addPerson(person4:Person4): Observable<any> {
-    const headers = { 'content-type': 'application/json'}  
-    const body=JSON.stringify(person4);
-    console.log(body);
-    return this.http.post(this.baseURL, body,{'headers':headers});
+  create1(data: any): Observable<any> {
+    return this.http.post(this.baseURL, data);
   }
 }

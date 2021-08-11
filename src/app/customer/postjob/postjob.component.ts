@@ -74,19 +74,27 @@ export class PostjobComponent implements OnInit {
   }
 
   refreshPeople() {
-    this.common5Service.getPeople()
-      .subscribe(data => {
-        console.log(data);
-        this.people=data;
-      });      
+    this.common5Service.getAll()
+      .subscribe(
+        data => {
+          this.people = data;
+          console.log(data);
+        },
+        error => {
+          console.log(error);
+        });      
  
   }
  
   addPerson() {
-    this.common5Service.addPerson(this.person)
-      .subscribe(data => {
-        console.log(data);
-        this.refreshPeople();
+    this.common5Service.create(this.person)
+    .subscribe(
+      response => {
+        console.log(response);
+      //  this.submitted = true;
+      },
+      error => {
+        console.log(error);
       });      
 
       this.submitted = true;

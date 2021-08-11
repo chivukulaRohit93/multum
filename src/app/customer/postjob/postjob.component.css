@@ -139,7 +139,12 @@ bottom:0;
     display:flex;
 }
 
-
+input.ng-touched{
+    border:1px solid #dc3545;
+  }
+  input.ng-valid{
+    border:1px solid #ced4da;
+  }
 
 .bg-color{
     background-color:#f9f9f9;

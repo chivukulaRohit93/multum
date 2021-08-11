@@ -1,4 +1,4 @@
 export class person3 {
-    username!: string;
-    password!: string;
+    username1!: string;
+    password1!: string;
   }

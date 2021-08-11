@@ -17,12 +17,21 @@
   <div class = "width1 p-1 position1" [class.width] = "!showing ? 'width' :'!width'">
     <div class = "box1">  
     <i (click) = "toggle1()" class="fas fa-align-left" aria-hidden="true"></i>
-    <div (click) = "toggle()" class = "pull-right dropdown-toggle relative1"> <img class = "img1" src = "assets/Images/user.png" /> <b> Wayne Mills </b>
+    <!-- <div (click) = "toggle()" class = "pull-right dropdown-toggle relative1"> <img class = "img1" src = "assets/Images/user.png" /> <b> Wayne Mills </b>
     <ul class = "absolute1">
       <li *ngIf = "show" [routerLink] = "['/nav','profile']"> <i class="far fa-user-circle"></i> Profile </li>
       <li *ngIf = "show" [routerLink] = "['/nav','settings']"> <i class="fa fa-cog" aria-hidden="true"></i> settings </li>
       <li *ngIf = "show" routerLink = "/login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out </li>
     </ul>
+    </div> -->
+
+    <div class="nav-item dropdown pull-right" dropdown>
+      <a dropdownToggle class="nav-link dropdown-toggle waves-light"> <img class = "img1" src = "assets/Images/user.png" /> <b> Wayne Mills </b> <span class="caret"></span></a>
+      <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+          <a class="dropdown-item waves-light" [routerLink] = "['/nav','profile']"> <i class="far fa-user-circle"></i> Profile </a>
+          <a class="dropdown-item waves-light" [routerLink] = "['/nav','settings']"> <i class="fa fa-cog" aria-hidden="true"></i> settings </a>
+          <a class="dropdown-item waves-light" routerLink = "/login"> <i class="fa fa-sign-out" aria-hidden="true"></i> Log Out </a>
+      </div>
     </div>
   </div>
   <router-outlet></router-outlet>

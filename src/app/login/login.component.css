@@ -24,6 +24,13 @@ li a{
         height:750px;
     }
 
+    input.ng-touched{
+        border:1px solid #dc3545;
+      }
+      input.ng-valid{
+        border:1px solid #ced4da;
+      }
+
      .bg-image2{
        background-image: url('src/assets/Images/login-img.jpg');
        background-size: cover;
