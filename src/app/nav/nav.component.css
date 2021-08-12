@@ -181,8 +181,7 @@ background-color: #431A28;
     border-radius:50%;
 }
 
-.relative1{
-    position: relative;
+.dropdown{
     cursor:pointer;
 }
 
@@ -229,6 +228,7 @@ background-color: #431A28;
     }
     .sidenav.active2 {
         margin-left: 0 !important;
+        height:auto;
     }
     .dropdown-menu{
         margin-left:-12px;
