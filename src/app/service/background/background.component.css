@@ -31,7 +31,7 @@ b{
 
 
     .text1{
-        width: 100%;
+        width: 50%;
         border:2px solid #ddd;
         border-radius: 10px;
         height: 35px;
@@ -93,6 +93,7 @@ ul.disc li{
     padding:15px;
     border-radius:15px;
     margin-top:10px;
+    line-height: 45px;
 }
 
 .relative1{

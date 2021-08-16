@@ -47,6 +47,10 @@ hr{
     font-weight:600;
 }
 
+.line1{
+    line-height:30px;
+}
+
 ul li{
     list-style:none;
     color:#ddd;
@@ -120,6 +124,7 @@ ul.disc li{
 .img2{
     width:100px;
     border-radius:50%;
+    margin-top:45px;
 }
 
 .relative1{

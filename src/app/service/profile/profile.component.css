@@ -25,6 +25,15 @@
     color:darkgrey;
 }
 
+.line1{
+    line-height: 30px;
+}
+
+.line2{
+    margin-top:25px;
+    line-height: 35px;
+}
+
 .font1{
     font-weight:600;
 }
@@ -112,6 +121,7 @@ h4{
 .img2{
     width:100px;
     border-radius:50%;
+    margin-top:45px;
 }
 
 .relative1{
@@ -129,6 +139,7 @@ h4{
 }
 .img2{
     display:block;
+    margin-top:0px;
 }
 .pull-left{
     float:none;

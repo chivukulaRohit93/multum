@@ -16,6 +16,7 @@
 
 .flex1{
     display: flex;
+    justify-content: space-evenly;
 }
 
 .puul-right{
@@ -34,17 +35,68 @@
     font-weight: bold;
 }
 
+.ml-7{
+    margin-left:100px;
+}
+
+.ml-8{
+    margin-left:90px;
+}
+
+.ml-10{
+    margin-left:88px;
+}
+
+.ml-9{
+    margin-left:50px;
+}
+
+.ml-11{
+    margin-left:20px;
+}
+
+.ml-12{
+    margin-left:70px;
+}
+
 /* Media Queries */
 
 @media (min-width:320px) and (max-width:998px){
     .flex1{
         display: block;
     }
-    .none{
-        display: none;
+    
+    .ml-7{
+        margin-left:0px;
+        display: block;
     }
     
-    .none1{
+    .ml-8{
+        margin-left:0px;
+        display: block;
+    }
+    
+    .ml-10{
+        margin-left:0px;
+        display: block;
+    }
+    
+    .ml-9{
+        margin-left:0px;
+        display: block;
+    }
+    
+    .ml-11{
+        margin-left:0px;
+        display: block;
+    }
+    
+    .ml-12{
+        margin-left:0px;
+        display: block;
+    }
+    .ml-13{
+        margin-left:0px;
         display: block;
     }
 }
