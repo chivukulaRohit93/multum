@@ -31,6 +31,11 @@ import { MysettingsComponent } from './customer/mysettings/mysettings.component'
 import { MypastjobsComponent } from './customer/mypastjobs/mypastjobs.component';
 import { MyratingsComponent } from './customer/myratings/myratings.component';
 import { MyloginComponent } from './mylogin/mylogin.component';
+import { Mydescription1Component } from './customer/mydescription1/mydescription1.component';
+import { DescriptionComponent } from './service/description/description.component';
+import { Description1Component } from './service/description1/description1.component';
+import { MydetailsComponent } from './customer/mydetails/mydetails.component';
+import { MyhireComponent } from './customer/myhire/myhire.component';
 
 const routes: Routes = [
   {path:'signup',component:SignupComponent},
@@ -49,7 +54,9 @@ const routes: Routes = [
     {path:'invites',component:InvitesComponent},
     {path:'past',component:PastjobsComponent},
     {path:'contact',component:ContactComponent},
-    {path:'settings',component:SettingsComponent}
+    {path:'settings',component:SettingsComponent},
+    {path:'description',component:DescriptionComponent},
+    {path:'description1',component:Description1Component}
   ]
 },
 {path:'navbar',component:NavbarComponent, children:[
@@ -66,7 +73,11 @@ const routes: Routes = [
   {path:'mysettings',component:MysettingsComponent},
   {path:'mypastjobs',component:MypastjobsComponent},
   {path:'create',component:CreateaccComponent},
-  {path:'myratings',component:MyratingsComponent}
+  {path:'myratings',component:MyratingsComponent},
+  {path:'mydescription1',component:Mydescription1Component},
+  {path:'mydetails',component:MydetailsComponent},
+  {path:'myhire',component:MyhireComponent}
+
 ]
 },
   {path:'', redirectTo:'/login', pathMatch:'full' }

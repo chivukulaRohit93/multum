@@ -11,7 +11,7 @@ export class Common1Service {
 
   constructor(private http: HttpClient) { }
 
-  baseURL: string = "http://localhost:8080/api/users";
+  baseURL: string = "http://localhost:8080/multum/api/users";
 
   getAll(): Observable<any> {
     return this.http.get(this.baseURL);

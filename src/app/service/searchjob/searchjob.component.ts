@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-searchjob',
@@ -9,6 +9,7 @@ export class SearchjobComponent implements OnInit {
 
   showing:boolean = false;
   searchterm!:any;
+  public isCollapsed = true;
   constructor() { }
 
   ngOnInit(): void {

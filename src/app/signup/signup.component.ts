@@ -7,6 +7,7 @@ import { Person4 } from 'src/app/person4';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MustMatch } from 'src/app/services/mustmatch';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-signup',
@@ -25,7 +26,9 @@ export class SignupComponent implements OnInit {
   person:any = new Person();
   people4!: Person4[];
   person4:any = new Person4();
-  message: any = '';
+  usertype!:string;
+  usertype1!:string;
+ // message: any = '';
   
   constructor(private formBuilder: FormBuilder,private http:HttpClient,private commonService:Common3Service,private common4Service:Common4Service, private route:Router) { }
 
@@ -33,32 +36,37 @@ export class SignupComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      emailId: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required],
-      phone:['',[Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
-      dateofbirth:['',Validators.required],
-      zipcode:['',Validators.required],
-      acceptTerms: [false, Validators.requiredTrue]
+      phoneNumber:['',[Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
+      dob:['',Validators.required],
+      zipCode:['',Validators.required],
+      acceptTerms: [false, Validators.requiredTrue],
+      userType:[{value: '', disabled:true}]
 
     }, {
       validator: MustMatch('password', 'confirmPassword')
   });
 
       this.registerForm1 = this.formBuilder.group({
-        firstName1: ['', Validators.required],
-        lastName1: ['', Validators.required],
-        email1: ['', [Validators.required, Validators.email]],
-        password1: ['',  [Validators.required, Validators.minLength(6)]],
-        confirmPassword1: ['', Validators.required],
-        phone1:['', [Validators.required,Validators.pattern("^[0-9]*$"), Validators.maxLength(10), Validators.minLength(10)]],
-        zipcode1:['',Validators.required],
-        acceptTerms1: [false, Validators.requiredTrue],
-        privacy: [false, Validators.requiredTrue]
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        emailId: ['', [Validators.required, Validators.email]],
+        password: ['',  [Validators.required, Validators.minLength(6)]],
+        confirmPassword: ['', Validators.required],
+        phoneNumber:['', [Validators.required,Validators.pattern("^[0-9]*$"), Validators.maxLength(10), Validators.minLength(10)]],
+        dob:['',Validators.required],
+        zipCode:['',Validators.required],
+        acceptTerms: [false, Validators.requiredTrue],
+        userType:[{value: '', disabled:true}]
       }, {
-        validator: MustMatch('password1', 'confirmPassword1')
+        validator: MustMatch('password', 'confirmPassword')
     });
 
+    this.usertype = "SERVICE_PROVIDER";
+    this.usertype1 = "CUSTOMER";
+    
   this.refreshPeople();
   this.refreshPeople1();
   }
@@ -68,10 +76,10 @@ export class SignupComponent implements OnInit {
       .subscribe(
         data => {
           this.people = data;
-          console.log(data.message);
+          console.log(data);
         },
         error => {
-          console.log(error.message);
+          console.log(error);
         });    
  
   }
@@ -80,7 +88,7 @@ export class SignupComponent implements OnInit {
     .subscribe(
       data => {
         this.people4 = data;
-        console.log(data.message);
+        console.log(data);
       },
       error => {
         console.log(error);
@@ -90,24 +98,30 @@ export class SignupComponent implements OnInit {
  
   addPerson() {
     this.submitted = true;
-
+    
     // stop here if form is invalid
     if (this.registerForm.invalid) {
         return;
     }
+    this.registerForm.controls["userType"].setValue("SERVICE_PROVIDER");
+    console.log(this.person.dob);
+    const date = new Date(this.person.dob);
+this.person.dob = moment(date).format('MM/DD/YYYY');
+
     this.commonService.create(this.person)
       .subscribe((Response: any) => {
            console.log(Response);
+
            this.route.navigate(['/nav','history']);
         
         },
       ( error: any) => {
-          console.log(error.error['message']);
-          this.message = error.error['message'];
-          console.log(this.message);
-        //  this.submitted = false;
+          console.log(error);
+          // this.message = error.error['message'];
+          // console.log(this.message);
+
         });
-     this.message = '';   
+    // this.message = '';   
   }
 
   addPerson1() {
@@ -116,6 +130,9 @@ export class SignupComponent implements OnInit {
     if (this.registerForm1.invalid) {
       return;
     }
+    this.registerForm1.controls["userType"].setValue("CUSTOMER");
+    const date = new Date(this.person4.dob);
+    this.person4.dob = moment(date).format('MM/DD/YYYY');
     this.common4Service.create1(this.person4)
     .subscribe((Response: any) => {
       console.log(Response);
@@ -123,12 +140,13 @@ export class SignupComponent implements OnInit {
     },
     ( error: any) => {
       console.log(error);
-      this.message = error.error['message'];
-          console.log(this.message);
-          this.submitted1 = false;
+      // this.message = error.error['message'];
+      //     console.log(this.message);
+      
     });
         
-    this.message = '';
+   // this.message = '';
+
   }
   
   // usernameValidator(): AsyncValidatorFn {

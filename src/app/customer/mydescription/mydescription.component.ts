@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input } from '@angular/core';
 
 @Component({
   selector: 'app-mydescription',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./mydescription.component.css']
 })
 export class MydescriptionComponent implements OnInit {
+
+  @Input() message:any = [];
 
   p: number = 1;
   collection = [

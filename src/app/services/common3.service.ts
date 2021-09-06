@@ -13,7 +13,7 @@ export class Common3Service {
 
   constructor(private http: HttpClient) { }
 
-   baseURL: string = "http://localhost:8080/api/registers";
+   baseURL: string = "http://localhost:8080/multum/api/users";
 
   getAll(): Observable<any> {
     return this.http.get(this.baseURL);

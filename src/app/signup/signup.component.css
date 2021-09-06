@@ -7,6 +7,9 @@
     display:block;
     width:35%;
     }
+    .none1{
+        display: none;
+    }
 li{
     float:left;
 }
@@ -18,7 +21,7 @@ li a{
 
 .bg-image{
     background-image:url("src/assets/Images/login-img.jpg");
-    height:1050px;
+    height:1100px;
     background-size:cover;
     }
 

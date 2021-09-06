@@ -24,7 +24,7 @@
            <h2 class = "font1"> My Jobs </h2>
          <div *ngFor = "let item of collection| paginate: { itemsPerPage: 3, currentPage: p }" class = "box2 row">
             <div class = "col-sm-9">
-             <h4 class = "color3"> {{ item.JobName }} </h4>
+             <h4 [routerLink] = "['/nav','description1']" class = "color3 col-sm-2 p-0"> {{ item.JobName }} </h4>
              <p> {{ item.description }} </p>
 
             </div>  

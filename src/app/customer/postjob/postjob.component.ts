@@ -3,6 +3,7 @@ import { Common5Service } from 'src/app/services/common5.service';
 import { Person2 } from 'src/app/person2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-postjob',
   templateUrl: './postjob.component.html',
@@ -15,8 +16,6 @@ export class PostjobComponent implements OnInit {
   people!: Person2[];
   person:any = new Person2();
   submitted = false;
-  myDate!: Date;
-  timepicker!:Date;
   tab : any = 'tab1';
   tab1 : any;
   tab2 : any;
@@ -38,12 +37,22 @@ export class PostjobComponent implements OnInit {
 
   }
 
+  public listItems: Array<Number> = [
+    90,
+    100,
+    200,
+    250,
+    300,
+    400
+  ];
+
   get f() { return this.reviewForm.controls; }
 
   formValidation(){
     this.jobForm = this.formBuilder.group({
       jobtitle: ['', Validators.required],
       dateneedstoknow: ['', Validators.required],
+      timeneedstobedone: ['', Validators.required],
       pickupaddress: ['', Validators.required],
       pickupaddress1: ['', Validators.required],      
       pickupaddress2: ['', Validators.required],

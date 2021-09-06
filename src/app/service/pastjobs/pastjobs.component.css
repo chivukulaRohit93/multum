@@ -13,6 +13,7 @@
 .color1{
     color:#b24a68;
     font-weight: bold;
+    cursor:pointer;
 }
 
 .align1{
@@ -20,7 +21,7 @@
     margin-left:auto;
     margin-right:auto;
     display:block;
-    width:550px;
+    width:450px;
 }
 
 h4{

@@ -1,11 +1,15 @@
+
+
 export class Person {
-  firstname!: string;
-      lastname!: string;
-      email!: string;
+  firstName!: string;
+  middleName!:string;
+      lastName!: string;
+      emailId!: string;
       password!: string;
       confirmPassword!: string;
-      phone!:string;
-      dateofbirth!:string;
-      zipcode!:string;
+      phoneNumber!:string;
+      dob!:String;
+      zipCode!:string;
       acceptTerms!: boolean;
+      userType!:string;
 }

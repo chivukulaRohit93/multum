@@ -64,7 +64,9 @@
     margin-left:60px;
 }
 
-
+.width1{
+width:100%;
+}
 
 .text2{
     width: 100%;
@@ -129,6 +131,10 @@ bottom:0;
 
 .top1{
     margin-top:20px;
+}
+
+.top3{
+    margin-top:-15px;
 }
 
 .flex1{
@@ -196,7 +202,7 @@ hr{
     padding:15px;
     border-radius:15px;
     margin-top:35px;
-    height:500px;
+    height:540px;
 }
 
 .box3{
@@ -219,12 +225,12 @@ hr{
     line-height:40px;
 }
 
-.none{
-    display: block;
+.top2{
+    margin-top:-5px;
 }
 
-.none1{
-    display: none;
+.btn-link{
+    color: #007bff !important;
 }
 
 /* Progrees bar css */
@@ -326,7 +332,10 @@ hr{
         height: 1800px;
     }
     .box2{
-        height: 800px;
+        height: 925px;
+    }
+    .btn{
+        margin-top:20px;
     }
     .box3{
         height:500px;
@@ -339,6 +348,16 @@ hr{
     }
     .text-center{
         text-align:left !important;
+    }
+    .top2{
+        margin-top:0px;
+    }
+    .top3{
+        margin-top:0px !important;
+    }
+    .ml{
+        padding:0px;
+        margin-left:0px;
     }
     .ml-6{
         margin-left:0px !important;

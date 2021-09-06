@@ -10,7 +10,7 @@ export class Common2Service {
 
   constructor(private http:HttpClient) { }
 
-  baseURL: string = "http://localhost:8080/api/user1";
+  baseURL: string = "http://localhost:8080/multum/api/users";
 
   getAll1(): Observable<any> {
     return this.http.get(this.baseURL);

@@ -5,7 +5,7 @@
     </div>
     <ng-template #content let-modal>
       <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">Add History</h4>
+        <h4 class="modal-title" id="modal-basic-title"><b> Add History </b></h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -13,8 +13,10 @@
       <div class="modal-body">
         <div> Add Job Description </div>
         <input type = "text" class = "text1" />
+        <br /><br />
         <div> Date </div>
-        <input type = "text" class = "text1" value = "10/10/1980" />
+        <input bsDatepicker formControlName="date" [bsConfig]="{containerClass:'theme-blue'}" placeholder=" Specify date" class = "text1" [(ngModel)] = "date" />
+        <br /><br />
         <p> Write 100 characters to explain why they are Adding </p>
         <textarea class = "textarea" name="" id="" cols="30" rows="10" placeholder="Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text

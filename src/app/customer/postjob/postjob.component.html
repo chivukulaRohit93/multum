@@ -43,7 +43,7 @@
      <div [formGroup]="jobForm" class = "box2">
             <h3> Order Description </h3>
             <div class = "flex1">
-                <div class = "col-sm-5 ml-0 p-0">
+                <div class = "col-sm-4 ml-0 p-0">
                     <label> Job Title </label>
                     <br />
                     <input type = "text" formControlName="jobtitle" placeholder = "Job Title" class = "text1" [ngClass]="{ 'is-invalid': submitted && f.jobtitle.errors }" [(ngModel)] = "person.jobtitle" />
@@ -51,23 +51,28 @@
                         <div *ngIf="f.jobtitle.errors.required">Job Title is required</div>
                     </div>
                 </div>
-                <div class = "col-sm-5 ml-10">
-                    <!-- <label> Date Job needs to be done: </label>
+                <div class = "col-sm-4 ml">
+                    <label> Date Job needs to be done: </label>
                     <br />
-                    <input type = "text" bsDatepicker formControlName="dateneedstoknow" [bsConfig]="{containerClass:'theme-blue'}" placeholder=" Specify date" class = "text1" [(ngModel)] = "person.dateneedstoknow" /> -->
+                    <input type = "text" bsDatepicker formControlName="dateneedstoknow" [bsConfig]="{containerClass:'theme-blue'}" placeholder=" Specify date" class = "text1" [(ngModel)] = "person.dateneedstoknow" />
 
-                    <label for="dateneedstoknow">Date Job needs to be done:</label>
-                    <br />
-                    <app-date-time-picker formControlName="dateneedstoknow" name = "dateneedstoknow" [ngClass]="{ 'is-invalid': submitted && f.dateneedstoknow.errors }" placeholder=" Specify date" class = "" [(ngModel)] = "person.dateneedstoknow"></app-date-time-picker>  
                     <div *ngIf="submitted && f.dateneedstoknow.errors" class="invalid-feedback">
                         <div *ngIf="f.dateneedstoknow.errors.required">Job Title is required</div>
                     </div>
+                    <br />
+                    <!-- <app-date-time-picker formControlName="dateneedstoknow" name = "dateneedstoknow" [ngClass]="{ 'is-invalid': submitted && f.dateneedstoknow.errors }" placeholder=" Specify date" class = "" [(ngModel)] = "person.dateneedstoknow"></app-date-time-picker>  
+                    <div *ngIf="submitted && f.dateneedstoknow.errors" class="invalid-feedback">
+                        <div *ngIf="f.dateneedstoknow.errors.required">Job Title is required</div>
+                    </div> -->
                 </div>
-                <!-- <div class = "col-sm-4">
+                <div class = "col-sm-4">
                     <label> Time Job needs to be done: </label>
                     <br />
-                        <timepicker formControlName="timeneedstobedone" placeholder="Specify time" [(ngModel)] = "person.timeneedstobedone"></timepicker>
-                </div> -->
+                    <kendo-timepicker class ="width1" formControlName="timeneedstobedone" placeholder="Specify time" [(ngModel)] = "person.timeneedstobedone"></kendo-timepicker>
+                        <div *ngIf="submitted && f.timeneedstobedone.errors" class="invalid-feedback">
+                            <div *ngIf="f.timeneedstobedone.errors.required">Job Time is required</div>
+                        </div>
+                </div>
             </div>
             
             <div class = "clearfix"></div>
@@ -139,13 +144,16 @@
             <div class = "flex1">
             <div class = "col-sm-6 p-0">
                 <h3 class = "color4"> Choose price for the job </h3>
-            <select required value="Select a value" class = "text1 col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice">
+            <!-- <select required value="Select a value" class = "text1 col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice">
                  <option> Select Default Value </option> 
                 <option> 100 </option>
                 <option> 200 </option>
                 <option> 300 </option>
                 <option> 400 </option>
-            </select>
+            </select> -->
+
+            <kendo-dropdownlist class = "col-sm-9" formControlName="chooseprice" [(ngModel)] = "person.chooseprice" [data]="listItems" [value]="'90'">
+            </kendo-dropdownlist>
 
         
             </div>
@@ -153,13 +161,13 @@
                 <h3 class = "color4"> Job Cost Summary </h3>
                 <div class = "bg-color">
                     <span> Job Budget </span>
-                    <span class = "pull-right"> $ 90.00 </span>
+                    <span class = "pull-right"> {{ person.chooseprice }} </span>
                     <br />
                     <span> Service Fee(10%) </span>
                     <span class = "pull-right"> $ 10.00 </span>
                     <br />
                     <b> Total </b>
-                    <b class = "pull-right"> $ 100.00 </b>
+                    <b class = "pull-right"> {{ person.chooseprice + person.chooseprice * 10  /100 }} </b>
                     <br />
                     <div class ="clearfix"></div>
                     
@@ -192,7 +200,7 @@
                         <br />
                         <div class = "bg-color line2">
                             <span> Price </span>
-                            <b class = "text-center ml-11">  $100.00 </b>
+                            <b class = "text-center ml-11">  {{ person.chooseprice + person.chooseprice * 10  /100 }} </b>
                             <br />
                             <span> Pickup Address </span>
                             <b class = "text-center ml-6"> {{ person.pickupaddress }} <br />
@@ -208,7 +216,7 @@
                             <b class = "text-center ml-31"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
                             <br />
                             <span class = "ml-6"> Time </span>
-                            <b class = "text-center ml-31"> {{ person.dateneedstoknow | date: "hh:mm:ss" }} </b>
+                            <b class = "text-center ml-31"> {{ person.timeneedstobedone | date: "hh:mm:ss" }} </b>
                         </div>
                     </div>
     
@@ -217,7 +225,7 @@
                         <br />
                         <div class = "bg-color">
                             <span class = "ml-6"> Job Budget </span>
-                            <b class = "ml-8"> $90.00 </b>
+                            <b class = "ml-8"> {{ person.chooseprice }} </b>
                             <br />
                             <span class = "ml-6"> Pickup Address </span>
                             <b class = "ml-6"> {{ person.pickupaddress }} <br />
@@ -225,13 +233,13 @@
                                 <span class = "ml-9"> {{ person.pickupaddress2 }} </span> </b>
                             <br />
                             <span class = "ml-6"> Total </span>
-                            <b class = "ml-10"> $100.00 </b>
+                            <b class = "ml-10"> {{ person.chooseprice + person.chooseprice * 10  /100 }} </b>
                             <br />
                             <span class = "ml-6"> Date </span>
                             <b class = "ml-10"> {{ person.dateneedstoknow | date: "MM-dd-yyyy" }} </b>
                             <br />
                             <span class = "ml-6"> Time </span>
-                            <b class = "ml-10"> {{ person.dateneedstoknow | date: "hh:mm:ss" }} </b>
+                            <b class = "ml-10"> {{ person.timeneedstobedone | date: "hh:mm:ss" }} </b>
                         </div>
                         <br />
                         <h3 class ="color4"> Credit Card Information </h3>

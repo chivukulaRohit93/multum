@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { NumericTextBoxModule } from '@progress/kendo-angular-inputs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HistoryComponent } from './service/history/history.component';
 import { BackgroundComponent } from './service/background/background.component';
@@ -22,6 +23,7 @@ import { ReviewComponent } from './service/review/review.component';
 import { JobsComponent } from './service/jobs/jobs.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { AccordionModule }    from 'ngx-bootstrap/accordion';
 import { HireComponent } from './service/hire/hire.component';
 import { SearchjobComponent } from './service/searchjob/searchjob.component';
 import { JobdetailsComponent } from './service/jobdetails/jobdetails.component';
@@ -49,6 +51,18 @@ import { DateTimePickerComponent } from './date-time-picker/date-time-picker.com
 import { ContactComponent } from './service/contact/contact.component';
 import { SettingsComponent } from './service/settings/settings.component';
 import { MaterialModule } from './material/material.module';
+import {DatePipe} from '@angular/common';
+import { Mydescription1Component } from './customer/mydescription1/mydescription1.component';
+import { DescriptionComponent } from './service/description/description.component';
+import { Description1Component } from './service/description1/description1.component';
+import { MydetailsComponent } from './customer/mydetails/mydetails.component';
+import { MyhireComponent } from './customer/myhire/myhire.component';
+import { InputsModule } from '@progress/kendo-angular-inputs';
+import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
+import { IntlModule } from '@progress/kendo-angular-intl';
+import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+
+
 
 @NgModule({
   declarations: [
@@ -88,7 +102,12 @@ import { MaterialModule } from './material/material.module';
     MyloginComponent,
     DateTimePickerComponent,
     ContactComponent,
-    SettingsComponent
+    SettingsComponent,
+    Mydescription1Component,
+    DescriptionComponent,
+    Description1Component,
+    MydetailsComponent,
+    MyhireComponent
   ],
   imports: [
     BrowserModule,
@@ -102,9 +121,15 @@ import { MaterialModule } from './material/material.module';
     TimepickerModule.forRoot(),
     MDBBootstrapModule.forRoot(),
     NgxPaginationModule,
-    MaterialModule
+    MaterialModule,
+    AccordionModule.forRoot(),
+    IntlModule,
+    DateInputsModule,
+    InputsModule,
+    NumericTextBoxModule,
+    DropDownsModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

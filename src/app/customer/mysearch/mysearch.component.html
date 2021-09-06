@@ -11,24 +11,55 @@
     
     <div class = "flex1">
     <p class = "col-sm-11 t1"> 8 Results Found </p>
-    <div class = "pull-right border1">
+    <div class = "pull-right">
         
-        <div class = "dropdown pull-right nav-item" dropdown>
+        <!-- <div class = "dropdown pull-right nav-item" dropdown>
             <a dropdownToggle class="nav-link dropdown-toggle waves-light"> <i class="fas fa-filter"></i> <b> Filter </b> </a>
           
          <div *dropdownMenu class = "dropdown-menu dropdown box3" role="menu">
-             <div> Job Price </div>
-             <input type = "text" class = "text2" value = "$250" />
              <div> Rating </div>
              <input type = "text" class = "text2" value = "5" />
-             <div> Job Done </div>
-             <input type = "text" class = "text2" value = "Multum" />
-             <div> Location </div>
-             <input type = "text" class = "text2" value = "Washington dc" />
              <br /><br />
+             <div> Zip Code </div>
+             <input type = "text" class = "text2" value = "500000" />
+             <br /><br />
+
              <div class = "btn color5"> Apply </div>
          </div>
-        </div>
+        </div> -->
+        <p>
+            <button type="button" class="btn color2" (click)="isCollapsed = !isCollapsed"
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                    <i class="fas fa-filter"></i>  <b> Filter </b>
+            </button>
+          </p>
+          <div id="collapseExample" [ngbCollapse]="isCollapsed">
+            <div class="card">
+              <div class="card-body">
+                  <div class = "pull-right" (click)="isCollapsed = !isCollapsed"> <i class="far fa-window-close"></i> </div>
+                  <br />
+                <div> <h4> Ratings </h4> </div>
+                        
+                        <kendo-numerictextbox
+                        [value]="value"
+                        [min]="1"
+                        [max]="5"
+                        placeholder = "Enter the Ratings">
+                        </kendo-numerictextbox>
+                        <br /><br />
+                        
+                        
+                        
+                        <div> <h4> Zip Code </h4> </div>
+                        <input type = "text" class = "text2" placeholder = "Enter Zipcode" />
+                        <br /><br />
+                        
+                        
+                        <div class = "btn color2"> Apply </div>
+              </div>
+            </div>
+          </div>
+
     </div>
     </div>
     <div class = "clearfix"></div>
@@ -38,7 +69,7 @@
         <div class = "box2 flex1" *ngFor = "let hotel of result | paginate: { itemsPerPage: 3, currentPage: p }">
             <div class = "col-sm-10">
                 <div class = "flex1">
-                    <h3 class = "color1"> {{hotel.Name}} </h3>
+                    <h3 [routerLink] = "['/navbar','mydetails']" class = "color1 col-sm-2 p-0"> {{hotel.Name}} </h3>
               <i class = "ml-5">
                 <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i>
               </i>
@@ -51,7 +82,7 @@
                 </div>
                 
             </div>
-            <div [routerLink] = "['/nav','invites']" class = "btn color6"> Invite a Job </div>
+            <div [routerLink] = "['/navbar','myhire']" class = "btn color6"> Invite to Job </div>
         </div>
 
         <div class ="align1">

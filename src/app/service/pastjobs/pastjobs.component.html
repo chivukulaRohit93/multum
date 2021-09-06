@@ -2,7 +2,7 @@
     <div class ="col-sm-12">
         <h4 class = "top1 font1"> Past Jobs </h4>
         <div *ngFor = "let item of collection| paginate: { itemsPerPage: 3, currentPage: p }" class = "box2">
-            <h4 class = "color1"> {{ item.JobName }} </h4>
+            <h4 [routerLink] = "['/nav','description']" class = "color1 col-sm-2 p-0"> {{ item.JobName }} </h4>
             <p> {{ item.description }} </p>
             <div class = "flex1">
                 <h4> Date : {{ item.date  }} </h4> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
