@@ -17,12 +17,15 @@
     "resolveJsonModule": true,
     "strictNullChecks": true,
     "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "types": ["resize-observer-browser"],
     "module": "es2020",
     "lib": [
       "es2018",
       "dom"
     ]
   },
+  "include": ["src", "@types"],
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
