@@ -10,7 +10,7 @@ export class Common5Service {
 
   constructor(private http: HttpClient) { }
 
-  baseURL: string = "http://localhost:8080/api/post";
+  baseURL: string = "http://localhost:8080/multum/api/jobs";
 
   getAll(): Observable<any> {
     return this.http.get(this.baseURL);

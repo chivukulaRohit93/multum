@@ -1,13 +1,22 @@
 export class Person4 {
+    // static id(id: any) {
+    //   throw new Error('Method not implemented.');
+    // }
+    id?:number;
     firstName!: string;
-    middlName!: string;
+    middleName!: string;
     lastName!: string;
     emailId!:string;
     password!:string;
     confirmPassword!:string;
     phoneNumber!:string;
     dob!:string;
-    zipCode!:string;
+    homeAddress!: {
+      zipCode:Number;
+    }
     acceptTerms!:boolean;
     userType!:string;
+    role!: {
+      id:any;
+    }
   }

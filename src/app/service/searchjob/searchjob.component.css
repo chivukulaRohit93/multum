@@ -34,6 +34,11 @@
     padding:10px;
 }
 
+.color6{
+    height:40px;
+    margin-top:30px;
+}
+
 :focus{
     outline: -webkit-focus-ring-color auto 0px;
 }

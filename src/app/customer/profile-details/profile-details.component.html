@@ -1,0 +1,23 @@
+<div class = "top1 col-sm-12">
+  <div class = "box2 align3">
+    <h2 class ="text-center color5"> {{ employeeData.firstName }} {{ employeeData.lastName }} Details</h2>
+    <div class = "align2">
+      <label>First Name: </label><br>
+        <input class = "text1" [(ngModel)]="employeeData.firstName" placeholder="First Name"/>
+      <br />
+      <label>Last Name: </label><br>
+        <input class = "text1" [(ngModel)]="employeeData.lastName" placeholder="Last Name"/>
+     <br />
+      <label>Email: </label><br>
+        <input class = "text1" [(ngModel)]="employeeData.emailId" placeholder="Email"/>
+      <br />
+      <label>Phone: </label><br>
+        <input class = "text1" [(ngModel)]="employeeData.phoneNumber" placeholder="Phone Number"/>
+      <br />
+      <label>Zip Code: </label><br>
+        <input class = "text1" [(ngModel)]="employeeData.homeAddress.zipCode" placeholder="ZipCode"/>
+     <br />
+    </div>
+    <button class = "align1 btn-color1" (click)="update()">Update</button>
+  </div>
+</div>

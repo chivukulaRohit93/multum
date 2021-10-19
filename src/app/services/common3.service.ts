@@ -1,8 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { AbstractControl, AsyncValidatorFn } from '@angular/forms';
-import { Observable, of } from 'rxjs';
-import { delay, map } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 import { Person } from 'src/app/person';
 
 @Injectable({
@@ -23,6 +21,13 @@ export class Common3Service {
     return this.http.post(this.baseURL, data);
   }
 
+  update(id: number, personData:any): Observable<Person> {
+    return this.http.put<any>(this.baseURL + '/' + id, JSON.stringify(personData), this.httpOptions);
+  }
+
+  delete(id: any): Observable<any> {
+    return this.http.delete(`${this.baseURL}/${id}`, this.httpOptions);
+  }
 
   // checkIfUsernameExists(email: string): Observable<boolean> {
   //   return of(this.baseURL.includes(email)).pipe(delay(1000));
@@ -32,7 +37,11 @@ export class Common3Service {
     return this.http.get<any[]>(`$(this.baseURL)?email=${email}`);
   }
 
-
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }  
   // getByEmail(email: string): Observable<Person | undefined> {
   //   const user = this.user.find((((user: { email: string; }) => user.email === email)));
   //   return of(user).pipe(delay(500));

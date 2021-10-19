@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Common3Service } from '../services/common3.service';
 import { Person } from 'src/app/person';
 import { Common4Service } from '../services/common4.service';
 import { Person4 } from 'src/app/person4';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { MustMatch } from 'src/app/services/mustmatch';
 import * as moment from 'moment';
@@ -28,9 +28,11 @@ export class SignupComponent implements OnInit {
   person4:any = new Person4();
   usertype!:string;
   usertype1!:string;
+
+  @Output() formvalue = new EventEmitter();
  // message: any = '';
   
-  constructor(private formBuilder: FormBuilder,private http:HttpClient,private commonService:Common3Service,private common4Service:Common4Service, private route:Router) { }
+  constructor(private formBuilder: FormBuilder,private http:HttpClient, private actRoute: ActivatedRoute, private commonService:Common3Service,private common4Service:Common4Service, private route:Router) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
@@ -41,15 +43,20 @@ export class SignupComponent implements OnInit {
       confirmPassword: ['', Validators.required],
       phoneNumber:['',[Validators.required, Validators.pattern("^[0-9]*$"), Validators.minLength(10), Validators.maxLength(10)]],
       dob:['',Validators.required],
-      zipCode:['',Validators.required],
+      homeAddress: this.formBuilder.group({
+        zipCode: ['', [Validators.required]]
+      }),
       acceptTerms: [false, Validators.requiredTrue],
-      userType:[{value: '', disabled:true}]
-
+      userType:['SERVICE_PROVIDER'],
+      role: this.formBuilder.group({
+        id: ['2']
+      }),
     }, {
       validator: MustMatch('password', 'confirmPassword')
   });
 
       this.registerForm1 = this.formBuilder.group({
+        id:[''],
         firstName: ['', Validators.required],
         lastName: ['', Validators.required],
         emailId: ['', [Validators.required, Validators.email]],
@@ -57,9 +64,14 @@ export class SignupComponent implements OnInit {
         confirmPassword: ['', Validators.required],
         phoneNumber:['', [Validators.required,Validators.pattern("^[0-9]*$"), Validators.maxLength(10), Validators.minLength(10)]],
         dob:['',Validators.required],
-        zipCode:['',Validators.required],
+        homeAddress: this.formBuilder.group({
+          zipCode: ['', [Validators.required]]
+        }),
         acceptTerms: [false, Validators.requiredTrue],
-        userType:[{value: '', disabled:true}]
+        userType:['CUSTOMER'],
+        role: this.formBuilder.group({
+          id: ['3']
+        }),
       }, {
         validator: MustMatch('password', 'confirmPassword')
     });
@@ -69,14 +81,30 @@ export class SignupComponent implements OnInit {
     
   this.refreshPeople();
   this.refreshPeople1();
+  this.refreshpeople2();
+  
+
   }
 
   refreshPeople() {
     this.commonService.getAll()
       .subscribe(
         data => {
-          this.people = data;
-          console.log(data);
+
+          for(var i=0;i<=data.length;i++){
+            if(data[i].homeAddress) {
+              this.people = data[i];
+              break;
+            }
+          }
+          for(var i=0;i<=data.length;i++){
+            if(data[i].role) {
+              this.people = data[i];
+              break;
+            }
+          }
+          console.log(('people data'))
+          console.log(this.people);
         },
         error => {
           console.log(error);
@@ -87,13 +115,37 @@ export class SignupComponent implements OnInit {
     this.common4Service.getAll1()
     .subscribe(
       data => {
-        this.people4 = data;
-        console.log(data);
+        for(var i=0;i<=data.length;i++){
+          if(data[i].homeAddress) {
+            this.people4 = data[i];
+            break;
+          }
+        }
+        for(var i=0;i<=data.length;i++){
+          if(data[i].role) {
+            this.people4 = data[i];
+            break;
+          }
+        }
+        console.log(this.people4);
       },
       error => {
         console.log(error);
       });        
  
+  }
+
+  refreshpeople2(){
+    this.common4Service.findById(this.actRoute.snapshot.params.id)
+    .subscribe(
+      (data: Person4) => {
+        
+        console.log(this.person4);
+        this.person4 = data;
+      },
+      error => {
+        console.log(error);
+      });    
   }
  
   addPerson() {
@@ -103,14 +155,16 @@ export class SignupComponent implements OnInit {
     if (this.registerForm.invalid) {
         return;
     }
-    this.registerForm.controls["userType"].setValue("SERVICE_PROVIDER");
-    console.log(this.person.dob);
-    const date = new Date(this.person.dob);
-this.person.dob = moment(date).format('MM/DD/YYYY');
+    console.log('form data');
+    // this.registerForm.controls["userType"].setValue("SERVICE_PROVIDER");
+    console.log(this.registerForm.value.dob);
+    const date = new Date(this.registerForm.value.dob);
+this.registerForm.value.dob = moment(date).format('MM/DD/YYYY');
 
-    this.commonService.create(this.person)
+    this.commonService.create(this.registerForm.value)
       .subscribe((Response: any) => {
            console.log(Response);
+           console.log(this.registerForm.value);
 
            this.route.navigate(['/nav','history']);
         
@@ -131,12 +185,13 @@ this.person.dob = moment(date).format('MM/DD/YYYY');
       return;
     }
     this.registerForm1.controls["userType"].setValue("CUSTOMER");
-    const date = new Date(this.person4.dob);
+    const date = new Date(this.registerForm1.value.dob);
     this.person4.dob = moment(date).format('MM/DD/YYYY');
-    this.common4Service.create1(this.person4)
+    this.common4Service.create1(this.registerForm1.value)
     .subscribe((Response: any) => {
       console.log(Response);
-      this.route.navigate(['/navbar','myprofile']);
+      this.formvalue.emit(this.registerForm1.value);
+      this.route.navigate(['/navbar','profile1']);
     },
     ( error: any) => {
       console.log(error);

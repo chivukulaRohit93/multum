@@ -61,6 +61,13 @@ import { InputsModule } from '@progress/kendo-angular-inputs';
 import { DateInputsModule } from "@progress/kendo-angular-dateinputs";
 import { IntlModule } from '@progress/kendo-angular-intl';
 import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
+import { MypostComponent } from './customer/mypost/mypost.component';
+import { ProfileDetailsComponent } from './customer/profile-details/profile-details.component';
+import { AmazingTimePickerModule } from 'amazing-time-picker';
+import { ServiceProfileEditComponent } from './service/service-profile-edit/service-profile-edit.component';
+import { ServiceProfile1Component } from './service/service-profile1/service-profile1.component';
+
+
 
 
 
@@ -107,7 +114,11 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
     DescriptionComponent,
     Description1Component,
     MydetailsComponent,
-    MyhireComponent
+    MyhireComponent,
+    MypostComponent,
+    ProfileDetailsComponent,
+    ServiceProfileEditComponent,
+    ServiceProfile1Component
   ],
   imports: [
     BrowserModule,
@@ -127,9 +138,10 @@ import { DropDownsModule } from '@progress/kendo-angular-dropdowns';
     DateInputsModule,
     InputsModule,
     NumericTextBoxModule,
-    DropDownsModule
+    DropDownsModule,
+    AmazingTimePickerModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe , MaterialModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

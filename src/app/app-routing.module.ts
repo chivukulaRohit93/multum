@@ -21,7 +21,6 @@ import { MydescriptionComponent } from './customer/mydescription/mydescription.c
 import { MyjobsComponent } from './customer/myjobs/myjobs.component';
 import { MyprofileComponent } from './customer/myprofile/myprofile.component';
 import { MyreviewsComponent } from './customer/myreviews/myreviews.component';
-import { PostjobComponent } from './customer/postjob/postjob.component';
 import { Profile1Component } from './customer/profile1/profile1.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MymessageComponent } from './customer/mymessage/mymessage.component';
@@ -36,15 +35,23 @@ import { DescriptionComponent } from './service/description/description.componen
 import { Description1Component } from './service/description1/description1.component';
 import { MydetailsComponent } from './customer/mydetails/mydetails.component';
 import { MyhireComponent } from './customer/myhire/myhire.component';
+import { MypostComponent } from './customer/mypost/mypost.component';
+import { PostjobComponent } from './customer/postjob/postjob.component';
+import { ProfileDetailsComponent } from './customer/profile-details/profile-details.component';
+import { ServiceProfile1Component } from 'src/app/service/service-profile1/service-profile1.component';
+import { ServiceProfileEditComponent } from 'src/app/service/service-profile-edit/service-profile-edit.component';
 
 const routes: Routes = [
   {path:'signup',component:SignupComponent},
   {path:'login',component:LoginComponent},
   {path:'mylogin',component:MyloginComponent},
+  {path:'profile-edit/:id',component:ProfileDetailsComponent},
+  {path:'service-profile-edit/:id',component:ServiceProfileEditComponent},  
   {path:'nav',component:NavComponent, children:[
     {path:'history',component:HistoryComponent},
     {path:'background',component:BackgroundComponent},
     {path:'profile',component:ProfileComponent},
+    {path:'profile1',component:ServiceProfile1Component},
     {path:'review',component:ReviewComponent},
     {path:'jobs',component:JobsComponent},
     {path:'hire',component:HireComponent},

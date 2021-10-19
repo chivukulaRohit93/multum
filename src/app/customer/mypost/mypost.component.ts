@@ -1,19 +1,16 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Common5Service } from 'src/app/services/common5.service';
 import { Person2 } from 'src/app/person2';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import * as moment from 'moment';
-import { DatePipe , formatDate } from '@angular/common';
-
-
-
+import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-postjob',
-  templateUrl: './postjob.component.html',
-  styleUrls: ['./postjob.component.css']
+  selector: 'app-mypost',
+  templateUrl: './mypost.component.html',
+  styleUrls: ['./mypost.component.css']
 })
-export class PostjobComponent implements OnInit {
+export class MypostComponent implements OnInit {
 
   viewmode = "hired";
   color:boolean = false;
@@ -29,6 +26,9 @@ export class PostjobComponent implements OnInit {
   tab4 : any;
   tab5 : any;
   jobForm!: FormGroup;
+  personalForm!: FormGroup;
+  priceForm!:FormGroup;
+  reviewForm!:FormGroup;
   price = this.person.price;
   serviceFee = '';
   multumFee = '';
@@ -97,13 +97,12 @@ export class PostjobComponent implements OnInit {
 
   get f2() { return this.jobForm.get('review'); }
 
-  priceChange($event: any){
-    
-    this.person.price = $event.substring($event.lastIndexOf(':') + 1);
-    // console.log(this.person.price);
-     this.person.serviceFee = this.person.price * 90/100;
-    this.person.multumFee = this.person.price * 10/100;
-    this.person.totalPrice = this.person.price;
+  priceChange(price: number){
+    console.log(price);
+    this.price = price;
+    this.person.serviceFee = price * 90/100;
+    this.person.multumFee = price * 10/100;
+    this.person.totalPrice = price;
   }
 
 
@@ -174,30 +173,23 @@ export class PostjobComponent implements OnInit {
 
   onClick(check:any){
     //    console.log(check);
-    if(this.f.valid){
-      if(check==1){
-        this.tab = 'tab1';
-        }
-      else if(this.f.valid){
-        if(check==2){
+        if(check==1){
+          this.tab = 'tab1';
+        }else if(check==2){
           this.tab = 'tab2';
-        }
-      
-      else if(this.f1.valid){
-        if(check==3){
+        }else if(check==3){
           this.tab = 'tab3';
         }
-      }  
-    }
-  }
+        else if(check==4){
+          this.tab = 'tab4';
+        }
+        else{
+          this.tab = 'tab5';
+        }
 
     }
 
 
-
-
-
-
+    
 
 }
-

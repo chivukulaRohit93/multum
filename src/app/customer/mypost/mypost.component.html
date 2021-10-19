@@ -39,7 +39,7 @@
 <br />
 
 <div class = "center1" [ngSwitch] = "viewmode">
- <form [formGroup] = "jobForm" (ngSubmit)="addPerson()">
+ <form [formGroup] = "jobForm">
     <div *ngSwitchCase = "'hired'">
         <div formGroupName = "personal">
             <div class = "box2">
@@ -188,13 +188,11 @@
                         </div>
                     </ng-container>
                     <div class = "clearfix"></div>
-                        <button [disabled] = "!f.valid" class = "pull-right" (click) = "viewmode = 'started'">
-                            <div (click) = "onClick(2)" [ngClass] = "{ 'active1' : tab == 'tab2' }">
-                                <div class = "btn btn-primary" type = "button"> Next </div>
-                            </div>
-                        </button>
-                        
-                    
+                    <div class = "pull-right" (click) = "viewmode = 'started'">
+                        <div (click) = "onClick(2)" [ngClass] = "{ 'active1' : tab == 'tab2' }">
+                            <button [disabled] = "!f.valid" class = "btn btn-primary" type = "button"> Next </button>
+                        </div>
+                    </div>
     
             </div>
         </div>
@@ -207,8 +205,8 @@
                 <div class = "flex1">
                     <div class = "col-sm-6 p-0">
                         <h3 class = "color4"> Choose Price for the job </h3>
-                        <select class = "text1 col-sm-9" (change) = "priceChange($event.target.value)" placeholder = "Choose the Price" formControlName = "price" [ngClass] = "{ 'is-vaild' : submitted1 && f1.price.errors }" [(ngModel)] = "person.price">
-                            <option *ngFor = "let price of Price" [value] = "price"> {{ price }} </option>
+                        <select class = "text1 col-sm-9" (change) = "priceChange()" placeholder = "Choose the Price" formControlName = "price" [ngClass] = "{ 'is-vaild' : submitted1 && f1.price.errors }" [(ngModel)] = "person.price">
+                            <option *ngFor = "let price of Price" [ngValue] = "price"> {{ price }} </option>
                         </select>
                         <div class = "invalid-feedback" *ngIf = "submitted1 && f1.price.errors">
                             <div *ngIf = "f1.price.errors.required"> Price is required </div>
@@ -226,18 +224,18 @@
                                     <i class="fas fa-info-circle"></i>
                                 </span>
                                 <br />
-                                <input type = "text" class = "col-sm-12" placeholder = "Choose the Price" formControlName = "serviceFee" [(ngModel)] = "person.serviceFee" />
+                                <input type = "text" class = "col-sm-12" placeholder = "Choose the Price" formControlName = "serviceFee" [(ngModel)] = "person.serviceFee" [value] = "person.price * 90/100" />
                                 <br />
                                 <span> Multum Fee (10%) </span>
                                 <span data-bs-toggle="tooltip" data-bs-placement="right" title="Service Provider gets 10% of amount adopted from the price">
                                 <i class="fas fa-info-circle"></i>
                                 </span>
                                 <br />
-                                <input type = "text" class = "col-sm-12" placeholder = "Choose the Price" formControlName = "multumFee" [(ngModel)] = "person.multumFee" />
+                                <input type = "text" class = "col-sm-12" placeholder = "Choose the Price" formControlName = "multumFee" [(ngModel)] = "person.multumFee" [value] = "person.price * 10/100" />
                                 <br />
                                 <b> Total </b>
                                 <br />
-                                <input type = "text" class = "col-sm-12" placeholder = "Choose the Price" formControlName = "totalPrice" [(ngModel)] = "person.totalPrice" />
+                                <input type = "text" class = "col-sm-12" placeholder = "Choose the Price" formControlName = "totalPrice" [(ngModel)] = "person.totalPrice" [value] = "person.price" />
                                 <br />
                                 <div class ="clearfix"></div>
                             </div>
@@ -250,11 +248,11 @@
                             <div (click)="onClick(1)" [ngClass]="{'active1': tab==='tab1'}" class = "btn btn1"> Back </div>
                         </div>
                         
-                        <button [disabled] = "!f1.valid" (click) = "viewmode = 'completed'">
+                        <div (click) = "viewmode = 'completed'">
                             <div (click)="onClick(3)" [ngClass]="{'active1': tab==='tab3'}"> 
-                                <div class = "btn btn-primary"> Next </div>
+                                <button [disabled] = "!f1.valid" class = "btn btn-primary"> Next </button>
                             </div>
-                        </button>
+                        </div>
                         
                     </div>
             </div>
@@ -365,7 +363,7 @@
                     <div (click) = "viewmode = 'started'">
                         <div (click)="onClick(2)" [ngClass]="{'active1': tab==='tab2'}" class = "btn btn1 top1"> Back </div>
                     </div>
-                    <button [disabled] = "!f2.valid" type = "submit" class = "btn color5 top1">  Place Order </button>
+                    <button [disabled] = "!f2.valid" (click) = "addPerson()" class = "btn color5 top1">  Place Order </button>
                 </div>
                 
             </div>

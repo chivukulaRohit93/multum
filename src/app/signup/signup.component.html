@@ -85,20 +85,33 @@
                         <div *ngIf="f.dob.errors.required">DOB is required</div>
                     </div>
                 </div>
-                <div class="form-group">
+                <!-- <div class="form-group">
                     <label>Zip Code</label>
                     <input type="text" formControlName="zipCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.zipCode.errors }"  [(ngModel)] = "person.zipCode" value = "1" />
                     <div *ngIf="submitted && f.zipCode.errors && ( f.zipCode.dirty || f.zipCode.touched )" class="invalid-feedback">
                         <div *ngIf="f.zipCode.errors.required">Zip Code is required</div>
                     </div>
+                </div> -->
+                <div formGroupName="homeAddress">
+                    <!-- <label>Home Address</label> -->
+                    <div>
+                      <label [ngClass]="{'error': submitted && f.homeAddress.controls.zipCode.errors}">Zip Code</label>
+                      <input type="text" class="form-control" formControlName="zipCode" [ngClass]="{'error': submitted && f.homeAddress.controls.zipCode.errors}" />
+          
+                      <!-- error block -->
+                      <div *ngIf="submitted && f.homeAddress.controls.zipCode.errors" class="invalid-feedback">
+                        <div *ngIf="f.homeAddress.controls.zipCode.required">Zip Code is required</div>
+                      </div>
+                    </div>
                 </div>
-                <div class="form-group none1">
+
+               <!--  <div class="form-group">
                     <label>User Type</label>
                     <input type="text" formControlName="userType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userType.errors } " [(ngModel)] = "person.userType" [value] = "usertype" />
                     <div *ngIf="submitted && f.userType.errors" class="invalid-feedback">
                         <div *ngIf="f.userType.required">User Type is required</div>
                     </div>
-                </div>
+                </div> -->
                 <div class="form-group form-check col-sm-12">
                     <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted && f.acceptTerms.errors }" [(ngModel)] = "person.acceptTerms" value = "1" />
                     <label style = "font-size: 12px;" for="acceptTerms" class="form-check-label"><b>I have read and agree to the</b> Multum’s Independent Contractor
@@ -173,20 +186,33 @@
                             <div *ngIf="f1.dob.errors.required">DOB is required</div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <!-- <div class="form-group">
                         <label>Zip Code</label>
                         <input type="text" formControlName="zipCode" class="form-control" [ngClass]="{ 'is-invalid': submitted1 && f1.zipCode.errors }" [(ngModel)] = "person4.zipCode" value = "2" />
                         <div *ngIf="submitted1 && f1.zipCode.errors" class="invalid-feedback">
                             <div *ngIf="f1.zipCode.required">Zip Code is required</div>
                         </div>
+                    </div> -->
+                    <div class="form-group" formGroupName="homeAddress">
+                        <!-- <label>Home Address</label> -->
+                        <div>
+                          <label [ngClass]="{'error': submitted1 && f1.homeAddress.controls.zipCode.errors}">Zip Code</label>
+                          <input type="number" class="form-control" formControlName="zipCode" [ngClass]="{'error': submitted1 && f1.homeAddress.controls.zipCode.errors}" />
+              
+                          <!-- error block -->
+                          <div *ngIf="submitted1 && f1.homeAddress.controls.zipCode.errors" class="invalid-feedback">
+                            <div *ngIf="f1.homeAddress.controls.zipCode.required">Zip Code is required</div>
+                          </div>
+                        </div>
                     </div>
-                    <div class="form-group none1">
+
+                    <!-- <div class="form-group">
                         <label>User Type</label>
                         <input type="text" formControlName="userType" class="form-control" [ngClass]="{ 'is-invalid': submitted1 && f1.userType.errors }" [(ngModel)] = "person4.userType" [value] = "usertype1" />
                         <div *ngIf="submitted1 && f1.userType.errors" class="invalid-feedback">
                             <div *ngIf="f1.userType.required">User Type is required</div>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group form-check col-sm-12">
                         <input type="checkbox" formControlName="acceptTerms" id="acceptTerms" class="form-check-input" [ngClass]="{ 'is-invalid': submitted1 && f1.acceptTerms.errors }" [(ngModel)] = "person4.acceptTerms" value = "2" />
                         <label style = "font-size: 12px;" for="acceptTerms" class="form-check-label"><b>I have read and agree to</b> Multum’s Terms and Conditions.</label>
